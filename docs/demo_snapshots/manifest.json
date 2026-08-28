@@ -1,0 +1,40 @@
+{
+  "captured_at": "2026-08-28T13:48:52.151571+05:30",
+  "endpoints": [
+    {
+      "path": "/api/health",
+      "file": "health.json",
+      "status": 200
+    },
+    {
+      "path": "/api/district",
+      "file": "district.json",
+      "status": 200
+    },
+    {
+      "path": "/api/habitations",
+      "file": "habitations.json",
+      "status": 200
+    },
+    {
+      "path": "/api/habitations/UT_RUD_0001",
+      "file": "habitation_ukhimath.json",
+      "status": 200
+    },
+    {
+      "path": "/api/sites",
+      "file": "sites.json",
+      "status": 200
+    },
+    {
+      "path": "/api/recommend/UT_RUD_0001",
+      "file": "recommend_ukhimath.json",
+      "status": 200
+    },
+    {
+      "path": "/api/layers/red_zones",
+      "file": "layer_red_zones.json",
+      "status": 200
+    }
+  ]
+}

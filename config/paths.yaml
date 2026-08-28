@@ -1,0 +1,48 @@
+# RedZone DSS — file paths
+district: Rudraprayag
+district_code: UT_RUD
+
+data_root: data/rudraprayag
+raw_dir: data/rudraprayag/raw
+processed_dir: data/rudraprayag/processed
+out_dir: out
+public_data_dir: frontend/public/data
+
+raw:
+  district: data/rudraprayag/raw/district.geojson
+  villages: data/rudraprayag/raw/villages.geojson
+  dem: data/rudraprayag/raw/dem
+  landslides: data/rudraprayag/raw/landslides.geojson
+  osm_waterways: data/rudraprayag/raw/osm_waterways.geojson
+  osm_roads: data/rudraprayag/raw/osm_roads.geojson
+  osm_amenities: data/rudraprayag/raw/osm_amenities.geojson
+  rainfall: data/rudraprayag/raw/rainfall.tif
+  worldcover: data/rudraprayag/raw/worldcover.tif
+  protected_areas: data/rudraprayag/raw/protected_areas.geojson
+
+processed:
+  dem_clipped: data/rudraprayag/processed/dem_32644.tif
+  slope: data/rudraprayag/processed/slope.tif
+  twi: data/rudraprayag/processed/twi.tif
+  stream_dist: data/rudraprayag/processed/stream_dist.tif
+  h_ls: data/rudraprayag/processed/h_ls.tif
+  h_ff: data/rudraprayag/processed/h_ff.tif
+  hazard_raster: data/rudraprayag/processed/hazard.tif
+  kde_landslide: data/rudraprayag/processed/kde_landslide.tif
+
+out:
+  district: out/district.geojson
+  habitations: out/habitations.geojson
+  red_zones: out/red_zones.geojson
+  sites: out/sites.geojson
+  landslides: out/landslides.geojson
+  streams: out/streams.geojson
+  meta: out/meta.json
+  recommendations: out/recommendations.json
+
+# Rudraprayag approximate bbox (WGS84) for fallback
+bbox:
+  min_lon: 78.75
+  min_lat: 30.05
+  max_lon: 79.55
+  max_lat: 30.75

@@ -1,0 +1,74 @@
+{
+  "district": "Rudraprayag",
+  "generated_at": "2026-08-28T13:48:37.140035+05:30",
+  "model_version": "1.0.0",
+  "weights_version": "1.0.0",
+  "degraded_mode": true,
+  "synthetic_data_used": true,
+  "sources": [
+    {
+      "layer": "district",
+      "provenance": "OPEN_DATA",
+      "url": "https://github.com/datameet/maps",
+      "note": "Rudraprayag district boundary"
+    },
+    {
+      "layer": "habitations",
+      "provenance": "EXPERT_SCREENED",
+      "url": null,
+      "note": "Demo subset with hazard scores sampled from pipeline rasters where available"
+    },
+    {
+      "layer": "red_zones",
+      "provenance": "DERIVED",
+      "url": null,
+      "note": "Multi-criteria hazard model output \u2014 not official government zonation"
+    },
+    {
+      "layer": "landslides",
+      "provenance": "DERIVED",
+      "url": "https://bharatlas.com/view/gsi_landslide_inventory",
+      "note": "GSI inventory clipped to district or slope proxy"
+    },
+    {
+      "layer": "streams",
+      "provenance": "OPEN_DATA",
+      "url": "https://download.geofabrik.de/",
+      "note": "OSM waterways or TWI-derived stream paths"
+    },
+    {
+      "layer": "sites",
+      "provenance": "EXPERT_SCREENED",
+      "url": null,
+      "note": "Candidate relocation sites screened by hazard, slope, and buildability"
+    },
+    {
+      "layer": "dem",
+      "provenance": "SYNTHETIC",
+      "url": null,
+      "note": "Synthetic DEM used when Copernicus/SRTM tiles unavailable"
+    },
+    {
+      "layer": "rainfall",
+      "provenance": "SYNTHETIC",
+      "url": null,
+      "note": "Uniform rainfall proxy; hazard weights renormalized"
+    }
+  ],
+  "limitations": [
+    "Derived hazard scores are decision-support indicators, not official government hazard zonation.",
+    "Carrying capacity is first-order physical screening capacity, not statutory or legally approved settlement capacity.",
+    "Demo dataset uses a curated subset of habitations; synthetic enrichment is flagged where applied.",
+    "Rainfall and vulnerability proxies may use fallback values when primary sources are unavailable."
+  ],
+  "kpis": {
+    "habitation_count": 25,
+    "immediate_count": 2,
+    "short_term_count": 0,
+    "medium_term_count": 10,
+    "monitor_count": 13,
+    "site_count": 11,
+    "red_zone_area_ha": 596077.0,
+    "district_area_ha": 596567.3
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "generated_at": "2026-08-28T13:48:37.277124+05:30",
+  "out_dir": "out",
+  "public_data_dir": "frontend\\public\\data",
+  "files": [
+    {
+      "file": "district.geojson",
+      "out_bytes": 417,
+      "public_bytes": 417,
+      "sha256": "11a6f1927f9d6735b858f7565ad7ca0694cdaa9c0278ab7d1c2d377b2e3ceb10",
+      "in_sync": true
+    },
+    {
+      "file": "habitations.geojson",
+      "out_bytes": 57495,
+      "public_bytes": 57495,
+      "sha256": "76012b84c3fd6555f7774a7be75ac349f86ee0b09e6e0e0c0f23e4566bc8df9e",
+      "in_sync": true
+    },
+    {
+      "file": "landslides.geojson",
+      "out_bytes": 1474,
+      "public_bytes": 1474,
+      "sha256": "d56711607349e868abcc984bb303b73743337cf09e53660550743ba861a97b3c",
+      "in_sync": true
+    },
+    {
+      "file": "meta.json",
+      "out_bytes": 2420,
+      "public_bytes": 2420,
+      "sha256": "b3a56c4b044d80d42de9c821f696ae3731d31ba02864e3eea78a643024adab4e",
+      "in_sync": true
+    },
+    {
+      "file": "recommendations.json",
+      "out_bytes": 110752,
+      "public_bytes": 110752,
+      "sha256": "3c4f8a4c26fc453e0e27dfb8e6d9bc926ef9957e28ad8bad95f5f40f71d1185e",
+      "in_sync": true
+    },
+    {
+      "file": "red_zones.geojson",
+      "out_bytes": 109624,
+      "public_bytes": 109624,
+      "sha256": "e55fd742513dbea255d3f61c76756d2723a08dbe8e1f6f1caca042d71f6e0ed2",
+      "in_sync": true
+    },
+    {
+      "file": "sites.geojson",
+      "out_bytes": 8435,
+      "public_bytes": 8435,
+      "sha256": "f33af8973a917fe40ff23863c24fc64a145f4bd54f27f431b1cb2f8dec3467e3",
+      "in_sync": true
+    },
+    {
+      "file": "streams.geojson",
+      "out_bytes": 1197,
+      "public_bytes": 1197,
+      "sha256": "6362c7d077409b5b1ee478a8a63e2e2939945dc4f150faf3607403facf400b67",
+      "in_sync": true
+    }
+  ],
+  "parity_ok": true
+}

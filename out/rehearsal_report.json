@@ -1,0 +1,47 @@
+{
+  "rehearsal_at": "2026-08-28T13:48:52.994088+05:30",
+  "automated": true,
+  "steps": [
+    {
+      "step": "Export sync",
+      "ok": true,
+      "returncode": 0
+    },
+    {
+      "step": "Validate demo",
+      "ok": true,
+      "returncode": 0
+    },
+    {
+      "step": "Offline static test",
+      "ok": true,
+      "returncode": 0
+    },
+    {
+      "step": "Backend tests",
+      "ok": true,
+      "returncode": 0
+    },
+    {
+      "step": "Frontend build",
+      "ok": true,
+      "returncode": 0
+    },
+    {
+      "step": "Offline static test (post-build)",
+      "ok": true,
+      "returncode": 0
+    },
+    {
+      "step": "Capture API snapshots",
+      "ok": true,
+      "returncode": 0
+    },
+    {
+      "step": "Create backup",
+      "ok": true,
+      "returncode": 0
+    }
+  ],
+  "passed": true
+}

@@ -1,0 +1,14 @@
+{
+  "type": "FeatureCollection",
+  "name": "landslides",
+  "features": [
+    { "type": "Feature", "properties": { "source": "OPEN_DATA", "date": "2013-06", "type": "rockslide" }, "geometry": { "type": "Point", "coordinates": [79.08, 30.52] } },
+    { "type": "Feature", "properties": { "source": "OPEN_DATA", "date": "2010-08", "type": "debris_flow" }, "geometry": { "type": "Point", "coordinates": [79.04, 30.50] } },
+    { "type": "Feature", "properties": { "source": "OPEN_DATA", "date": "2015-07", "type": "rockslide" }, "geometry": { "type": "Point", "coordinates": [79.11, 30.54] } },
+    { "type": "Feature", "properties": { "source": "OPEN_DATA", "date": "2013-06", "type": "debris_flow" }, "geometry": { "type": "Point", "coordinates": [78.96, 30.36] } },
+    { "type": "Feature", "properties": { "source": "OPEN_DATA", "date": "2018-09", "type": "rockslide" }, "geometry": { "type": "Point", "coordinates": [79.00, 30.40] } },
+    { "type": "Feature", "properties": { "source": "OPEN_DATA", "date": "2012-05", "type": "rockslide" }, "geometry": { "type": "Point", "coordinates": [78.90, 30.31] } },
+    { "type": "Feature", "properties": { "source": "OPEN_DATA", "date": "2013-06", "type": "debris_flow" }, "geometry": { "type": "Point", "coordinates": [79.06, 30.53] } },
+    { "type": "Feature", "properties": { "source": "OPEN_DATA", "date": "2016-08", "type": "rockslide" }, "geometry": { "type": "Point", "coordinates": [78.94, 30.33] } }
+  ]
+}

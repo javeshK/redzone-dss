@@ -1,0 +1,38 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
+
+# Node
+node_modules/
+dist/
+
+# GIS / large data
+data/*/raw/*
+data/*/processed/*
+*.tif
+*.tiff
+*.gpkg
+*.shp
+*.dbf
+*.prj
+*.cpg
+
+# Generated
+*.log
+backups/
+docs/demo_snapshots/health.json
+docs/demo_snapshots/district.json
+docs/demo_snapshots/habitations.json
+docs/demo_snapshots/habitation_ukhimath.json
+docs/demo_snapshots/sites.json
+docs/demo_snapshots/recommend_ukhimath.json
+docs/demo_snapshots/layer_red_zones.json
+docs/demo_snapshots/screenshots/*.png
+docs/demo_snapshots/screenshots/*.jpg
+
+# OS
+.DS_Store
+Thumbs.db
