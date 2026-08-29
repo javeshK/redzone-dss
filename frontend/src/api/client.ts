@@ -1,10 +1,13 @@
 import type {
+  AlertData,
   DistrictResponse,
   HabitationDetail,
   HabitationSummary,
   HealthResponse,
   MetaResponse,
   RecommendationResponse,
+  RefreshStatus,
+  ScenarioResponse,
   SiteSummary,
 } from '../types';
 
@@ -223,4 +226,41 @@ export function isUsingApi(): boolean | null {
 
 export function resetApiCheck() {
   apiAvailable = null;
+}
+
+export async function getAlerts(): Promise<AlertData> {
+  return fetchWithFallback<AlertData>('/alerts', '/alerts.json');
+}
+
+export async function getRainfallScenario(factor: number): Promise<ScenarioResponse> {
+  const useApi = await checkApi();
+  if (useApi) {
+    try {
+      const r = await fetch(`${API_BASE}/scenario/rainfall?factor=${factor}`);
+      if (r.ok) return r.json();
+    } catch {
+      apiAvailable = false;
+    }
+  }
+  const r = await fetch(`${STATIC_BASE}/scenarios.json`);
+  if (r.ok) {
+    const data = await r.json();
+    return data[String(factor)] ?? data['1.0'];
+  }
+  throw new Error('Scenario data unavailable');
+}
+
+export async function getRefreshStatus(): Promise<RefreshStatus> {
+  const useApi = await checkApi();
+  if (!useApi) return { success: false, pipeline_version: '2.0.0' };
+  const r = await fetch(`${API_BASE}/meta/refresh-status`);
+  if (!r.ok) throw new Error('Refresh status unavailable');
+  return r.json();
+}
+
+export async function triggerRefresh(): Promise<{ success: boolean }> {
+  const r = await fetch(`${API_BASE}/admin/refresh`, { method: 'POST' });
+  if (!r.ok) throw new Error('Refresh failed');
+  resetApiCheck();
+  return r.json();
 }

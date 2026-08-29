@@ -10,9 +10,36 @@ Intelligent Identification of Hazard-Based Red Zones, Carrying Capacity Assessme
 
 - **Geography:** Rudraprayag district only
 - **Hazards:** Landslide + Cloudburst / flash-flood susceptibility
-- **No ML, no auth, no PostGIS** — see `.cursor/rules/project.md`
+- **Phase 2:** Real/derived open data, operational refresh, scenario slider, alerts, PDF, Hindi i18n
+- **ML disabled** (`ml_enabled: false`) — see Phase 3 scaffold in `scripts/ml/`
 
-## Quick Start
+## Phase 2 Quick Start
+
+### Download open data
+
+```bash
+cd scripts
+pip install -r requirements.txt
+python download_data.py
+```
+
+### Run full pipeline (rainfall fetch → 01–05 → alerts → PDF)
+
+```bash
+python scripts/07_run_pipeline.py
+```
+
+### Schedule nightly refresh
+
+```bash
+# cron / Task Scheduler
+python scripts/07_run_pipeline.py
+```
+
+Refresh status: `GET /api/meta/refresh-status`  
+Dev refresh: `POST /api/admin/refresh`
+
+## Quick Start (original)
 
 ### Prerequisites
 
@@ -84,8 +111,7 @@ python scripts/run_demo_rehearsal.py
 # See docs/REHEARSAL_CHECKLIST.md and docs/demo_script.md
 ```
 
-**Feature freeze is active** — see [`docs/FEATURE_FREEZE.md`](docs/FEATURE_FREEZE.md).  
-Only crash fixes allowed on 5 September.
+**Phase 2 active** — see [`docs/FEATURE_FREEZE.md`](docs/FEATURE_FREEZE.md) for roadmap.
 
 ## Demo Flow
 
@@ -121,7 +147,7 @@ Run `05_export.py` to sync `out/` → `frontend/public/data/` and write `export_
 config/          # weights.yaml, paths.yaml
 data/            # raw + processed GIS inputs
 out/             # precomputed GeoJSON + JSON artifacts
-scripts/         # offline GIS pipeline (01–05)
+scripts/         # offline GIS pipeline (01–09, download, ML scaffold)
 backend/         # FastAPI read-only API
 frontend/        # React + Vite + Leaflet dashboard
 docs/            # full specification

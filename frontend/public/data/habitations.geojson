@@ -9,28 +9,29 @@
         "name": "Ukhimath",
         "block": "Ukhimath",
         "pop": 850,
-        "h_ls": 0.0752,
-        "h_ff": 0.6064,
-        "h": 0.636,
-        "v": 0.4254,
-        "p": 0.5518,
-        "priority": "Medium-term",
-        "pct_red": 24.7,
-        "zone_class": "Orange",
+        "h_ls": 0.0288,
+        "h_ff": 0.2708,
+        "h": 0.2919,
+        "v": 0.3629,
+        "p": 0.3203,
+        "priority": "Monitor",
+        "pct_red": 0.0,
+        "zone_class": "Green",
         "source": "EXPERT_SCREENED",
         "hazard_source": "PIPELINE",
+        "village_joined": true,
         "explain": [
           {
             "factor": "multi_hazard",
-            "value": 0.636,
+            "value": 0.2919,
             "weight": 0.6,
-            "contribution": 0.3816
+            "contribution": 0.1751
           },
           {
             "factor": "vulnerability",
-            "value": 0.4254,
+            "value": 0.3629,
             "weight": 0.4,
-            "contribution": 0.1702
+            "contribution": 0.1452
           }
         ],
         "vuln_explain": [
@@ -60,20 +61,20 @@
           },
           {
             "factor": "historical_exposure",
-            "value": 0.6,
+            "value": 0.35,
             "weight": 0.25,
-            "contribution": 0.15
+            "contribution": 0.0875
           }
         ],
         "rec_site_id": "SITE_A",
-        "rec_score": 0.7662,
+        "rec_score": 0.8334,
         "why_site": [
-          "H_site=0.35 (below 0.4 safety filter)",
+          "H_site=0.22 (below 0.4 safety filter)",
           "Distance 3.8 km from Ukhimath (proximity score 0.85)",
           "Access: road 0.90, healthcare 0.80, water 0.85, school 0.70",
-          "First-order physical screening capacity: 617 available (habitation pop 850)",
-          "Capacity meets 0.5\u00d7population threshold (617 \u2265 425)",
-          "U_ij suitability score 0.77"
+          "First-order physical screening capacity: 779 available (habitation pop 850)",
+          "Capacity meets 0.5\u00d7population threshold (779 \u2265 425)",
+          "U_ij suitability score 0.83"
         ]
       },
       "geometry": {
@@ -91,22 +92,23 @@
         "name": "Guptkashi",
         "block": "Ukhimath",
         "pop": 620,
-        "h_ls": 0.046,
-        "h_ff": 0.3335,
-        "h": 0.3642,
+        "h_ls": 0.0345,
+        "h_ff": 0.2039,
+        "h": 0.2314,
         "v": 0.2956,
-        "p": 0.3368,
+        "p": 0.2571,
         "priority": "Monitor",
         "pct_red": 0.0,
-        "zone_class": "Yellow",
+        "zone_class": "Green",
         "source": "EXPERT_SCREENED",
         "hazard_source": "PIPELINE",
+        "village_joined": true,
         "explain": [
           {
             "factor": "multi_hazard",
-            "value": 0.3642,
+            "value": 0.2314,
             "weight": 0.6,
-            "contribution": 0.2185
+            "contribution": 0.1388
           },
           {
             "factor": "vulnerability",
@@ -148,14 +150,14 @@
           }
         ],
         "rec_site_id": "SITE_A",
-        "rec_score": 0.8078,
+        "rec_score": 0.8472,
         "why_site": [
-          "H_site=0.35 (below 0.4 safety filter)",
+          "H_site=0.22 (below 0.4 safety filter)",
           "Distance 3.6 km from Guptkashi (proximity score 0.85)",
           "Access: road 0.90, healthcare 0.80, water 0.85, school 0.70",
-          "First-order physical screening capacity: 617 available (habitation pop 620)",
-          "Capacity meets 0.5\u00d7population threshold (617 \u2265 310)",
-          "U_ij suitability score 0.81"
+          "First-order physical screening capacity: 779 available (habitation pop 620)",
+          "Capacity meets 0.5\u00d7population threshold (779 \u2265 310)",
+          "U_ij suitability score 0.85"
         ]
       },
       "geometry": {
@@ -173,35 +175,29 @@
         "name": "Agastyamuni",
         "block": "Rudraprayag",
         "pop": 420,
-        "h_ls": 0.0,
-        "h_ff": 0.6918,
-        "h": 0.6918,
+        "h_ls": 0.0576,
+        "h_ff": 0.3871,
+        "h": 0.4224,
         "v": 0.1725,
-        "p": 0.4841,
-        "priority": "Immediate",
-        "pct_red": 41.6,
-        "zone_class": "Orange",
+        "p": 0.3225,
+        "priority": "Monitor",
+        "pct_red": 0.0,
+        "zone_class": "Yellow",
         "source": "EXPERT_SCREENED",
         "hazard_source": "PIPELINE",
+        "village_joined": true,
         "explain": [
           {
             "factor": "multi_hazard",
-            "value": 0.6918,
+            "value": 0.4224,
             "weight": 0.6,
-            "contribution": 0.4151
+            "contribution": 0.2534
           },
           {
             "factor": "vulnerability",
             "value": 0.1725,
             "weight": 0.4,
             "contribution": 0.069
-          },
-          {
-            "factor": "pct_red_override",
-            "value": 41.6,
-            "weight": 0.0,
-            "contribution": 0.0,
-            "note": "pct_red >= 40.0% forces Immediate"
           }
         ],
         "vuln_explain": [
@@ -237,14 +233,14 @@
           }
         ],
         "rec_site_id": "SITE_A",
-        "rec_score": 0.71,
+        "rec_score": 0.7486,
         "why_site": [
-          "H_site=0.35 (below 0.4 safety filter)",
+          "H_site=0.22 (below 0.4 safety filter)",
           "Distance 20.1 km from Agastyamuni (proximity score 0.20)",
           "Access: road 0.90, healthcare 0.80, water 0.85, school 0.70",
-          "First-order physical screening capacity: 617 available (habitation pop 420)",
-          "Capacity meets 0.5\u00d7population threshold (617 \u2265 210)",
-          "U_ij suitability score 0.71"
+          "First-order physical screening capacity: 779 available (habitation pop 420)",
+          "Capacity meets 0.5\u00d7population threshold (779 \u2265 210)",
+          "U_ij suitability score 0.75"
         ]
       },
       "geometry": {
@@ -262,22 +258,23 @@
         "name": "Tilwara",
         "block": "Rudraprayag",
         "pop": 310,
-        "h_ls": 0.0001,
-        "h_ff": 0.3337,
-        "h": 0.3337,
+        "h_ls": 0.0412,
+        "h_ff": 0.3231,
+        "h": 0.351,
         "v": 0.2723,
-        "p": 0.3091,
+        "p": 0.3195,
         "priority": "Monitor",
         "pct_red": 0.0,
         "zone_class": "Yellow",
         "source": "EXPERT_SCREENED",
         "hazard_source": "PIPELINE",
+        "village_joined": true,
         "explain": [
           {
             "factor": "multi_hazard",
-            "value": 0.3337,
+            "value": 0.351,
             "weight": 0.6,
-            "contribution": 0.2002
+            "contribution": 0.2106
           },
           {
             "factor": "vulnerability",
@@ -319,14 +316,14 @@
           }
         ],
         "rec_site_id": "SITE_I",
-        "rec_score": 0.7741,
+        "rec_score": 0.8095,
         "why_site": [
-          "H_site=0.32 (below 0.4 safety filter)",
+          "H_site=0.24 (below 0.4 safety filter)",
           "Distance 6.8 km from Tilwara (proximity score 0.73)",
           "Access: road 0.84, healthcare 0.74, water 0.87, school 0.70",
-          "First-order physical screening capacity: 288 available (habitation pop 310)",
-          "Capacity meets 0.5\u00d7population threshold (288 \u2265 155)",
-          "U_ij suitability score 0.77"
+          "First-order physical screening capacity: 340 available (habitation pop 310)",
+          "Capacity meets 0.5\u00d7population threshold (340 \u2265 155)",
+          "U_ij suitability score 0.81"
         ]
       },
       "geometry": {
@@ -344,22 +341,23 @@
         "name": "Rudraprayag Town",
         "block": "Rudraprayag",
         "pop": 1150,
-        "h_ls": 0.0,
-        "h_ff": 0.3199,
-        "h": 0.3199,
+        "h_ls": 0.0641,
+        "h_ff": 0.5841,
+        "h": 0.6107,
         "v": 0.3025,
-        "p": 0.3129,
-        "priority": "Monitor",
+        "p": 0.4874,
+        "priority": "Medium-term",
         "pct_red": 0.0,
-        "zone_class": "Yellow",
+        "zone_class": "Orange",
         "source": "EXPERT_SCREENED",
         "hazard_source": "PIPELINE",
+        "village_joined": true,
         "explain": [
           {
             "factor": "multi_hazard",
-            "value": 0.3199,
+            "value": 0.6107,
             "weight": 0.6,
-            "contribution": 0.1919
+            "contribution": 0.3664
           },
           {
             "factor": "vulnerability",
@@ -401,14 +399,14 @@
           }
         ],
         "rec_site_id": "SITE_A",
-        "rec_score": 0.6108,
+        "rec_score": 0.6706,
         "why_site": [
-          "H_site=0.35 (below 0.4 safety filter)",
+          "H_site=0.22 (below 0.4 safety filter)",
           "Distance 29.7 km from Rudraprayag Town (proximity score 0.00)",
           "Access: road 0.90, healthcare 0.80, water 0.85, school 0.70",
-          "First-order physical screening capacity: 617 available (habitation pop 1150)",
-          "Capacity meets 0.5\u00d7population threshold (617 \u2265 575)",
-          "U_ij suitability score 0.61"
+          "First-order physical screening capacity: 779 available (habitation pop 1150)",
+          "Capacity meets 0.5\u00d7population threshold (779 \u2265 575)",
+          "U_ij suitability score 0.67"
         ]
       },
       "geometry": {
@@ -426,22 +424,23 @@
         "name": "Gaurikund",
         "block": "Ukhimath",
         "pop": 180,
-        "h_ls": 0.0,
-        "h_ff": 0.4358,
-        "h": 0.4358,
+        "h_ls": 0.0295,
+        "h_ff": 0.2679,
+        "h": 0.2895,
         "v": 0.4567,
-        "p": 0.4442,
-        "priority": "Medium-term",
+        "p": 0.3564,
+        "priority": "Monitor",
         "pct_red": 0.0,
-        "zone_class": "Yellow",
+        "zone_class": "Green",
         "source": "EXPERT_SCREENED",
         "hazard_source": "PIPELINE",
+        "village_joined": true,
         "explain": [
           {
             "factor": "multi_hazard",
-            "value": 0.4358,
+            "value": 0.2895,
             "weight": 0.6,
-            "contribution": 0.2615
+            "contribution": 0.1737
           },
           {
             "factor": "vulnerability",
@@ -483,14 +482,14 @@
           }
         ],
         "rec_site_id": "SITE_A",
-        "rec_score": 0.7743,
+        "rec_score": 0.8129,
         "why_site": [
-          "H_site=0.35 (below 0.4 safety filter)",
+          "H_site=0.22 (below 0.4 safety filter)",
           "Distance 9.3 km from Gaurikund (proximity score 0.63)",
           "Access: road 0.90, healthcare 0.80, water 0.85, school 0.70",
-          "First-order physical screening capacity: 617 available (habitation pop 180)",
-          "Capacity meets 0.5\u00d7population threshold (617 \u2265 90)",
-          "U_ij suitability score 0.77"
+          "First-order physical screening capacity: 779 available (habitation pop 180)",
+          "Capacity meets 0.5\u00d7population threshold (779 \u2265 90)",
+          "U_ij suitability score 0.81"
         ]
       },
       "geometry": {
@@ -508,22 +507,23 @@
         "name": "Phata",
         "block": "Ukhimath",
         "pop": 240,
-        "h_ls": 0.0,
-        "h_ff": 0.47,
-        "h": 0.47,
+        "h_ls": 0.056,
+        "h_ff": 0.2912,
+        "h": 0.3309,
         "v": 0.2608,
-        "p": 0.3863,
+        "p": 0.3029,
         "priority": "Monitor",
         "pct_red": 0.0,
         "zone_class": "Yellow",
         "source": "EXPERT_SCREENED",
         "hazard_source": "PIPELINE",
+        "village_joined": true,
         "explain": [
           {
             "factor": "multi_hazard",
-            "value": 0.47,
+            "value": 0.3309,
             "weight": 0.6,
-            "contribution": 0.282
+            "contribution": 0.1985
           },
           {
             "factor": "vulnerability",
@@ -565,14 +565,14 @@
           }
         ],
         "rec_site_id": "SITE_A",
-        "rec_score": 0.7419,
+        "rec_score": 0.7806,
         "why_site": [
-          "H_site=0.35 (below 0.4 safety filter)",
+          "H_site=0.22 (below 0.4 safety filter)",
           "Distance 14.7 km from Phata (proximity score 0.41)",
           "Access: road 0.90, healthcare 0.80, water 0.85, school 0.70",
-          "First-order physical screening capacity: 617 available (habitation pop 240)",
-          "Capacity meets 0.5\u00d7population threshold (617 \u2265 120)",
-          "U_ij suitability score 0.74"
+          "First-order physical screening capacity: 779 available (habitation pop 240)",
+          "Capacity meets 0.5\u00d7population threshold (779 \u2265 120)",
+          "U_ij suitability score 0.78"
         ]
       },
       "geometry": {
@@ -590,22 +590,23 @@
         "name": "Kalimath",
         "block": "Ukhimath",
         "pop": 390,
-        "h_ls": 0.0,
-        "h_ff": 0.6247,
-        "h": 0.6247,
+        "h_ls": 0.0614,
+        "h_ff": 0.5374,
+        "h": 0.5658,
         "v": 0.3234,
-        "p": 0.5042,
+        "p": 0.4688,
         "priority": "Medium-term",
-        "pct_red": 7.2,
+        "pct_red": 0.0,
         "zone_class": "Orange",
         "source": "EXPERT_SCREENED",
         "hazard_source": "PIPELINE",
+        "village_joined": true,
         "explain": [
           {
             "factor": "multi_hazard",
-            "value": 0.6247,
+            "value": 0.5658,
             "weight": 0.6,
-            "contribution": 0.3748
+            "contribution": 0.3395
           },
           {
             "factor": "vulnerability",
@@ -647,14 +648,14 @@
           }
         ],
         "rec_site_id": "SITE_A",
-        "rec_score": 0.7783,
+        "rec_score": 0.8169,
         "why_site": [
-          "H_site=0.35 (below 0.4 safety filter)",
+          "H_site=0.22 (below 0.4 safety filter)",
           "Distance 8.7 km from Kalimath (proximity score 0.65)",
           "Access: road 0.90, healthcare 0.80, water 0.85, school 0.70",
-          "First-order physical screening capacity: 617 available (habitation pop 390)",
-          "Capacity meets 0.5\u00d7population threshold (617 \u2265 195)",
-          "U_ij suitability score 0.78"
+          "First-order physical screening capacity: 779 available (habitation pop 390)",
+          "Capacity meets 0.5\u00d7population threshold (779 \u2265 195)",
+          "U_ij suitability score 0.82"
         ]
       },
       "geometry": {
@@ -672,22 +673,23 @@
         "name": "Narayankoti",
         "block": "Ukhimath",
         "pop": 275,
-        "h_ls": 0.006,
-        "h_ff": 0.3233,
-        "h": 0.3273,
+        "h_ls": 0.0333,
+        "h_ff": 0.3081,
+        "h": 0.3311,
         "v": 0.2416,
-        "p": 0.293,
+        "p": 0.2953,
         "priority": "Monitor",
         "pct_red": 0.0,
         "zone_class": "Yellow",
         "source": "EXPERT_SCREENED",
         "hazard_source": "PIPELINE",
+        "village_joined": true,
         "explain": [
           {
             "factor": "multi_hazard",
-            "value": 0.3273,
+            "value": 0.3311,
             "weight": 0.6,
-            "contribution": 0.1964
+            "contribution": 0.1987
           },
           {
             "factor": "vulnerability",
@@ -729,14 +731,14 @@
           }
         ],
         "rec_site_id": "SITE_A",
-        "rec_score": 0.7903,
+        "rec_score": 0.829,
         "why_site": [
-          "H_site=0.35 (below 0.4 safety filter)",
+          "H_site=0.22 (below 0.4 safety filter)",
           "Distance 6.7 km from Narayankoti (proximity score 0.73)",
           "Access: road 0.90, healthcare 0.80, water 0.85, school 0.70",
-          "First-order physical screening capacity: 617 available (habitation pop 275)",
-          "Capacity meets 0.5\u00d7population threshold (617 \u2265 137)",
-          "U_ij suitability score 0.79"
+          "First-order physical screening capacity: 779 available (habitation pop 275)",
+          "Capacity meets 0.5\u00d7population threshold (779 \u2265 137)",
+          "U_ij suitability score 0.83"
         ]
       },
       "geometry": {
@@ -754,22 +756,23 @@
         "name": "Triyuginarayan",
         "block": "Ukhimath",
         "pop": 195,
-        "h_ls": 0.0,
-        "h_ff": 0.3226,
-        "h": 0.3226,
+        "h_ls": 0.0713,
+        "h_ff": 0.3346,
+        "h": 0.3821,
         "v": 0.521,
-        "p": 0.402,
+        "p": 0.4377,
         "priority": "Medium-term",
         "pct_red": 0.0,
         "zone_class": "Yellow",
         "source": "EXPERT_SCREENED",
         "hazard_source": "PIPELINE",
+        "village_joined": true,
         "explain": [
           {
             "factor": "multi_hazard",
-            "value": 0.3226,
+            "value": 0.3821,
             "weight": 0.6,
-            "contribution": 0.1936
+            "contribution": 0.2293
           },
           {
             "factor": "vulnerability",
@@ -811,14 +814,14 @@
           }
         ],
         "rec_site_id": "SITE_A",
-        "rec_score": 0.7204,
+        "rec_score": 0.759,
         "why_site": [
-          "H_site=0.35 (below 0.4 safety filter)",
+          "H_site=0.22 (below 0.4 safety filter)",
           "Distance 18.3 km from Triyuginarayan (proximity score 0.27)",
           "Access: road 0.90, healthcare 0.80, water 0.85, school 0.70",
-          "First-order physical screening capacity: 617 available (habitation pop 195)",
-          "Capacity meets 0.5\u00d7population threshold (617 \u2265 97)",
-          "U_ij suitability score 0.72"
+          "First-order physical screening capacity: 779 available (habitation pop 195)",
+          "Capacity meets 0.5\u00d7population threshold (779 \u2265 97)",
+          "U_ij suitability score 0.76"
         ]
       },
       "geometry": {
@@ -836,22 +839,23 @@
         "name": "Okhimath",
         "block": "Ukhimath",
         "pop": 520,
-        "h_ls": 0.0,
-        "h_ff": 0.3488,
-        "h": 0.3488,
+        "h_ls": 0.0456,
+        "h_ff": 0.4765,
+        "h": 0.5004,
         "v": 0.343,
-        "p": 0.3465,
-        "priority": "Monitor",
+        "p": 0.4374,
+        "priority": "Medium-term",
         "pct_red": 0.0,
-        "zone_class": "Yellow",
+        "zone_class": "Orange",
         "source": "EXPERT_SCREENED",
         "hazard_source": "PIPELINE",
+        "village_joined": true,
         "explain": [
           {
             "factor": "multi_hazard",
-            "value": 0.3488,
+            "value": 0.5004,
             "weight": 0.6,
-            "contribution": 0.2093
+            "contribution": 0.3002
           },
           {
             "factor": "vulnerability",
@@ -893,14 +897,14 @@
           }
         ],
         "rec_site_id": "SITE_A",
-        "rec_score": 0.8304,
+        "rec_score": 0.869,
         "why_site": [
-          "H_site=0.35 (below 0.4 safety filter)",
+          "H_site=0.22 (below 0.4 safety filter)",
           "Distance 0.0 km from Okhimath (proximity score 1.00)",
           "Access: road 0.90, healthcare 0.80, water 0.85, school 0.70",
-          "First-order physical screening capacity: 617 available (habitation pop 520)",
-          "Capacity meets 0.5\u00d7population threshold (617 \u2265 260)",
-          "U_ij suitability score 0.83"
+          "First-order physical screening capacity: 779 available (habitation pop 520)",
+          "Capacity meets 0.5\u00d7population threshold (779 \u2265 260)",
+          "U_ij suitability score 0.87"
         ]
       },
       "geometry": {
@@ -918,22 +922,23 @@
         "name": "Chopta",
         "block": "Jakholi",
         "pop": 210,
-        "h_ls": 0.0,
-        "h_ff": 0.3384,
-        "h": 0.3384,
+        "h_ls": 0.0562,
+        "h_ff": 0.5242,
+        "h": 0.5509,
         "v": 0.5876,
-        "p": 0.4381,
+        "p": 0.5656,
         "priority": "Medium-term",
         "pct_red": 0.0,
-        "zone_class": "Yellow",
+        "zone_class": "Orange",
         "source": "EXPERT_SCREENED",
         "hazard_source": "PIPELINE",
+        "village_joined": true,
         "explain": [
           {
             "factor": "multi_hazard",
-            "value": 0.3384,
+            "value": 0.5509,
             "weight": 0.6,
-            "contribution": 0.203
+            "contribution": 0.3305
           },
           {
             "factor": "vulnerability",
@@ -974,15 +979,15 @@
             "contribution": 0.0875
           }
         ],
-        "rec_site_id": "SITE_L",
-        "rec_score": 0.6976,
+        "rec_site_id": "SITE_F",
+        "rec_score": 0.7298,
         "why_site": [
-          "H_site=0.34 (below 0.4 safety filter)",
-          "Distance 8.2 km from Chopta (proximity score 0.67)",
-          "Access: road 0.74, healthcare 0.62, water 0.83, school 0.56",
-          "First-order physical screening capacity: 159 available (habitation pop 210)",
-          "Capacity meets 0.5\u00d7population threshold (159 \u2265 105)",
-          "U_ij suitability score 0.70"
+          "H_site=0.27 (below 0.4 safety filter)",
+          "Distance 2.9 km from Chopta (proximity score 0.88)",
+          "Access: road 0.72, healthcare 0.60, water 0.80, school 0.55",
+          "First-order physical screening capacity: 144 available (habitation pop 210)",
+          "Capacity meets 0.5\u00d7population threshold (144 \u2265 105)",
+          "U_ij suitability score 0.73"
         ]
       },
       "geometry": {
@@ -1000,22 +1005,23 @@
         "name": "Makku",
         "block": "Jakholi",
         "pop": 165,
-        "h_ls": 0.0,
-        "h_ff": 0.3358,
-        "h": 0.3358,
+        "h_ls": 0.0542,
+        "h_ff": 0.3952,
+        "h": 0.428,
         "v": 0.524,
-        "p": 0.4111,
+        "p": 0.4664,
         "priority": "Medium-term",
         "pct_red": 0.0,
         "zone_class": "Yellow",
         "source": "EXPERT_SCREENED",
         "hazard_source": "PIPELINE",
+        "village_joined": true,
         "explain": [
           {
             "factor": "multi_hazard",
-            "value": 0.3358,
+            "value": 0.428,
             "weight": 0.6,
-            "contribution": 0.2015
+            "contribution": 0.2568
           },
           {
             "factor": "vulnerability",
@@ -1057,14 +1063,14 @@
           }
         ],
         "rec_site_id": "SITE_L",
-        "rec_score": 0.769,
+        "rec_score": 0.7912,
         "why_site": [
-          "H_site=0.34 (below 0.4 safety filter)",
+          "H_site=0.28 (below 0.4 safety filter)",
           "Distance 1.5 km from Makku (proximity score 0.94)",
           "Access: road 0.74, healthcare 0.62, water 0.83, school 0.56",
-          "First-order physical screening capacity: 159 available (habitation pop 165)",
-          "Capacity meets 0.5\u00d7population threshold (159 \u2265 82)",
-          "U_ij suitability score 0.77"
+          "First-order physical screening capacity: 178 available (habitation pop 165)",
+          "Capacity meets 0.5\u00d7population threshold (178 \u2265 82)",
+          "U_ij suitability score 0.79"
         ]
       },
       "geometry": {
@@ -1082,22 +1088,23 @@
         "name": "Jagula",
         "block": "Jakholi",
         "pop": 145,
-        "h_ls": 0.0,
-        "h_ff": 0.3475,
-        "h": 0.3475,
+        "h_ls": 0.05,
+        "h_ff": 0.2487,
+        "h": 0.2862,
         "v": 0.4182,
-        "p": 0.3758,
+        "p": 0.339,
         "priority": "Monitor",
         "pct_red": 0.0,
-        "zone_class": "Yellow",
+        "zone_class": "Green",
         "source": "EXPERT_SCREENED",
         "hazard_source": "PIPELINE",
+        "village_joined": true,
         "explain": [
           {
             "factor": "multi_hazard",
-            "value": 0.3475,
+            "value": 0.2862,
             "weight": 0.6,
-            "contribution": 0.2085
+            "contribution": 0.1717
           },
           {
             "factor": "vulnerability",
@@ -1139,14 +1146,14 @@
           }
         ],
         "rec_site_id": "SITE_A",
-        "rec_score": 0.7687,
+        "rec_score": 0.8074,
         "why_site": [
-          "H_site=0.35 (below 0.4 safety filter)",
+          "H_site=0.22 (below 0.4 safety filter)",
           "Distance 10.3 km from Jagula (proximity score 0.59)",
           "Access: road 0.90, healthcare 0.80, water 0.85, school 0.70",
-          "First-order physical screening capacity: 617 available (habitation pop 145)",
-          "Capacity meets 0.5\u00d7population threshold (617 \u2265 72)",
-          "U_ij suitability score 0.77"
+          "First-order physical screening capacity: 779 available (habitation pop 145)",
+          "Capacity meets 0.5\u00d7population threshold (779 \u2265 72)",
+          "U_ij suitability score 0.81"
         ]
       },
       "geometry": {
@@ -1164,22 +1171,23 @@
         "name": "Augustmuni",
         "block": "Rudraprayag",
         "pop": 580,
-        "h_ls": 0.0,
-        "h_ff": 0.3636,
-        "h": 0.3636,
+        "h_ls": 0.0609,
+        "h_ff": 0.5265,
+        "h": 0.5554,
         "v": 0.3994,
-        "p": 0.3779,
-        "priority": "Monitor",
+        "p": 0.493,
+        "priority": "Medium-term",
         "pct_red": 0.0,
-        "zone_class": "Yellow",
+        "zone_class": "Orange",
         "source": "EXPERT_SCREENED",
         "hazard_source": "PIPELINE",
+        "village_joined": true,
         "explain": [
           {
             "factor": "multi_hazard",
-            "value": 0.3636,
+            "value": 0.5554,
             "weight": 0.6,
-            "contribution": 0.2182
+            "contribution": 0.3332
           },
           {
             "factor": "vulnerability",
@@ -1220,15 +1228,15 @@
             "contribution": 0.0
           }
         ],
-        "rec_site_id": "SITE_E",
-        "rec_score": 0.6903,
+        "rec_site_id": "SITE_D",
+        "rec_score": 0.7571,
         "why_site": [
-          "H_site=0.35 (below 0.4 safety filter)",
-          "Distance 14.0 km from Augustmuni (proximity score 0.44)",
-          "Access: road 0.88, healthcare 0.78, water 0.92, school 0.72",
-          "First-order physical screening capacity: 353 available (habitation pop 580)",
-          "Capacity meets 0.5\u00d7population threshold (353 \u2265 290)",
-          "U_ij suitability score 0.69"
+          "H_site=0.25 (below 0.4 safety filter)",
+          "Distance 2.2 km from Augustmuni (proximity score 0.91)",
+          "Access: road 0.82, healthcare 0.72, water 0.88, school 0.68",
+          "First-order physical screening capacity: 303 available (habitation pop 580)",
+          "Capacity meets 0.5\u00d7population threshold (303 \u2265 290)",
+          "U_ij suitability score 0.76"
         ]
       },
       "geometry": {
@@ -1246,22 +1254,23 @@
         "name": "Bhiri",
         "block": "Rudraprayag",
         "pop": 325,
-        "h_ls": 0.0,
-        "h_ff": 0.6058,
-        "h": 0.6058,
+        "h_ls": 0.0559,
+        "h_ff": 0.5334,
+        "h": 0.5595,
         "v": 0.2948,
-        "p": 0.4814,
+        "p": 0.4536,
         "priority": "Medium-term",
-        "pct_red": 9.1,
+        "pct_red": 0.0,
         "zone_class": "Orange",
         "source": "EXPERT_SCREENED",
         "hazard_source": "PIPELINE",
+        "village_joined": true,
         "explain": [
           {
             "factor": "multi_hazard",
-            "value": 0.6058,
+            "value": 0.5595,
             "weight": 0.6,
-            "contribution": 0.3635
+            "contribution": 0.3357
           },
           {
             "factor": "vulnerability",
@@ -1303,14 +1312,14 @@
           }
         ],
         "rec_site_id": "SITE_I",
-        "rec_score": 0.773,
+        "rec_score": 0.8148,
         "why_site": [
-          "H_site=0.32 (below 0.4 safety filter)",
+          "H_site=0.24 (below 0.4 safety filter)",
           "Distance 5.9 km from Bhiri (proximity score 0.77)",
           "Access: road 0.84, healthcare 0.74, water 0.87, school 0.70",
-          "First-order physical screening capacity: 288 available (habitation pop 325)",
-          "Capacity meets 0.5\u00d7population threshold (288 \u2265 162)",
-          "U_ij suitability score 0.77"
+          "First-order physical screening capacity: 340 available (habitation pop 325)",
+          "Capacity meets 0.5\u00d7population threshold (340 \u2265 162)",
+          "U_ij suitability score 0.81"
         ]
       },
       "geometry": {
@@ -1328,22 +1337,23 @@
         "name": "Chandrapuri",
         "block": "Rudraprayag",
         "pop": 270,
-        "h_ls": 0.0,
-        "h_ff": 0.3229,
-        "h": 0.3229,
+        "h_ls": 0.066,
+        "h_ff": 0.5799,
+        "h": 0.6076,
         "v": 0.2512,
-        "p": 0.2942,
-        "priority": "Monitor",
+        "p": 0.465,
+        "priority": "Medium-term",
         "pct_red": 0.0,
-        "zone_class": "Yellow",
+        "zone_class": "Orange",
         "source": "EXPERT_SCREENED",
         "hazard_source": "PIPELINE",
+        "village_joined": true,
         "explain": [
           {
             "factor": "multi_hazard",
-            "value": 0.3229,
+            "value": 0.6076,
             "weight": 0.6,
-            "contribution": 0.1937
+            "contribution": 0.3646
           },
           {
             "factor": "vulnerability",
@@ -1385,14 +1395,14 @@
           }
         ],
         "rec_site_id": "SITE_I",
-        "rec_score": 0.8077,
+        "rec_score": 0.8324,
         "why_site": [
-          "H_site=0.32 (below 0.4 safety filter)",
+          "H_site=0.24 (below 0.4 safety filter)",
           "Distance 2.9 km from Chandrapuri (proximity score 0.88)",
           "Access: road 0.84, healthcare 0.74, water 0.87, school 0.70",
-          "First-order physical screening capacity: 288 available (habitation pop 270)",
-          "Capacity meets 0.5\u00d7population threshold (288 \u2265 135)",
-          "U_ij suitability score 0.81"
+          "First-order physical screening capacity: 340 available (habitation pop 270)",
+          "Capacity meets 0.5\u00d7population threshold (340 \u2265 135)",
+          "U_ij suitability score 0.83"
         ]
       },
       "geometry": {
@@ -1410,22 +1420,23 @@
         "name": "Srinagar",
         "block": "Rudraprayag",
         "pop": 890,
-        "h_ls": 0.0,
-        "h_ff": 0.3553,
-        "h": 0.3553,
+        "h_ls": 0.0694,
+        "h_ff": 0.3907,
+        "h": 0.433,
         "v": 0.2562,
-        "p": 0.3157,
+        "p": 0.3623,
         "priority": "Monitor",
         "pct_red": 0.0,
         "zone_class": "Yellow",
         "source": "EXPERT_SCREENED",
         "hazard_source": "PIPELINE",
+        "village_joined": true,
         "explain": [
           {
             "factor": "multi_hazard",
-            "value": 0.3553,
+            "value": 0.433,
             "weight": 0.6,
-            "contribution": 0.2132
+            "contribution": 0.2598
           },
           {
             "factor": "vulnerability",
@@ -1467,14 +1478,14 @@
           }
         ],
         "rec_site_id": "SITE_A",
-        "rec_score": 0.6343,
+        "rec_score": 0.7003,
         "why_site": [
-          "H_site=0.35 (below 0.4 safety filter)",
+          "H_site=0.22 (below 0.4 safety filter)",
           "Distance 44.9 km from Srinagar (proximity score 0.00)",
           "Access: road 0.90, healthcare 0.80, water 0.85, school 0.70",
-          "First-order physical screening capacity: 617 available (habitation pop 890)",
-          "Capacity meets 0.5\u00d7population threshold (617 \u2265 445)",
-          "U_ij suitability score 0.63"
+          "First-order physical screening capacity: 779 available (habitation pop 890)",
+          "Capacity meets 0.5\u00d7population threshold (779 \u2265 445)",
+          "U_ij suitability score 0.70"
         ]
       },
       "geometry": {
@@ -1492,28 +1503,29 @@
         "name": "Pipalkoti",
         "block": "Rudraprayag",
         "pop": 410,
-        "h_ls": 0.0,
-        "h_ff": 0.3687,
-        "h": 0.3687,
-        "v": 0.5207,
-        "p": 0.4295,
-        "priority": "Medium-term",
-        "pct_red": 0.0,
-        "zone_class": "Yellow",
+        "h_ls": 0.2295,
+        "h_ff": 0.6097,
+        "h": 0.6992,
+        "v": 0.5832,
+        "p": 0.6528,
+        "priority": "Short-term",
+        "pct_red": 10.6,
+        "zone_class": "Orange",
         "source": "EXPERT_SCREENED",
         "hazard_source": "PIPELINE",
+        "village_joined": true,
         "explain": [
           {
             "factor": "multi_hazard",
-            "value": 0.3687,
+            "value": 0.6992,
             "weight": 0.6,
-            "contribution": 0.2212
+            "contribution": 0.4195
           },
           {
             "factor": "vulnerability",
-            "value": 0.5207,
+            "value": 0.5832,
             "weight": 0.4,
-            "contribution": 0.2083
+            "contribution": 0.2333
           }
         ],
         "vuln_explain": [
@@ -1543,20 +1555,20 @@
           },
           {
             "factor": "historical_exposure",
-            "value": 0.0,
+            "value": 0.25,
             "weight": 0.25,
-            "contribution": 0.0
+            "contribution": 0.0625
           }
         ],
         "rec_site_id": "SITE_G",
-        "rec_score": 0.7165,
+        "rec_score": 0.7644,
         "why_site": [
-          "H_site=0.38 (below 0.4 safety filter)",
+          "H_site=0.29 (below 0.4 safety filter)",
           "Distance 2.9 km from Pipalkoti (proximity score 0.88)",
           "Access: road 0.86, healthcare 0.70, water 0.82, school 0.66",
-          "First-order physical screening capacity: 228 available (habitation pop 410)",
-          "Capacity meets 0.5\u00d7population threshold (228 \u2265 205)",
-          "U_ij suitability score 0.72"
+          "First-order physical screening capacity: 287 available (habitation pop 410)",
+          "Capacity meets 0.5\u00d7population threshold (287 \u2265 205)",
+          "U_ij suitability score 0.76"
         ]
       },
       "geometry": {
@@ -1574,35 +1586,29 @@
         "name": "Khumera",
         "block": "Jakholi",
         "pop": 155,
-        "h_ls": 0.0,
-        "h_ff": 0.8299,
-        "h": 0.8299,
+        "h_ls": 0.0414,
+        "h_ff": 0.4957,
+        "h": 0.5166,
         "v": 0.384,
-        "p": 0.6515,
-        "priority": "Immediate",
-        "pct_red": 84.1,
-        "zone_class": "Red",
+        "p": 0.4635,
+        "priority": "Medium-term",
+        "pct_red": 0.0,
+        "zone_class": "Orange",
         "source": "EXPERT_SCREENED",
         "hazard_source": "PIPELINE",
+        "village_joined": true,
         "explain": [
           {
             "factor": "multi_hazard",
-            "value": 0.8299,
+            "value": 0.5166,
             "weight": 0.6,
-            "contribution": 0.4979
+            "contribution": 0.31
           },
           {
             "factor": "vulnerability",
             "value": 0.384,
             "weight": 0.4,
             "contribution": 0.1536
-          },
-          {
-            "factor": "pct_red_override",
-            "value": 84.1,
-            "weight": 0.0,
-            "contribution": 0.0,
-            "note": "pct_red >= 40.0% forces Immediate"
           }
         ],
         "vuln_explain": [
@@ -1638,14 +1644,14 @@
           }
         ],
         "rec_site_id": "SITE_A",
-        "rec_score": 0.7695,
+        "rec_score": 0.8082,
         "why_site": [
-          "H_site=0.35 (below 0.4 safety filter)",
+          "H_site=0.22 (below 0.4 safety filter)",
           "Distance 10.1 km from Khumera (proximity score 0.59)",
           "Access: road 0.90, healthcare 0.80, water 0.85, school 0.70",
-          "First-order physical screening capacity: 617 available (habitation pop 155)",
-          "Capacity meets 0.5\u00d7population threshold (617 \u2265 77)",
-          "U_ij suitability score 0.77"
+          "First-order physical screening capacity: 779 available (habitation pop 155)",
+          "Capacity meets 0.5\u00d7population threshold (779 \u2265 77)",
+          "U_ij suitability score 0.81"
         ]
       },
       "geometry": {
@@ -1663,22 +1669,23 @@
         "name": "Deoria",
         "block": "Ukhimath",
         "pop": 380,
-        "h_ls": 0.0,
-        "h_ff": 0.3153,
-        "h": 0.3153,
+        "h_ls": 0.0336,
+        "h_ff": 0.2865,
+        "h": 0.3106,
         "v": 0.3391,
-        "p": 0.3248,
+        "p": 0.322,
         "priority": "Monitor",
         "pct_red": 0.0,
         "zone_class": "Yellow",
         "source": "EXPERT_SCREENED",
         "hazard_source": "PIPELINE",
+        "village_joined": true,
         "explain": [
           {
             "factor": "multi_hazard",
-            "value": 0.3153,
+            "value": 0.3106,
             "weight": 0.6,
-            "contribution": 0.1892
+            "contribution": 0.1864
           },
           {
             "factor": "vulnerability",
@@ -1720,14 +1727,14 @@
           }
         ],
         "rec_site_id": "SITE_A",
-        "rec_score": 0.7524,
+        "rec_score": 0.7911,
         "why_site": [
-          "H_site=0.35 (below 0.4 safety filter)",
+          "H_site=0.22 (below 0.4 safety filter)",
           "Distance 13.0 km from Deoria (proximity score 0.48)",
           "Access: road 0.90, healthcare 0.80, water 0.85, school 0.70",
-          "First-order physical screening capacity: 617 available (habitation pop 380)",
-          "Capacity meets 0.5\u00d7population threshold (617 \u2265 190)",
-          "U_ij suitability score 0.75"
+          "First-order physical screening capacity: 779 available (habitation pop 380)",
+          "Capacity meets 0.5\u00d7population threshold (779 \u2265 190)",
+          "U_ij suitability score 0.79"
         ]
       },
       "geometry": {
@@ -1745,22 +1752,23 @@
         "name": "Sari",
         "block": "Ukhimath",
         "pop": 125,
-        "h_ls": 0.0,
-        "h_ff": 0.321,
-        "h": 0.321,
+        "h_ls": 0.0346,
+        "h_ff": 0.2966,
+        "h": 0.3209,
         "v": 0.5725,
-        "p": 0.4216,
+        "p": 0.4215,
         "priority": "Medium-term",
         "pct_red": 0.0,
         "zone_class": "Yellow",
         "source": "EXPERT_SCREENED",
         "hazard_source": "PIPELINE",
+        "village_joined": true,
         "explain": [
           {
             "factor": "multi_hazard",
-            "value": 0.321,
+            "value": 0.3209,
             "weight": 0.6,
-            "contribution": 0.1926
+            "contribution": 0.1925
           },
           {
             "factor": "vulnerability",
@@ -1802,14 +1810,14 @@
           }
         ],
         "rec_site_id": "SITE_F",
-        "rec_score": 0.7255,
+        "rec_score": 0.7486,
         "why_site": [
-          "H_site=0.34 (below 0.4 safety filter)",
+          "H_site=0.27 (below 0.4 safety filter)",
           "Distance 7.7 km from Sari (proximity score 0.69)",
           "Access: road 0.72, healthcare 0.60, water 0.80, school 0.55",
-          "First-order physical screening capacity: 123 available (habitation pop 125)",
-          "Capacity meets 0.5\u00d7population threshold (123 \u2265 62)",
-          "U_ij suitability score 0.73"
+          "First-order physical screening capacity: 144 available (habitation pop 125)",
+          "Capacity meets 0.5\u00d7population threshold (144 \u2265 62)",
+          "U_ij suitability score 0.75"
         ]
       },
       "geometry": {
@@ -1827,22 +1835,23 @@
         "name": "Toshi",
         "block": "Ukhimath",
         "pop": 200,
-        "h_ls": 0.0,
-        "h_ff": 0.3165,
-        "h": 0.3165,
+        "h_ls": 0.0341,
+        "h_ff": 0.2769,
+        "h": 0.3015,
         "v": 0.2728,
-        "p": 0.299,
+        "p": 0.29,
         "priority": "Monitor",
         "pct_red": 0.0,
         "zone_class": "Yellow",
         "source": "EXPERT_SCREENED",
         "hazard_source": "PIPELINE",
+        "village_joined": true,
         "explain": [
           {
             "factor": "multi_hazard",
-            "value": 0.3165,
+            "value": 0.3015,
             "weight": 0.6,
-            "contribution": 0.1899
+            "contribution": 0.1809
           },
           {
             "factor": "vulnerability",
@@ -1884,14 +1893,14 @@
           }
         ],
         "rec_site_id": "SITE_A",
-        "rec_score": 0.7697,
+        "rec_score": 0.8084,
         "why_site": [
-          "H_site=0.35 (below 0.4 safety filter)",
+          "H_site=0.22 (below 0.4 safety filter)",
           "Distance 10.1 km from Toshi (proximity score 0.60)",
           "Access: road 0.90, healthcare 0.80, water 0.85, school 0.70",
-          "First-order physical screening capacity: 617 available (habitation pop 200)",
-          "Capacity meets 0.5\u00d7population threshold (617 \u2265 100)",
-          "U_ij suitability score 0.77"
+          "First-order physical screening capacity: 779 available (habitation pop 200)",
+          "Capacity meets 0.5\u00d7population threshold (779 \u2265 100)",
+          "U_ij suitability score 0.81"
         ]
       },
       "geometry": {
@@ -1909,22 +1918,23 @@
         "name": "Kamleshwar",
         "block": "Rudraprayag",
         "pop": 175,
-        "h_ls": 0.0,
-        "h_ff": 0.6235,
-        "h": 0.6235,
+        "h_ls": 0.0622,
+        "h_ff": 0.5387,
+        "h": 0.5674,
         "v": 0.3438,
-        "p": 0.5116,
+        "p": 0.478,
         "priority": "Medium-term",
-        "pct_red": 22.2,
+        "pct_red": 0.0,
         "zone_class": "Orange",
         "source": "EXPERT_SCREENED",
         "hazard_source": "PIPELINE",
+        "village_joined": true,
         "explain": [
           {
             "factor": "multi_hazard",
-            "value": 0.6235,
+            "value": 0.5674,
             "weight": 0.6,
-            "contribution": 0.3741
+            "contribution": 0.3404
           },
           {
             "factor": "vulnerability",
@@ -1966,14 +1976,14 @@
           }
         ],
         "rec_site_id": "SITE_E",
-        "rec_score": 0.7835,
+        "rec_score": 0.7987,
         "why_site": [
-          "H_site=0.35 (below 0.4 safety filter)",
+          "H_site=0.30 (below 0.4 safety filter)",
           "Distance 8.2 km from Kamleshwar (proximity score 0.67)",
           "Access: road 0.88, healthcare 0.78, water 0.92, school 0.72",
-          "First-order physical screening capacity: 353 available (habitation pop 175)",
-          "Capacity meets 0.5\u00d7population threshold (353 \u2265 87)",
-          "U_ij suitability score 0.78"
+          "First-order physical screening capacity: 398 available (habitation pop 175)",
+          "Capacity meets 0.5\u00d7population threshold (398 \u2265 87)",
+          "U_ij suitability score 0.80"
         ]
       },
       "geometry": {
@@ -1991,22 +2001,23 @@
         "name": "Joshiyara",
         "block": "Rudraprayag",
         "pop": 340,
-        "h_ls": 0.0,
-        "h_ff": 0.3223,
-        "h": 0.3223,
+        "h_ls": 0.0657,
+        "h_ff": 0.5752,
+        "h": 0.6031,
         "v": 0.211,
-        "p": 0.2778,
-        "priority": "Monitor",
+        "p": 0.4462,
+        "priority": "Medium-term",
         "pct_red": 0.0,
-        "zone_class": "Yellow",
+        "zone_class": "Orange",
         "source": "EXPERT_SCREENED",
         "hazard_source": "PIPELINE",
+        "village_joined": true,
         "explain": [
           {
             "factor": "multi_hazard",
-            "value": 0.3223,
+            "value": 0.6031,
             "weight": 0.6,
-            "contribution": 0.1934
+            "contribution": 0.3619
           },
           {
             "factor": "vulnerability",
@@ -2048,14 +2059,14 @@
           }
         ],
         "rec_site_id": "SITE_I",
-        "rec_score": 0.8024,
+        "rec_score": 0.85,
         "why_site": [
-          "H_site=0.32 (below 0.4 safety filter)",
+          "H_site=0.24 (below 0.4 safety filter)",
           "Distance 0.0 km from Joshiyara (proximity score 1.00)",
           "Access: road 0.84, healthcare 0.74, water 0.87, school 0.70",
-          "First-order physical screening capacity: 288 available (habitation pop 340)",
-          "Capacity meets 0.5\u00d7population threshold (288 \u2265 170)",
-          "U_ij suitability score 0.80"
+          "First-order physical screening capacity: 340 available (habitation pop 340)",
+          "Capacity meets 0.5\u00d7population threshold (340 \u2265 170)",
+          "U_ij suitability score 0.85"
         ]
       },
       "geometry": {

@@ -748,3 +748,67 @@ body {
     grid-template-columns: 1fr 1fr;
   }
 }
+
+.last-updated {
+  margin-top: 0.5rem;
+  font-size: 0.95rem;
+  color: #2c3e50;
+}
+
+.pipeline-version {
+  color: #7f8c8d;
+  font-size: 0.85rem;
+}
+
+.refresh-btn {
+  margin-top: 0.5rem;
+}
+
+.lang-toggle {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.4);
+  color: #fff;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+
+.scenario-control {
+  padding: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.scenario-control input[type="range"] {
+  width: 100%;
+}
+
+.scenario-factor {
+  font-size: 0.85rem;
+  color: #555;
+}
+
+.scenario-banner {
+  margin-bottom: 0.75rem;
+  font-size: 0.8rem;
+}
+
+.alert-panel {
+  margin-bottom: 1rem;
+}
+
+.alert-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.alert-item {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #eee;
+}
+
+.alert-reason {
+  font-size: 0.85rem;
+  color: #555;
+}

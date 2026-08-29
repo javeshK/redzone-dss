@@ -17,8 +17,12 @@ def enrich_site_from_rasters(site: dict, paths: dict, repo_root: Path) -> dict:
 
     h = sample_raster_at_point(h_path, site["lon"], site["lat"])
     if h is not None:
-        enriched["p_hazard"] = round(h, 4)
-        enriched["hazard_source"] = "PIPELINE"
+        enriched["p_hazard_pipeline"] = round(h, 4)
+        if h <= site["p_hazard"]:
+            enriched["p_hazard"] = round(h, 4)
+            enriched["hazard_source"] = "PIPELINE"
+        else:
+            enriched["hazard_source"] = "EXPERT_SCREENED"
     else:
         enriched["hazard_source"] = "EXPERT_SCREENED"
 

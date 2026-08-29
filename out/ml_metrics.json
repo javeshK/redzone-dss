@@ -1,0 +1,8 @@
+{
+  "status": "not_ready",
+  "ml_enabled": false,
+  "note": "Hybrid ML factor disabled until labelled events + backtest metrics pass gates",
+  "minimum_precision": 0.6,
+  "minimum_recall": 0.5,
+  "metrics": null
+}

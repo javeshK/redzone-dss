@@ -1,65 +1,48 @@
-# Feature Freeze — RedZone DSS
+# RedZone DSS — Roadmap & Feature Status
 
-**Effective:** 28 August 2026 (Day 9 demo freeze)  
-**Presentation:** 5 September 2026
+**Updated:** 28 August 2026 — Phase 2 lift
 
-## Frozen scope
+## Phase 1 MVP (frozen baseline)
 
-The MVP is **feature-complete**. No new formulas, hazards, districts, or major UI flows after this date.
+The Day-9 demo MVP remains the locked baseline: MCA pipeline, API, dashboard, static fallback, 25 habitations, 11 sites.
 
-### In scope (locked)
+## Phase 2 — Lifted freeze (active)
 
-| Area | Delivered |
-|------|-----------|
-| Hazard pipeline | H_ls, H_ff, H, red/orange/yellow zones |
-| Vulnerability | 5-factor V, priority P, Immediate override |
-| Relocation | 11 screened sites, U_ij ranking, runner-up, reasons |
-| API | Read-only FastAPI + static fallback |
-| UI | Overview, Risk Map, Habitation Panel, Relocation Planner |
-| Hardening | Provenance badges, degraded/synthetic banners, error retry |
+| Phase | Status | Deliverables |
+|-------|--------|--------------|
+| **2A Authenticity** | Complete | `download_data.py` expanded; terrain-derived DEM + orographic rainfall; GSI proxy; OSM Overpass; village polygons; `data_layers` hashes in meta |
+| **2B Operational refresh** | Complete | `06_fetch_rainfall.py`, `07_run_pipeline.py`, `run_log.json`, refresh API, Last updated UI |
+| **2C SDMA features** | Complete | Rainfall scenario slider, rule-based alerts, PDF export, Hindi i18n, village polygon join |
+| **2D Gated** | Foundation | Live weather overlay stub (disabled), district parameterization scaffold — behind `config/features.yaml` flags |
+| **Phase 3 ML** | Scaffold only | `events/` template, `train_susceptibility.py` stub, `ml_enabled: false`, `ml_metrics.json` placeholder |
 
-### Allowed after freeze (5 Sep only)
+## Guardrails (unchanged)
 
-- Crash fixes that restore an already-demonstrated flow
-- Copy/typo fixes that do not change scoring or data contracts
-- Demo machine setup (paths, ports, env)
+- Do **not** claim official government hazard zonation
+- Do **not** change core MCA formulas in `config/weights.yaml` without documentation
+- Keep static fallback architecture
+- Keep explainable MCA — no black-box ML in UI until backtest gates pass
 
-### Not allowed
-
-- New scoring factors or weight changes
-- Third hazard type or second district
-- Auth, ML, PostGIS, microservices
-- New dashboard pages or API endpoints unless required to fix a crash
-
-## Demo data contract
-
-Frozen artifacts in `out/` and `frontend/public/data/`:
-
-- 25 habitations (`UT_RUD_0001`–`UT_RUD_0025`)
-- 11 screened relocation sites
-- 25 recommendations (top + runner-up + comparison)
-- `meta.json` with KPIs, sources, limitations
-
-## Verification before presenting
+## Verification
 
 ```bash
+python scripts/download_data.py
+python scripts/07_run_pipeline.py
 python scripts/run_demo_rehearsal.py
+cd backend && pytest tests/ -v
 ```
 
-Or step-by-step:
+## Scheduling (production)
+
+Nightly refresh via Windows Task Scheduler or cron:
 
 ```bash
-python scripts/validate_demo.py
-python scripts/offline_demo_test.py
-cd backend && pytest tests/ -q
-cd frontend && npm run build
+python scripts/07_run_pipeline.py
 ```
 
-## Team roles (5 Sep)
+## Not in scope (Tier 3)
 
-| Person | Role |
-|--------|------|
-| P6 | Present / narrate |
-| P1 | Drive map + habitation clicks |
-| P2 | Explain scoring methods |
-| P5 | Data sources + limitations |
+- Official statutory carrying capacity claims
+- Live satellite inference in demo loop
+- 7-day cloudburst prediction without labelled events + backtest
+- Microservices, PostGIS, Kafka, GraphQL

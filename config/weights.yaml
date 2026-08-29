@@ -3,6 +3,8 @@
 
 model_version: "1.0.0"
 weights_version: "1.0.0"
+pipeline_version: "2.0.0"
+ml_enabled: false
 
 crs:
   display: "EPSG:4326"

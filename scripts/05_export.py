@@ -23,9 +23,54 @@ def _detect_degraded_mode(paths: dict) -> bool:
 
 
 def _detect_synthetic_mode(paths: dict) -> bool:
+    """True only when core rasters are missing entirely (not terrain-derived)."""
     dem_dir = REPO_ROOT / paths["raw"]["dem"]
     dem_files = list(dem_dir.glob("*.tif")) if dem_dir.exists() else []
-    return len(dem_files) == 0
+    rainfall = REPO_ROOT / paths["raw"]["rainfall"]
+    return len(dem_files) == 0 or not rainfall.exists()
+
+
+def _file_mtime_iso(path: Path) -> str | None:
+    if path.exists():
+        return datetime.fromtimestamp(path.stat().st_mtime, IST).isoformat()
+    return None
+
+
+def _layer_data_hash(path: Path) -> str | None:
+    if path.exists() and path.is_file():
+        return _sha256(path)
+    if path.exists() and path.is_dir():
+        files = sorted(path.glob("*.tif"))
+        if files:
+            return _sha256(files[0])
+    return None
+
+
+def _collect_data_layers(paths: dict) -> dict:
+    """Per-layer hashes and data_as_of timestamps for audit trail."""
+    layer_paths = {
+        "district": REPO_ROOT / paths["raw"]["district"],
+        "dem": REPO_ROOT / paths["raw"]["dem"],
+        "landslides": REPO_ROOT / paths["raw"]["landslides"],
+        "rainfall": REPO_ROOT / paths["raw"]["rainfall"],
+        "villages": REPO_ROOT / paths["raw"]["villages"],
+        "osm_waterways": REPO_ROOT / paths["raw"]["osm_waterways"],
+        "habitations": REPO_ROOT / paths["out"]["habitations"],
+        "red_zones": REPO_ROOT / paths["out"]["red_zones"],
+        "sites": REPO_ROOT / paths["out"]["sites"],
+    }
+    layers = {}
+    latest_as_of = None
+    for name, path in layer_paths.items():
+        h = _layer_data_hash(path)
+        as_of = _file_mtime_iso(path) if path.is_file() else (
+            _file_mtime_iso(next(path.glob("*.tif"), Path())) if path.is_dir() and list(path.glob("*.tif")) else None
+        )
+        if h or as_of:
+            layers[name] = {"sha256": h, "data_as_of": as_of, "path": str(path.relative_to(REPO_ROOT))}
+            if as_of and (latest_as_of is None or as_of > latest_as_of):
+                latest_as_of = as_of
+    return {"layers": layers, "data_as_of": latest_as_of}
 
 
 def _layer_provenance(layer: str, paths: dict) -> str:
@@ -92,6 +137,11 @@ def build_meta(weights: dict, paths: dict) -> dict:
 
     degraded = _detect_degraded_mode(paths)
     synthetic = _detect_synthetic_mode(paths)
+    data_audit = _collect_data_layers(paths)
+
+    dem_dir = REPO_ROOT / paths["raw"]["dem"]
+    dem_files = list(dem_dir.glob("*.tif")) if dem_dir.exists() else []
+    rainfall_exists = (REPO_ROOT / paths["raw"]["rainfall"]).exists()
 
     sources = [
         {"layer": "district", "provenance": "OPEN_DATA", "url": "https://github.com/datameet/maps",
@@ -109,20 +159,53 @@ def build_meta(weights: dict, paths: dict) -> dict:
         {"layer": "sites", "provenance": "EXPERT_SCREENED", "url": None,
          "note": "Candidate relocation sites screened by hazard, slope, and buildability"},
     ]
-    if synthetic:
+    if not dem_files:
         sources.append({"layer": "dem", "provenance": "SYNTHETIC", "url": None,
                         "note": "Synthetic DEM used when Copernicus/SRTM tiles unavailable"})
+    elif dem_files:
+        manifest_path = REPO_ROOT / paths["raw_dir"] / "download_manifest.json"
+        dem_prov = "OPEN_DATA"
+        dem_note = "SRTM/Copernicus DEM or terrain-derived from district bbox"
+        if manifest_path.exists():
+            try:
+                manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+                dem_entry = next((e for e in manifest.get("layers", []) if e.get("layer") == "dem"), None)
+                if dem_entry and not dem_entry.get("live"):
+                    dem_prov = "DERIVED"
+                    dem_note = dem_entry.get("note", dem_note)
+            except json.JSONDecodeError:
+                pass
+        sources.append({"layer": "dem", "provenance": dem_prov, "url": "https://portal.opentopography.org/",
+                        "note": dem_note})
     if degraded:
         sources.append({"layer": "rainfall", "provenance": "SYNTHETIC", "url": None,
                         "note": "Uniform rainfall proxy; hazard weights renormalized"})
+    elif rainfall_exists:
+        rain_prov = "OPEN_DATA"
+        rain_note = "CHIRPS/ERA5 or orographic model from DEM"
+        manifest_path = REPO_ROOT / paths["raw_dir"] / "download_manifest.json"
+        if manifest_path.exists():
+            try:
+                manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+                rain_entry = next((e for e in manifest.get("layers", []) if e.get("layer") == "rainfall"), None)
+                if rain_entry and not rain_entry.get("live"):
+                    rain_prov = "DERIVED"
+                    rain_note = rain_entry.get("note", rain_note)
+            except json.JSONDecodeError:
+                pass
+        sources.append({"layer": "rainfall", "provenance": rain_prov,
+                        "url": "https://www.chc.ucsb.edu/data/chirps", "note": rain_note})
 
     return {
         "district": paths["district"],
         "generated_at": datetime.now(IST).isoformat(),
+        "data_as_of": data_audit.get("data_as_of"),
+        "pipeline_version": weights.get("pipeline_version", "2.0.0"),
         "model_version": weights["model_version"],
         "weights_version": weights["weights_version"],
         "degraded_mode": degraded,
-        "synthetic_data_used": synthetic or degraded,
+        "synthetic_data_used": synthetic,
+        "data_layers": data_audit.get("layers", {}),
         "sources": sources,
         "limitations": [
             "Derived hazard scores are decision-support indicators, not official government hazard zonation.",
@@ -151,8 +234,12 @@ def copy_to_public(paths: dict) -> list[Path]:
     files = [
         "district.geojson", "habitations.geojson", "red_zones.geojson",
         "sites.geojson", "landslides.geojson", "streams.geojson",
-        "meta.json", "recommendations.json",
+        "meta.json", "recommendations.json", "alerts.json",
     ]
+    scenarios_src = REPO_ROOT / paths["out_dir"] / "scenarios.json"
+    if scenarios_src.exists():
+        public_dir = REPO_ROOT / paths["public_data_dir"]
+        shutil.copy2(scenarios_src, public_dir / "scenarios.json")
     copied: list[Path] = []
     for fname in files:
         src = out_dir / fname
@@ -172,7 +259,7 @@ def _sha256(path: Path) -> str:
     return digest.hexdigest()
 
 
-def build_export_manifest(paths: dict, copied: list[Path]) -> dict:
+def build_export_manifest(paths: dict, copied: list[Path], meta: dict | None = None) -> dict:
     out_dir = REPO_ROOT / paths["out_dir"]
     public_dir = REPO_ROOT / paths["public_data_dir"]
     entries = []
@@ -185,13 +272,18 @@ def build_export_manifest(paths: dict, copied: list[Path]) -> dict:
             "sha256": _sha256(path),
             "in_sync": src.exists() and src.stat().st_size == path.stat().st_size,
         })
-    return {
+    result = {
         "generated_at": datetime.now(IST).isoformat(),
+        "data_as_of": meta.get("data_as_of") if meta else None,
+        "pipeline_version": meta.get("pipeline_version") if meta else None,
         "out_dir": str(out_dir.relative_to(REPO_ROOT)),
         "public_data_dir": str(public_dir.relative_to(REPO_ROOT)),
         "files": entries,
         "parity_ok": all(e["in_sync"] for e in entries),
     }
+    if meta and meta.get("data_layers"):
+        result["data_layers"] = meta["data_layers"]
+    return result
 
 
 def copy_to_dist(paths: dict, copied: list[Path]) -> None:
@@ -217,7 +309,14 @@ def main():
     print("Copying to frontend/public/data/...")
     copied = copy_to_public(paths)
 
-    manifest = build_export_manifest(paths, copied)
+    try:
+        from _scenario import export_scenarios
+        print("Exporting rainfall scenarios...")
+        export_scenarios(paths)
+    except Exception as e:
+        print(f"  [warn] Scenario export failed: {e}")
+
+    manifest = build_export_manifest(paths, copied, meta)
     manifest_path = REPO_ROOT / paths["out_dir"] / "export_manifest.json"
     manifest_path.write_text(json.dumps(manifest, indent=2), encoding="utf-8")
     shutil.copy2(manifest_path, REPO_ROOT / paths["public_data_dir"] / "export_manifest.json")

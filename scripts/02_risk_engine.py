@@ -253,7 +253,19 @@ def polygonize_zones(
 
     district_utm = to_compute(district)
     boundary = unary_union(district_utm.geometry)
-    gdf["geometry"] = gdf.geometry.intersection(boundary)
+    if not boundary.is_valid:
+        boundary = boundary.buffer(0)
+
+    def _clip_to_boundary(geom):
+        if geom is None or geom.is_empty:
+            return geom
+        fixed = geom.buffer(0) if not geom.is_valid else geom
+        try:
+            return fixed.intersection(boundary)
+        except Exception:
+            return fixed
+
+    gdf["geometry"] = gdf.geometry.apply(_clip_to_boundary)
     gdf = gdf[~gdf.geometry.is_empty].copy()
     gdf["area_ha"] = gdf.geometry.area / 10000.0
 

@@ -1,17 +1,22 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { getDistrict } from '../api/client';
+import { getDistrict, triggerRefresh } from '../api/client';
 import KpiCards from '../components/KpiCards';
 import PageError from '../components/PageError';
 import SourceBadge from '../components/SourceBadge';
+import AlertPanel from '../components/AlertPanel';
 import { useApp } from '../context/AppContext';
 import { DistrictResponse } from '../types';
+import { t } from '../i18n';
+
+const IS_DEV = import.meta.env.DEV;
 
 export default function Overview() {
   const { meta, refreshAppData } = useApp();
   const [data, setData] = useState<DistrictResponse | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
+  const [refreshing, setRefreshing] = useState(false);
   const navigate = useNavigate();
 
   const load = () => {
@@ -27,10 +32,24 @@ export default function Overview() {
     load();
   }, []);
 
+  const handleRefresh = async () => {
+    setRefreshing(true);
+    try {
+      await triggerRefresh();
+      await refreshAppData();
+      load();
+    } catch (e) {
+      setError(e instanceof Error ? e.message : 'Refresh failed');
+    } finally {
+      setRefreshing(false);
+    }
+  };
+
   if (loading) return <div className="page loading">Loading overview…</div>;
   if (error) return <PageError message={error} onRetry={() => { refreshAppData(); load(); }} />;
 
   const displayMeta = data?.meta ?? meta;
+  const lastUpdated = displayMeta?.data_as_of ?? displayMeta?.generated_at;
 
   return (
     <div className="page overview-page">
@@ -40,9 +59,29 @@ export default function Overview() {
           Multi-hazard red-zone identification, habitation vulnerability scoring,
           and explainable relocation recommendations for vulnerable settlements.
         </p>
+        {lastUpdated && (
+          <p className="last-updated">
+            <strong>{t('overview.lastUpdated')}:</strong>{' '}
+            {new Date(lastUpdated).toLocaleString()}
+            {displayMeta?.pipeline_version && (
+              <span className="pipeline-version"> (pipeline v{displayMeta.pipeline_version})</span>
+            )}
+          </p>
+        )}
+        {IS_DEV && (
+          <button
+            className="btn-secondary refresh-btn"
+            onClick={handleRefresh}
+            disabled={refreshing}
+          >
+            {refreshing ? 'Refreshing…' : t('overview.refresh')}
+          </button>
+        )}
       </div>
 
       {displayMeta && <KpiCards kpis={displayMeta.kpis} />}
+
+      <AlertPanel />
 
       <div className="overview-grid">
         <section className="card">

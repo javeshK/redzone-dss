@@ -108,6 +108,8 @@ export interface Kpis {
 export interface MetaResponse {
   district: string;
   generated_at: string;
+  data_as_of?: string;
+  pipeline_version?: string;
   model_version: string;
   weights_version: string;
   degraded_mode: boolean;
@@ -115,6 +117,50 @@ export interface MetaResponse {
   sources: SourceMeta[];
   limitations: string[];
   kpis: Kpis;
+}
+
+export interface AlertItem {
+  id: string;
+  habitation_id: string;
+  habitation_name: string;
+  severity: string;
+  priority: PriorityClass;
+  h: number;
+  h_ff: number;
+  pct_red: number;
+  reasons: string[];
+  action: string;
+}
+
+export interface AlertData {
+  generated_at?: string;
+  alert_count: number;
+  alerts: AlertItem[];
+}
+
+export interface ScenarioResponse {
+  factor: number;
+  rainfall_factor: number;
+  has_rainfall: boolean;
+  h_min: number;
+  h_max: number;
+  h_mean: number;
+  habitations: Array<{
+    id: string;
+    name: string;
+    h_ls: number;
+    h_ff: number;
+    h: number;
+    zone_class: ZoneClass;
+  }>;
+  note?: string;
+}
+
+export interface RefreshStatus {
+  last_run?: string;
+  success: boolean;
+  duration_s?: number;
+  pipeline_version: string;
 }
 
 export interface DistrictResponse {

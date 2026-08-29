@@ -3,7 +3,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from starlette.middleware.gzip import GZipMiddleware
 
 from app.data_loader import store
-from app.routers import district, habitations, layers, recommend
+from app.routers import admin, alerts, district, experimental, habitations, layers, recommend, scenario
 
 app = FastAPI(
     title="RedZone DSS API",
@@ -27,6 +27,10 @@ def startup() -> None:
 
 
 app.include_router(district.router, prefix="/api", tags=["district"])
+app.include_router(admin.router, prefix="/api", tags=["admin"])
+app.include_router(scenario.router, prefix="/api", tags=["scenario"])
+app.include_router(alerts.router, prefix="/api", tags=["alerts"])
+app.include_router(experimental.router, prefix="/api", tags=["experimental"])
 app.include_router(habitations.router, prefix="/api/habitations", tags=["habitations"])
 app.include_router(layers.router, prefix="/api/layers", tags=["layers"])
 app.include_router(recommend.router, prefix="/api", tags=["recommendation"])

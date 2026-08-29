@@ -104,6 +104,12 @@ class SourceMeta(BaseModel):
     note: str | None = None
 
 
+class DataLayerMeta(BaseModel):
+    sha256: str | None = None
+    data_as_of: str | None = None
+    path: str | None = None
+
+
 class Kpis(BaseModel):
     habitation_count: int = 0
     immediate_count: int = 0
@@ -118,13 +124,63 @@ class Kpis(BaseModel):
 class MetaResponse(BaseModel):
     district: str
     generated_at: str
+    data_as_of: str | None = None
+    pipeline_version: str | None = None
     model_version: str
     weights_version: str
     degraded_mode: bool = False
     synthetic_data_used: bool = False
+    data_layers: dict[str, DataLayerMeta] = Field(default_factory=dict)
     sources: list[SourceMeta] = Field(default_factory=list)
     limitations: list[str] = Field(default_factory=list)
     kpis: Kpis = Field(default_factory=Kpis)
+
+
+class AlertItem(BaseModel):
+    id: str
+    habitation_id: str
+    habitation_name: str
+    severity: str
+    priority: PriorityClass
+    h: float
+    h_ff: float
+    pct_red: float
+    reasons: list[str]
+    action: str
+
+
+class AlertsResponse(BaseModel):
+    generated_at: str | None = None
+    alert_count: int = 0
+    alerts: list[AlertItem] = Field(default_factory=list)
+
+
+class RefreshStatusResponse(BaseModel):
+    last_run: str | None = None
+    success: bool = False
+    duration_s: float | None = None
+    pipeline_version: str = "2.0.0"
+    steps: list[dict] = Field(default_factory=list)
+
+
+class ScenarioHabitation(BaseModel):
+    id: str
+    name: str
+    h_ls: float
+    h_ff: float
+    h: float
+    zone_class: ZoneClass
+
+
+class ScenarioResponse(BaseModel):
+    factor: float
+    rainfall_factor: float
+    has_rainfall: bool = True
+    h_min: float = 0.0
+    h_max: float = 0.0
+    h_mean: float = 0.0
+    habitations: list[ScenarioHabitation] = Field(default_factory=list)
+    note: str | None = None
 
 
 class DistrictResponse(BaseModel):

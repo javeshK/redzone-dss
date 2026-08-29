@@ -1,0 +1,73 @@
+{
+  "pipeline_version": "2.0.0",
+  "started_at": "2026-08-28T14:53:45.757768+05:30",
+  "ended_at": "2026-08-28T14:54:18.259699+05:30",
+  "duration_s": 32.5,
+  "success": true,
+  "steps": [
+    {
+      "script": "06_fetch_rainfall.py",
+      "ok": true,
+      "returncode": 0,
+      "started_at": "2026-08-28T14:53:45.757768+05:30",
+      "ended_at": "2026-08-28T14:53:47.748987+05:30",
+      "duration_s": 2.0
+    },
+    {
+      "script": "01_preprocess.py",
+      "ok": true,
+      "returncode": 0,
+      "started_at": "2026-08-28T14:53:47.748987+05:30",
+      "ended_at": "2026-08-28T14:53:52.758277+05:30",
+      "duration_s": 5.0
+    },
+    {
+      "script": "02_risk_engine.py",
+      "ok": true,
+      "returncode": 0,
+      "started_at": "2026-08-28T14:53:52.758277+05:30",
+      "ended_at": "2026-08-28T14:54:00.110393+05:30",
+      "duration_s": 7.4
+    },
+    {
+      "script": "03_vuln_engine.py",
+      "ok": true,
+      "returncode": 0,
+      "started_at": "2026-08-28T14:54:00.110393+05:30",
+      "ended_at": "2026-08-28T14:54:10.587023+05:30",
+      "duration_s": 10.5
+    },
+    {
+      "script": "04_relocation.py",
+      "ok": true,
+      "returncode": 0,
+      "started_at": "2026-08-28T14:54:10.587023+05:30",
+      "ended_at": "2026-08-28T14:54:14.333886+05:30",
+      "duration_s": 3.7
+    },
+    {
+      "script": "05_export.py",
+      "ok": true,
+      "returncode": 0,
+      "started_at": "2026-08-28T14:54:14.333886+05:30",
+      "ended_at": "2026-08-28T14:54:17.816610+05:30",
+      "duration_s": 3.5
+    },
+    {
+      "script": "08_alerts.py",
+      "ok": true,
+      "returncode": 0,
+      "started_at": "2026-08-28T14:54:17.816610+05:30",
+      "ended_at": "2026-08-28T14:54:18.056700+05:30",
+      "duration_s": 0.2
+    },
+    {
+      "script": "09_export_pdf.py",
+      "ok": true,
+      "returncode": 0,
+      "started_at": "2026-08-28T14:54:18.056700+05:30",
+      "ended_at": "2026-08-28T14:54:18.259699+05:30",
+      "duration_s": 0.2
+    }
+  ]
+}

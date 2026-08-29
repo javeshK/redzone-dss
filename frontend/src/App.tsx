@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Routes, Route, NavLink } from 'react-router-dom';
 import Overview from './pages/Overview';
 import RiskMap from './pages/RiskMap';
@@ -6,8 +7,17 @@ import RelocationPlanner from './pages/RelocationPlanner';
 import { AppProvider } from './context/AppContext';
 import ErrorBoundary from './components/ErrorBoundary';
 import GlobalBanners from './components/GlobalBanners';
+import { t, setLang, getLang } from './i18n';
 
 export default function App() {
+  const [lang, setLangState] = useState(getLang());
+
+  const toggleLang = () => {
+    const next = lang === 'en' ? 'hi' : 'en';
+    setLang(next);
+    setLangState(next);
+  };
+
   return (
     <AppProvider>
       <div className="app-shell">
@@ -19,10 +29,13 @@ export default function App() {
             </span>
           </div>
           <nav className="app-nav">
-            <NavLink to="/" end>Overview</NavLink>
-            <NavLink to="/map">Risk Map</NavLink>
-            <NavLink to="/habitation">Habitation</NavLink>
-            <NavLink to="/planner">Relocation Planner</NavLink>
+            <NavLink to="/" end>{t('nav.overview')}</NavLink>
+            <NavLink to="/map">{t('nav.map')}</NavLink>
+            <NavLink to="/habitation">{t('nav.habitation')}</NavLink>
+            <NavLink to="/planner">{t('nav.planner')}</NavLink>
+            <button className="lang-toggle" onClick={toggleLang} title="Toggle Hindi/English">
+              {lang === 'en' ? 'हिं' : 'EN'}
+            </button>
           </nav>
         </header>
         <GlobalBanners />
@@ -39,8 +52,9 @@ export default function App() {
           </ErrorBoundary>
         </main>
         <footer className="app-footer">
-          Derived scores are not official government hazard zonation.
-          Capacity is first-order physical screening capacity, not statutory capacity.
+          {t('disclaimer.derived')}
+          {' '}
+          {t('disclaimer.capacity')}
         </footer>
       </div>
     </AppProvider>

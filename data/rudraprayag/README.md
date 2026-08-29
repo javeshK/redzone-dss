@@ -6,37 +6,61 @@
 data/rudraprayag/
 ├── raw/          # Original downloads (gitignored if large)
 ├── processed/    # Clipped rasters, intermediate outputs (gitignored)
+├── events/       # Phase 3 labelled events (template provided)
 └── README.md     # This file
 ```
 
-## Day-1 Download Checklist
-
-1. [ ] Rudraprayag district polygon — [DataMeet maps](https://github.com/datameet/maps) → `raw/district.geojson`
-2. [ ] Uttarakhand village boundaries — [DataMeet](https://projects.datameet.org/indian_village_boundaries/) → `raw/villages.geojson`
-3. [ ] GSI landslide points — [bharatlas](https://bharatlas.com/view/gsi_landslide_inventory) → `raw/landslides.geojson`
-4. [ ] DEM 30m — Copernicus GLO-30 or SRTM → `raw/dem/*.tif`
-5. [ ] OSM extract — [Geofabrik](https://download.geofabrik.de/asia/india.html) → `raw/osm_waterways.geojson`, `raw/osm_roads.geojson`, `raw/osm_amenities.geojson`
-6. [ ] WorldPop 100m — [HDX](https://data.humdata.org/dataset/worldpop-population-density-for-india) → `raw/worldpop.tif`
-7. [ ] CHIRPS or ERA5 rainfall → `raw/rainfall.tif`
-8. [ ] ESA WorldCover → `raw/worldcover.tif`
-9. [ ] Protected areas (WDPA) → `raw/protected_areas.geojson`
-
-## Processing
-
-After downloads, run the pipeline from `scripts/`:
+## Automated Download (Phase 2)
 
 ```bash
+cd scripts
+python download_data.py
+```
+
+This attempts live sources and falls back to documented derived data:
+
+| Asset | Live source | Fallback |
+|-------|-------------|----------|
+| District | geoBoundaries ADM2 | Bbox |
+| DEM | OpenTopography SRTM GL1 | Terrain-derived from bbox |
+| Rainfall | CHIRPS/ERA5 | Orographic model from DEM |
+| Landslides | GSI/bharatlas | Steep-slope proxy from DEM |
+| OSM | Overpass API | Pipeline derives from TWI |
+| Villages | DataMeet | Buffer polygons from demo points |
+
+Download manifest: `raw/download_manifest.json`
+
+## Full Pipeline
+
+```bash
+python scripts/07_run_pipeline.py
+```
+
+Or step-by-step:
+
+```bash
+python 06_fetch_rainfall.py
 python 01_preprocess.py
 python 02_risk_engine.py
 python 03_vuln_engine.py
 python 04_relocation.py
 python 05_export.py
+python 08_alerts.py
+python 09_export_pdf.py
+```
+
+## Scheduling
+
+Nightly refresh (Windows Task Scheduler / cron):
+
+```bash
+python scripts/07_run_pipeline.py
 ```
 
 ## Fallback Policy
 
 If a primary source is unavailable, use the fallback matrix in `docs/PS26191_SPEC.md` §2.9.
-Always label `SYNTHETIC` or `EXPERT_SCREENED` data in `out/meta.json` and the UI.
+Always label `DERIVED` or `EXPERT_SCREENED` data in `out/meta.json` and the UI.
 
 ## CRS
 

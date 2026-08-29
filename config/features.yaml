@@ -1,0 +1,10 @@
+# Experimental feature flags (Phase 2D — gated)
+live_weather_overlay: false
+district_parameterization: false
+auth_roles: false
+
+# Open-Meteo endpoint for live weather overlay stub
+open_meteo_url: "https://api.open-meteo.com/v1/forecast"
+
+# Default district (parameterization scaffold)
+default_district_id: Rudraprayag

@@ -1,0 +1,4 @@
+date,lon,lat,event_type,source,notes
+# Curate labelled landslide/cloudburst events for Uttarakhand/Rudraprayag
+# Example (remove header comment lines before use):
+# 2013-06-16,79.07,30.52,cloudburst,IMD_report,Kedarnath corridor
