@@ -1,7 +1,7 @@
 {
   "district": "Rudraprayag",
-  "generated_at": "2026-08-28T15:01:17.971447+05:30",
-  "data_as_of": "2026-08-28T14:54:14.129520+05:30",
+  "generated_at": "2026-09-03T01:35:23.519583+05:30",
+  "data_as_of": "2026-09-03T01:35:16.487302+05:30",
   "pipeline_version": "2.0.0",
   "model_version": "1.0.0",
   "weights_version": "1.0.0",
@@ -9,23 +9,23 @@
   "synthetic_data_used": false,
   "data_layers": {
     "district": {
-      "sha256": "b3555871ae3d74bcb6c277be499580fca96129e8afb48d0b2ecd9932b4acc1f6",
-      "data_as_of": "2026-08-28T14:50:37.202539+05:30",
+      "sha256": "d68db39cd3e2d0892af268e2b0454166368ce3b5b8a78fcda63069ec92a641db",
+      "data_as_of": "2023-12-12T15:47:32+05:30",
       "path": "data\\rudraprayag\\raw\\district.geojson"
     },
     "dem": {
-      "sha256": "98ce5d00bfe7c301b1b3048324bd19b235afde5c8def77c54a0aff9403190637",
-      "data_as_of": "2026-08-28T14:50:38.691886+05:30",
+      "sha256": "6dbc6af294498c9f5dfcdc2e24fdda0aa600df93662684ed1a7a153fe0891580",
+      "data_as_of": "2026-09-03T01:11:21.794419+05:30",
       "path": "data\\rudraprayag\\raw\\dem"
     },
     "landslides": {
-      "sha256": "79c5f8409f8b8a29837cc7d1a51c4ae449043e6f57574e33c23e990157c5c678",
-      "data_as_of": "2026-08-28T14:51:59.172108+05:30",
+      "sha256": "95f195bd80dd1224ae4f0880255693eb134835deb39ebfdac39a1840ca9a9e38",
+      "data_as_of": "2026-09-02T23:06:24.954400+05:30",
       "path": "data\\rudraprayag\\raw\\landslides.geojson"
     },
     "rainfall": {
-      "sha256": "4c8e0a4be7ba06aad1ead2735b1d883d326eb8565d094c5b0b93cbe01074ba2d",
-      "data_as_of": "2026-08-28T14:53:47.578255+05:30",
+      "sha256": "13b96a348ddbd39723c6495c855ef4874d71eda93ce7ccb2d5ccb20bc569e415",
+      "data_as_of": "2026-09-03T01:19:50.769884+05:30",
       "path": "data\\rudraprayag\\raw\\rainfall.tif"
     },
     "villages": {
@@ -39,18 +39,18 @@
       "path": "data\\rudraprayag\\raw\\osm_waterways.geojson"
     },
     "habitations": {
-      "sha256": "23029cb06bb6886bb3f11c649a5554ecff8fbe03a33bee63b3266e1388703817",
-      "data_as_of": "2026-08-28T14:54:14.129520+05:30",
+      "sha256": "55c3087ffb675a0f172e97e9578715154b6cea5c29917975d1a81023cabf1ad7",
+      "data_as_of": "2026-09-03T01:35:16.487302+05:30",
       "path": "out\\habitations.geojson"
     },
     "red_zones": {
-      "sha256": "a28b63b0d443e031d4f8abea398ed7b9303f1d0233a7e8cfa732b13ab3ba9bb6",
-      "data_as_of": "2026-08-28T14:53:59.884397+05:30",
+      "sha256": "8aff138a3785e4fa83969af14a13754be7aa20142f402ed319841c4dc1b4e1dd",
+      "data_as_of": "2026-09-03T01:31:33.157545+05:30",
       "path": "out\\red_zones.geojson"
     },
     "sites": {
-      "sha256": "a8781576590e86e16efc59cc3b5eb22ccad0bfd363ab7044378a3dcd9db00afd",
-      "data_as_of": "2026-08-28T14:54:14.099519+05:30",
+      "sha256": "37cdab7927ba86ea89032547a1fad00de5417f91366bf6d4066ad3b99aa2acc9",
+      "data_as_of": "2026-09-03T01:35:16.454981+05:30",
       "path": "out\\sites.geojson"
     }
   },
@@ -112,12 +112,12 @@
   ],
   "kpis": {
     "habitation_count": 25,
-    "immediate_count": 0,
-    "short_term_count": 1,
-    "medium_term_count": 13,
-    "monitor_count": 11,
-    "site_count": 12,
-    "red_zone_area_ha": 541214.1,
-    "district_area_ha": 596567.3
+    "immediate_count": 25,
+    "short_term_count": 0,
+    "medium_term_count": 0,
+    "monitor_count": 0,
+    "site_count": 2,
+    "red_zone_area_ha": 605936.2,
+    "district_area_ha": 330102133.1
   }
 }

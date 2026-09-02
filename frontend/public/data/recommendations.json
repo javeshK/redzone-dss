@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-28T14:54:14.110524+05:30",
+  "generated_at": "2026-09-03T01:35:16.463159+05:30",
   "model_version": "1.0.0",
   "recommendations": {
     "UT_RUD_0001": {
@@ -8,15 +8,15 @@
       "top": {
         "site_id": "SITE_A",
         "site_name": "Okhimath Plateau North",
-        "score": 0.8334,
+        "score": 0.8202,
         "safety": 0.22,
         "distance_km": 3.85,
         "road_access": 0.9,
         "healthcare_access": 0.8,
         "water_access": 0.85,
         "school_access": 0.7,
-        "capacity": 979,
-        "capacity_available": 779,
+        "capacity": 904,
+        "capacity_available": 704,
         "meets_capacity_threshold": true,
         "explain": [
           {
@@ -57,95 +57,95 @@
           },
           {
             "factor": "capacity_fit",
-            "value": 0.9165,
+            "value": 0.8282,
             "weight": 0.15,
-            "contribution": 0.1375
+            "contribution": 0.1242
           }
         ],
         "reasons": [
           "H_site=0.22 (below 0.4 safety filter)",
           "Distance 3.8 km from Ukhimath (proximity score 0.85)",
           "Access: road 0.90, healthcare 0.80, water 0.85, school 0.70",
-          "First-order physical screening capacity: 779 available (habitation pop 850)",
-          "Capacity meets 0.5\u00d7population threshold (779 \u2265 425)",
-          "U_ij suitability score 0.83"
+          "First-order physical screening capacity: 704 available (habitation pop 850)",
+          "Capacity meets 0.5\u00d7population threshold (704 \u2265 425)",
+          "U_ij suitability score 0.82"
         ]
       },
       "runner_up": {
-        "site_id": "SITE_B",
-        "site_name": "Guptkashi Ridge East",
-        "score": 0.7111,
-        "safety": 0.28,
-        "distance_km": 3.63,
-        "road_access": 0.85,
-        "healthcare_access": 0.75,
-        "water_access": 0.8,
-        "school_access": 0.65,
-        "capacity": 474,
-        "capacity_available": 294,
+        "site_id": "SITE_C",
+        "site_name": "Phata Valley Bench",
+        "score": 0.5916,
+        "safety": 0.31,
+        "distance_km": 12.11,
+        "road_access": 0.78,
+        "healthcare_access": 0.65,
+        "water_access": 0.9,
+        "school_access": 0.6,
+        "capacity": 150,
+        "capacity_available": 30,
         "meets_capacity_threshold": false,
         "explain": [
           {
             "factor": "safety",
-            "value": 0.72,
+            "value": 0.69,
             "weight": 0.3,
-            "contribution": 0.216
+            "contribution": 0.207
           },
           {
             "factor": "distance",
-            "value": 0.8547,
+            "value": 0.5157,
             "weight": 0.15,
-            "contribution": 0.1282
+            "contribution": 0.0774
           },
           {
             "factor": "road",
-            "value": 0.85,
+            "value": 0.78,
             "weight": 0.15,
-            "contribution": 0.1275
+            "contribution": 0.117
           },
           {
             "factor": "healthcare",
-            "value": 0.75,
+            "value": 0.65,
             "weight": 0.1,
-            "contribution": 0.075
+            "contribution": 0.065
           },
           {
             "factor": "school",
-            "value": 0.65,
+            "value": 0.6,
             "weight": 0.05,
-            "contribution": 0.0325
+            "contribution": 0.03
           },
           {
             "factor": "water",
-            "value": 0.8,
+            "value": 0.9,
             "weight": 0.1,
-            "contribution": 0.08
+            "contribution": 0.09
           },
           {
             "factor": "capacity_fit",
-            "value": 0.3459,
+            "value": 0.0353,
             "weight": 0.15,
-            "contribution": 0.0519
+            "contribution": 0.0053
           }
         ],
         "reasons": [
-          "H_site=0.28 (below 0.4 safety filter)",
-          "Distance 3.6 km from Ukhimath (proximity score 0.85)",
-          "Access: road 0.85, healthcare 0.75, water 0.80, school 0.65",
-          "First-order physical screening capacity: 294 available (habitation pop 850)",
-          "Below full capacity threshold (294 < 425) \u2014 split relocation may be required",
-          "U_ij suitability score 0.71"
+          "H_site=0.31 (below 0.4 safety filter)",
+          "Distance 12.1 km from Ukhimath (proximity score 0.52)",
+          "Access: road 0.78, healthcare 0.65, water 0.90, school 0.60",
+          "First-order physical screening capacity: 30 available (habitation pop 850)",
+          "Below full capacity threshold (30 < 425) \u2014 split relocation may be required",
+          "U_ij suitability score 0.59"
         ]
       },
       "comparison": {
-        "score_delta": 0.1223,
-        "distance_delta_km": -0.22,
-        "capacity_delta": 485,
+        "score_delta": 0.2286,
+        "distance_delta_km": 8.26,
+        "capacity_delta": 674,
         "notes": [
-          "Top site U_ij=0.83 vs runner-up 0.71 (\u0394 +0.12)",
-          "Runner-up is 0.2 km closer, but lower overall U_ij",
-          "Top site has 485 more available screening capacity",
-          "Lower site hazard at top choice (H=0.22 vs 0.28)"
+          "Top site U_ij=0.82 vs runner-up 0.59 (\u0394 +0.23)",
+          "Top site is 8.3 km closer to the habitation",
+          "Top site has 674 more available screening capacity",
+          "Lower site hazard at top choice (H=0.22 vs 0.31)"
         ]
       }
     },
@@ -162,8 +162,8 @@
         "healthcare_access": 0.8,
         "water_access": 0.85,
         "school_access": 0.7,
-        "capacity": 979,
-        "capacity_available": 779,
+        "capacity": 904,
+        "capacity_available": 704,
         "meets_capacity_threshold": true,
         "explain": [
           {
@@ -213,86 +213,86 @@
           "H_site=0.22 (below 0.4 safety filter)",
           "Distance 3.6 km from Guptkashi (proximity score 0.85)",
           "Access: road 0.90, healthcare 0.80, water 0.85, school 0.70",
-          "First-order physical screening capacity: 779 available (habitation pop 620)",
-          "Capacity meets 0.5\u00d7population threshold (779 \u2265 310)",
+          "First-order physical screening capacity: 704 available (habitation pop 620)",
+          "Capacity meets 0.5\u00d7population threshold (704 \u2265 310)",
           "U_ij suitability score 0.85"
         ]
       },
       "runner_up": {
-        "site_id": "SITE_E",
-        "site_name": "Srinagar Riverside Flat",
-        "score": 0.6443,
-        "safety": 0.3,
-        "distance_km": 41.97,
-        "road_access": 0.88,
-        "healthcare_access": 0.78,
-        "water_access": 0.92,
-        "school_access": 0.72,
-        "capacity": 618,
-        "capacity_available": 398,
-        "meets_capacity_threshold": true,
+        "site_id": "SITE_C",
+        "site_name": "Phata Valley Bench",
+        "score": 0.5852,
+        "safety": 0.31,
+        "distance_km": 13.52,
+        "road_access": 0.78,
+        "healthcare_access": 0.65,
+        "water_access": 0.9,
+        "school_access": 0.6,
+        "capacity": 150,
+        "capacity_available": 30,
+        "meets_capacity_threshold": false,
         "explain": [
           {
             "factor": "safety",
-            "value": 0.7,
+            "value": 0.69,
             "weight": 0.3,
-            "contribution": 0.21
+            "contribution": 0.207
           },
           {
             "factor": "distance",
-            "value": 0.0,
+            "value": 0.4594,
             "weight": 0.15,
-            "contribution": 0.0
+            "contribution": 0.0689
           },
           {
             "factor": "road",
-            "value": 0.88,
+            "value": 0.78,
             "weight": 0.15,
-            "contribution": 0.132
+            "contribution": 0.117
           },
           {
             "factor": "healthcare",
-            "value": 0.78,
+            "value": 0.65,
             "weight": 0.1,
-            "contribution": 0.078
+            "contribution": 0.065
           },
           {
             "factor": "school",
-            "value": 0.72,
+            "value": 0.6,
             "weight": 0.05,
-            "contribution": 0.036
+            "contribution": 0.03
           },
           {
             "factor": "water",
-            "value": 0.92,
+            "value": 0.9,
             "weight": 0.1,
-            "contribution": 0.092
+            "contribution": 0.09
           },
           {
             "factor": "capacity_fit",
-            "value": 0.6419,
+            "value": 0.0484,
             "weight": 0.15,
-            "contribution": 0.0963
+            "contribution": 0.0073
           }
         ],
         "reasons": [
-          "H_site=0.30 (below 0.4 safety filter)",
-          "Distance 42.0 km from Guptkashi (proximity score 0.00)",
-          "Access: road 0.88, healthcare 0.78, water 0.92, school 0.72",
-          "First-order physical screening capacity: 398 available (habitation pop 620)",
-          "Capacity meets 0.5\u00d7population threshold (398 \u2265 310)",
-          "U_ij suitability score 0.64"
+          "H_site=0.31 (below 0.4 safety filter)",
+          "Distance 13.5 km from Guptkashi (proximity score 0.46)",
+          "Access: road 0.78, healthcare 0.65, water 0.90, school 0.60",
+          "First-order physical screening capacity: 30 available (habitation pop 620)",
+          "Below full capacity threshold (30 < 310) \u2014 split relocation may be required",
+          "U_ij suitability score 0.59"
         ]
       },
       "comparison": {
-        "score_delta": 0.2029,
-        "distance_delta_km": 38.34,
-        "capacity_delta": 381,
+        "score_delta": 0.262,
+        "distance_delta_km": 9.89,
+        "capacity_delta": 674,
         "notes": [
-          "Top site U_ij=0.85 vs runner-up 0.64 (\u0394 +0.20)",
-          "Top site is 38.3 km closer to the habitation",
-          "Top site has 381 more available screening capacity",
-          "Lower site hazard at top choice (H=0.22 vs 0.30)"
+          "Top site U_ij=0.85 vs runner-up 0.59 (\u0394 +0.26)",
+          "Top site is 9.9 km closer to the habitation",
+          "Top site has 674 more available screening capacity",
+          "Lower site hazard at top choice (H=0.22 vs 0.31)"
         ]
       }
     },
@@ -309,8 +309,8 @@
         "healthcare_access": 0.8,
         "water_access": 0.85,
         "school_access": 0.7,
-        "capacity": 979,
-        "capacity_available": 779,
+        "capacity": 904,
+        "capacity_available": 704,
         "meets_capacity_threshold": true,
         "explain": [
           {
@@ -360,86 +360,86 @@
           "H_site=0.22 (below 0.4 safety filter)",
           "Distance 20.1 km from Agastyamuni (proximity score 0.20)",
           "Access: road 0.90, healthcare 0.80, water 0.85, school 0.70",
-          "First-order physical screening capacity: 779 available (habitation pop 420)",
-          "Capacity meets 0.5\u00d7population threshold (779 \u2265 210)",
+          "First-order physical screening capacity: 704 available (habitation pop 420)",
+          "Capacity meets 0.5\u00d7population threshold (704 \u2265 210)",
           "U_ij suitability score 0.75"
         ]
       },
       "runner_up": {
-        "site_id": "SITE_I",
-        "site_name": "Joshiyara Plateau",
-        "score": 0.7471,
-        "safety": 0.24,
-        "distance_km": 12.38,
-        "road_access": 0.84,
-        "healthcare_access": 0.74,
-        "water_access": 0.87,
-        "school_access": 0.7,
-        "capacity": 480,
-        "capacity_available": 340,
-        "meets_capacity_threshold": true,
+        "site_id": "SITE_C",
+        "site_name": "Phata Valley Bench",
+        "score": 0.6345,
+        "safety": 0.31,
+        "distance_km": 5.87,
+        "road_access": 0.78,
+        "healthcare_access": 0.65,
+        "water_access": 0.9,
+        "school_access": 0.6,
+        "capacity": 150,
+        "capacity_available": 30,
+        "meets_capacity_threshold": false,
         "explain": [
           {
             "factor": "safety",
-            "value": 0.76,
+            "value": 0.69,
             "weight": 0.3,
-            "contribution": 0.228
+            "contribution": 0.207
           },
           {
             "factor": "distance",
-            "value": 0.5048,
+            "value": 0.7651,
             "weight": 0.15,
-            "contribution": 0.0757
+            "contribution": 0.1148
           },
           {
             "factor": "road",
-            "value": 0.84,
+            "value": 0.78,
             "weight": 0.15,
-            "contribution": 0.126
+            "contribution": 0.117
           },
           {
             "factor": "healthcare",
-            "value": 0.74,
+            "value": 0.65,
             "weight": 0.1,
-            "contribution": 0.074
+            "contribution": 0.065
           },
           {
             "factor": "school",
-            "value": 0.7,
+            "value": 0.6,
             "weight": 0.05,
-            "contribution": 0.035
+            "contribution": 0.03
           },
           {
             "factor": "water",
-            "value": 0.87,
+            "value": 0.9,
             "weight": 0.1,
-            "contribution": 0.087
+            "contribution": 0.09
           },
           {
             "factor": "capacity_fit",
-            "value": 0.8095,
+            "value": 0.0714,
             "weight": 0.15,
-            "contribution": 0.1214
+            "contribution": 0.0107
           }
         ],
         "reasons": [
-          "H_site=0.24 (below 0.4 safety filter)",
-          "Distance 12.4 km from Agastyamuni (proximity score 0.50)",
-          "Access: road 0.84, healthcare 0.74, water 0.87, school 0.70",
-          "First-order physical screening capacity: 340 available (habitation pop 420)",
-          "Capacity meets 0.5\u00d7population threshold (340 \u2265 210)",
-          "U_ij suitability score 0.75"
+          "H_site=0.31 (below 0.4 safety filter)",
+          "Distance 5.9 km from Agastyamuni (proximity score 0.77)",
+          "Access: road 0.78, healthcare 0.65, water 0.90, school 0.60",
+          "First-order physical screening capacity: 30 available (habitation pop 420)",
+          "Below full capacity threshold (30 < 210) \u2014 split relocation may be required",
+          "U_ij suitability score 0.63"
         ]
       },
       "comparison": {
-        "score_delta": 0.0015,
-        "distance_delta_km": -7.68,
-        "capacity_delta": 439,
+        "score_delta": 0.1141,
+        "distance_delta_km": -14.19,
+        "capacity_delta": 674,
         "notes": [
-          "Top site U_ij=0.75 vs runner-up 0.75 (\u0394 +0.00)",
-          "Runner-up is 7.7 km closer, but lower overall U_ij",
-          "Top site has 439 more available screening capacity",
-          "Lower site hazard at top choice (H=0.22 vs 0.24)"
+          "Top site U_ij=0.75 vs runner-up 0.63 (\u0394 +0.11)",
+          "Runner-up is 14.2 km closer, but lower overall U_ij",
+          "Top site has 674 more available screening capacity",
+          "Lower site hazard at top choice (H=0.22 vs 0.31)"
         ]
       }
     },
@@ -447,164 +447,17 @@
       "hab_id": "UT_RUD_0004",
       "hab_name": "Tilwara",
       "top": {
-        "site_id": "SITE_I",
-        "site_name": "Joshiyara Plateau",
-        "score": 0.8095,
-        "safety": 0.24,
-        "distance_km": 6.76,
-        "road_access": 0.84,
-        "healthcare_access": 0.74,
-        "water_access": 0.87,
-        "school_access": 0.7,
-        "capacity": 480,
-        "capacity_available": 340,
-        "meets_capacity_threshold": true,
-        "explain": [
-          {
-            "factor": "safety",
-            "value": 0.76,
-            "weight": 0.3,
-            "contribution": 0.228
-          },
-          {
-            "factor": "distance",
-            "value": 0.7297,
-            "weight": 0.15,
-            "contribution": 0.1095
-          },
-          {
-            "factor": "road",
-            "value": 0.84,
-            "weight": 0.15,
-            "contribution": 0.126
-          },
-          {
-            "factor": "healthcare",
-            "value": 0.74,
-            "weight": 0.1,
-            "contribution": 0.074
-          },
-          {
-            "factor": "school",
-            "value": 0.7,
-            "weight": 0.05,
-            "contribution": 0.035
-          },
-          {
-            "factor": "water",
-            "value": 0.87,
-            "weight": 0.1,
-            "contribution": 0.087
-          },
-          {
-            "factor": "capacity_fit",
-            "value": 1.0,
-            "weight": 0.15,
-            "contribution": 0.15
-          }
-        ],
-        "reasons": [
-          "H_site=0.24 (below 0.4 safety filter)",
-          "Distance 6.8 km from Tilwara (proximity score 0.73)",
-          "Access: road 0.84, healthcare 0.74, water 0.87, school 0.70",
-          "First-order physical screening capacity: 340 available (habitation pop 310)",
-          "Capacity meets 0.5\u00d7population threshold (340 \u2265 155)",
-          "U_ij suitability score 0.81"
-        ]
-      },
-      "runner_up": {
-        "site_id": "SITE_D",
-        "site_name": "Augustmuni Terrace",
-        "score": 0.8068,
-        "safety": 0.25,
-        "distance_km": 5.3,
-        "road_access": 0.82,
-        "healthcare_access": 0.72,
-        "water_access": 0.88,
-        "school_access": 0.68,
-        "capacity": 453,
-        "capacity_available": 303,
-        "meets_capacity_threshold": true,
-        "explain": [
-          {
-            "factor": "safety",
-            "value": 0.75,
-            "weight": 0.3,
-            "contribution": 0.225
-          },
-          {
-            "factor": "distance",
-            "value": 0.7881,
-            "weight": 0.15,
-            "contribution": 0.1182
-          },
-          {
-            "factor": "road",
-            "value": 0.82,
-            "weight": 0.15,
-            "contribution": 0.123
-          },
-          {
-            "factor": "healthcare",
-            "value": 0.72,
-            "weight": 0.1,
-            "contribution": 0.072
-          },
-          {
-            "factor": "school",
-            "value": 0.68,
-            "weight": 0.05,
-            "contribution": 0.034
-          },
-          {
-            "factor": "water",
-            "value": 0.88,
-            "weight": 0.1,
-            "contribution": 0.088
-          },
-          {
-            "factor": "capacity_fit",
-            "value": 0.9774,
-            "weight": 0.15,
-            "contribution": 0.1466
-          }
-        ],
-        "reasons": [
-          "H_site=0.25 (below 0.4 safety filter)",
-          "Distance 5.3 km from Tilwara (proximity score 0.79)",
-          "Access: road 0.82, healthcare 0.72, water 0.88, school 0.68",
-          "First-order physical screening capacity: 303 available (habitation pop 310)",
-          "Capacity meets 0.5\u00d7population threshold (303 \u2265 155)",
-          "U_ij suitability score 0.81"
-        ]
-      },
-      "comparison": {
-        "score_delta": 0.0027,
-        "distance_delta_km": -1.46,
-        "capacity_delta": 37,
-        "notes": [
-          "Top site U_ij=0.81 vs runner-up 0.81 (\u0394 +0.00)",
-          "Runner-up is 1.5 km closer, but lower overall U_ij",
-          "Top site has 37 more available screening capacity",
-          "Lower site hazard at top choice (H=0.24 vs 0.25)"
-        ]
-      }
-    },
-    "UT_RUD_0005": {
-      "hab_id": "UT_RUD_0005",
-      "hab_name": "Rudraprayag Town",
-      "top": {
         "site_id": "SITE_A",
         "site_name": "Okhimath Plateau North",
-        "score": 0.6706,
+        "score": 0.719,
         "safety": 0.22,
-        "distance_km": 29.68,
+        "distance_km": 28.45,
         "road_access": 0.9,
         "healthcare_access": 0.8,
         "water_access": 0.85,
         "school_access": 0.7,
-        "capacity": 979,
-        "capacity_available": 779,
+        "capacity": 904,
+        "capacity_available": 704,
         "meets_capacity_threshold": true,
         "explain": [
           {
@@ -645,57 +498,138 @@
           },
           {
             "factor": "capacity_fit",
-            "value": 0.6774,
+            "value": 1.0,
             "weight": 0.15,
-            "contribution": 0.1016
+            "contribution": 0.15
           }
         ],
         "reasons": [
           "H_site=0.22 (below 0.4 safety filter)",
-          "Distance 29.7 km from Rudraprayag Town (proximity score 0.00)",
+          "Distance 28.5 km from Tilwara (proximity score 0.00)",
           "Access: road 0.90, healthcare 0.80, water 0.85, school 0.70",
-          "First-order physical screening capacity: 779 available (habitation pop 1150)",
-          "Capacity meets 0.5\u00d7population threshold (779 \u2265 575)",
-          "U_ij suitability score 0.67"
+          "First-order physical screening capacity: 704 available (habitation pop 310)",
+          "Capacity meets 0.5\u00d7population threshold (704 \u2265 155)",
+          "U_ij suitability score 0.72"
         ]
       },
       "runner_up": {
-        "site_id": "SITE_I",
-        "site_name": "Joshiyara Plateau",
-        "score": 0.7267,
-        "safety": 0.24,
-        "distance_km": 2.94,
-        "road_access": 0.84,
-        "healthcare_access": 0.74,
-        "water_access": 0.87,
-        "school_access": 0.7,
-        "capacity": 480,
-        "capacity_available": 340,
+        "site_id": "SITE_C",
+        "site_name": "Phata Valley Bench",
+        "score": 0.5854,
+        "safety": 0.31,
+        "distance_km": 14.69,
+        "road_access": 0.78,
+        "healthcare_access": 0.65,
+        "water_access": 0.9,
+        "school_access": 0.6,
+        "capacity": 150,
+        "capacity_available": 30,
         "meets_capacity_threshold": false,
         "explain": [
           {
             "factor": "safety",
-            "value": 0.76,
+            "value": 0.69,
             "weight": 0.3,
-            "contribution": 0.228
+            "contribution": 0.207
           },
           {
             "factor": "distance",
-            "value": 0.8825,
+            "value": 0.4126,
             "weight": 0.15,
-            "contribution": 0.1324
+            "contribution": 0.0619
           },
           {
             "factor": "road",
-            "value": 0.84,
+            "value": 0.78,
             "weight": 0.15,
-            "contribution": 0.126
+            "contribution": 0.117
           },
           {
             "factor": "healthcare",
-            "value": 0.74,
+            "value": 0.65,
             "weight": 0.1,
-            "contribution": 0.074
+            "contribution": 0.065
+          },
+          {
+            "factor": "school",
+            "value": 0.6,
+            "weight": 0.05,
+            "contribution": 0.03
+          },
+          {
+            "factor": "water",
+            "value": 0.9,
+            "weight": 0.1,
+            "contribution": 0.09
+          },
+          {
+            "factor": "capacity_fit",
+            "value": 0.0968,
+            "weight": 0.15,
+            "contribution": 0.0145
+          }
+        ],
+        "reasons": [
+          "H_site=0.31 (below 0.4 safety filter)",
+          "Distance 14.7 km from Tilwara (proximity score 0.41)",
+          "Access: road 0.78, healthcare 0.65, water 0.90, school 0.60",
+          "First-order physical screening capacity: 30 available (habitation pop 310)",
+          "Below full capacity threshold (30 < 155) \u2014 split relocation may be required",
+          "U_ij suitability score 0.59"
+        ]
+      },
+      "comparison": {
+        "score_delta": 0.1336,
+        "distance_delta_km": -13.76,
+        "capacity_delta": 674,
+        "notes": [
+          "Top site U_ij=0.72 vs runner-up 0.59 (\u0394 +0.13)",
+          "Runner-up is 13.8 km closer, but lower overall U_ij",
+          "Top site has 674 more available screening capacity",
+          "Lower site hazard at top choice (H=0.22 vs 0.31)"
+        ]
+      }
+    },
+    "UT_RUD_0005": {
+      "hab_id": "UT_RUD_0005",
+      "hab_name": "Rudraprayag Town",
+      "top": {
+        "site_id": "SITE_A",
+        "site_name": "Okhimath Plateau North",
+        "score": 0.6608,
+        "safety": 0.22,
+        "distance_km": 29.68,
+        "road_access": 0.9,
+        "healthcare_access": 0.8,
+        "water_access": 0.85,
+        "school_access": 0.7,
+        "capacity": 904,
+        "capacity_available": 704,
+        "meets_capacity_threshold": true,
+        "explain": [
+          {
+            "factor": "safety",
+            "value": 0.78,
+            "weight": 0.3,
+            "contribution": 0.234
+          },
+          {
+            "factor": "distance",
+            "value": 0.0,
+            "weight": 0.15,
+            "contribution": 0.0
+          },
+          {
+            "factor": "road",
+            "value": 0.9,
+            "weight": 0.15,
+            "contribution": 0.135
+          },
+          {
+            "factor": "healthcare",
+            "value": 0.8,
+            "weight": 0.1,
+            "contribution": 0.08
           },
           {
             "factor": "school",
@@ -705,35 +639,101 @@
           },
           {
             "factor": "water",
-            "value": 0.87,
+            "value": 0.85,
             "weight": 0.1,
-            "contribution": 0.087
+            "contribution": 0.085
           },
           {
             "factor": "capacity_fit",
-            "value": 0.2957,
+            "value": 0.6122,
             "weight": 0.15,
-            "contribution": 0.0443
+            "contribution": 0.0918
           }
         ],
         "reasons": [
-          "H_site=0.24 (below 0.4 safety filter)",
-          "Distance 2.9 km from Rudraprayag Town (proximity score 0.88)",
-          "Access: road 0.84, healthcare 0.74, water 0.87, school 0.70",
-          "First-order physical screening capacity: 340 available (habitation pop 1150)",
-          "Below full capacity threshold (340 < 575) \u2014 split relocation may be required",
-          "U_ij suitability score 0.73"
+          "H_site=0.22 (below 0.4 safety filter)",
+          "Distance 29.7 km from Rudraprayag Town (proximity score 0.00)",
+          "Access: road 0.90, healthcare 0.80, water 0.85, school 0.70",
+          "First-order physical screening capacity: 704 available (habitation pop 1150)",
+          "Capacity meets 0.5\u00d7population threshold (704 \u2265 575)",
+          "U_ij suitability score 0.66"
+        ]
+      },
+      "runner_up": {
+        "site_id": "SITE_C",
+        "site_name": "Phata Valley Bench",
+        "score": 0.5732,
+        "safety": 0.31,
+        "distance_km": 14.96,
+        "road_access": 0.78,
+        "healthcare_access": 0.65,
+        "water_access": 0.9,
+        "school_access": 0.6,
+        "capacity": 150,
+        "capacity_available": 30,
+        "meets_capacity_threshold": false,
+        "explain": [
+          {
+            "factor": "safety",
+            "value": 0.69,
+            "weight": 0.3,
+            "contribution": 0.207
+          },
+          {
+            "factor": "distance",
+            "value": 0.4018,
+            "weight": 0.15,
+            "contribution": 0.0603
+          },
+          {
+            "factor": "road",
+            "value": 0.78,
+            "weight": 0.15,
+            "contribution": 0.117
+          },
+          {
+            "factor": "healthcare",
+            "value": 0.65,
+            "weight": 0.1,
+            "contribution": 0.065
+          },
+          {
+            "factor": "school",
+            "value": 0.6,
+            "weight": 0.05,
+            "contribution": 0.03
+          },
+          {
+            "factor": "water",
+            "value": 0.9,
+            "weight": 0.1,
+            "contribution": 0.09
+          },
+          {
+            "factor": "capacity_fit",
+            "value": 0.0261,
+            "weight": 0.15,
+            "contribution": 0.0039
+          }
+        ],
+        "reasons": [
+          "H_site=0.31 (below 0.4 safety filter)",
+          "Distance 15.0 km from Rudraprayag Town (proximity score 0.40)",
+          "Access: road 0.78, healthcare 0.65, water 0.90, school 0.60",
+          "First-order physical screening capacity: 30 available (habitation pop 1150)",
+          "Below full capacity threshold (30 < 575) \u2014 split relocation may be required",
+          "U_ij suitability score 0.57"
         ]
       },
       "comparison": {
-        "score_delta": -0.0561,
-        "distance_delta_km": -26.74,
-        "capacity_delta": 439,
+        "score_delta": 0.0876,
+        "distance_delta_km": -14.72,
+        "capacity_delta": 674,
         "notes": [
-          "Top site U_ij=0.67 vs runner-up 0.73 (\u0394 +-0.06)",
-          "Runner-up is 26.7 km closer, but lower overall U_ij",
-          "Top site has 439 more available screening capacity",
-          "Lower site hazard at top choice (H=0.22 vs 0.24)"
+          "Top site U_ij=0.66 vs runner-up 0.57 (\u0394 +0.09)",
+          "Runner-up is 14.7 km closer, but lower overall U_ij",
+          "Top site has 674 more available screening capacity",
+          "Lower site hazard at top choice (H=0.22 vs 0.31)"
         ]
       }
     },
@@ -750,8 +750,8 @@
         "healthcare_access": 0.8,
         "water_access": 0.85,
         "school_access": 0.7,
-        "capacity": 979,
-        "capacity_available": 779,
+        "capacity": 904,
+        "capacity_available": 704,
         "meets_capacity_threshold": true,
         "explain": [
           {
@@ -801,86 +801,86 @@
           "H_site=0.22 (below 0.4 safety filter)",
           "Distance 9.3 km from Gaurikund (proximity score 0.63)",
           "Access: road 0.90, healthcare 0.80, water 0.85, school 0.70",
-          "First-order physical screening capacity: 779 available (habitation pop 180)",
-          "Capacity meets 0.5\u00d7population threshold (779 \u2265 90)",
+          "First-order physical screening capacity: 704 available (habitation pop 180)",
+          "Capacity meets 0.5\u00d7population threshold (704 \u2265 90)",
           "U_ij suitability score 0.81"
         ]
       },
       "runner_up": {
-        "site_id": "SITE_B",
-        "site_name": "Guptkashi Ridge East",
-        "score": 0.7554,
-        "safety": 0.28,
-        "distance_km": 12.6,
-        "road_access": 0.85,
-        "healthcare_access": 0.75,
-        "water_access": 0.8,
-        "school_access": 0.65,
-        "capacity": 474,
-        "capacity_available": 294,
-        "meets_capacity_threshold": true,
+        "site_id": "SITE_C",
+        "site_name": "Phata Valley Bench",
+        "score": 0.5439,
+        "safety": 0.31,
+        "distance_km": 23.35,
+        "road_access": 0.78,
+        "healthcare_access": 0.65,
+        "water_access": 0.9,
+        "school_access": 0.6,
+        "capacity": 150,
+        "capacity_available": 30,
+        "meets_capacity_threshold": false,
         "explain": [
           {
             "factor": "safety",
-            "value": 0.72,
+            "value": 0.69,
             "weight": 0.3,
-            "contribution": 0.216
+            "contribution": 0.207
           },
           {
             "factor": "distance",
-            "value": 0.4959,
+            "value": 0.066,
             "weight": 0.15,
-            "contribution": 0.0744
+            "contribution": 0.0099
           },
           {
             "factor": "road",
-            "value": 0.85,
+            "value": 0.78,
             "weight": 0.15,
-            "contribution": 0.1275
+            "contribution": 0.117
           },
           {
             "factor": "healthcare",
-            "value": 0.75,
+            "value": 0.65,
             "weight": 0.1,
-            "contribution": 0.075
+            "contribution": 0.065
           },
           {
             "factor": "school",
-            "value": 0.65,
+            "value": 0.6,
             "weight": 0.05,
-            "contribution": 0.0325
+            "contribution": 0.03
           },
           {
             "factor": "water",
-            "value": 0.8,
+            "value": 0.9,
             "weight": 0.1,
-            "contribution": 0.08
+            "contribution": 0.09
           },
           {
             "factor": "capacity_fit",
-            "value": 1.0,
+            "value": 0.1667,
             "weight": 0.15,
-            "contribution": 0.15
+            "contribution": 0.025
           }
         ],
         "reasons": [
-          "H_site=0.28 (below 0.4 safety filter)",
-          "Distance 12.6 km from Gaurikund (proximity score 0.50)",
-          "Access: road 0.85, healthcare 0.75, water 0.80, school 0.65",
-          "First-order physical screening capacity: 294 available (habitation pop 180)",
-          "Capacity meets 0.5\u00d7population threshold (294 \u2265 90)",
-          "U_ij suitability score 0.76"
+          "H_site=0.31 (below 0.4 safety filter)",
+          "Distance 23.4 km from Gaurikund (proximity score 0.07)",
+          "Access: road 0.78, healthcare 0.65, water 0.90, school 0.60",
+          "First-order physical screening capacity: 30 available (habitation pop 180)",
+          "Below full capacity threshold (30 < 90) \u2014 split relocation may be required",
+          "U_ij suitability score 0.54"
         ]
       },
       "comparison": {
-        "score_delta": 0.0575,
-        "distance_delta_km": 3.25,
-        "capacity_delta": 485,
+        "score_delta": 0.269,
+        "distance_delta_km": 14.0,
+        "capacity_delta": 674,
         "notes": [
-          "Top site U_ij=0.81 vs runner-up 0.76 (\u0394 +0.06)",
-          "Top site is 3.2 km closer to the habitation",
-          "Top site has 485 more available screening capacity",
-          "Lower site hazard at top choice (H=0.22 vs 0.28)"
+          "Top site U_ij=0.81 vs runner-up 0.54 (\u0394 +0.27)",
+          "Top site is 14.0 km closer to the habitation",
+          "Top site has 674 more available screening capacity",
+          "Lower site hazard at top choice (H=0.22 vs 0.31)"
         ]
       }
     },
@@ -897,8 +897,8 @@
         "healthcare_access": 0.8,
         "water_access": 0.85,
         "school_access": 0.7,
-        "capacity": 979,
-        "capacity_available": 779,
+        "capacity": 904,
+        "capacity_available": 704,
         "meets_capacity_threshold": true,
         "explain": [
           {
@@ -948,86 +948,86 @@
           "H_site=0.22 (below 0.4 safety filter)",
           "Distance 14.7 km from Phata (proximity score 0.41)",
           "Access: road 0.90, healthcare 0.80, water 0.85, school 0.70",
-          "First-order physical screening capacity: 779 available (habitation pop 240)",
-          "Capacity meets 0.5\u00d7population threshold (779 \u2265 120)",
+          "First-order physical screening capacity: 704 available (habitation pop 240)",
+          "Capacity meets 0.5\u00d7population threshold (704 \u2265 120)",
           "U_ij suitability score 0.78"
         ]
       },
       "runner_up": {
-        "site_id": "SITE_H",
-        "site_name": "Kalimath Bench West",
-        "score": 0.7713,
-        "safety": 0.26,
-        "distance_km": 6.26,
-        "road_access": 0.8,
-        "healthcare_access": 0.68,
-        "water_access": 0.86,
-        "school_access": 0.62,
-        "capacity": 321,
-        "capacity_available": 211,
-        "meets_capacity_threshold": true,
+        "site_id": "SITE_C",
+        "site_name": "Phata Valley Bench",
+        "score": 0.6777,
+        "safety": 0.31,
+        "distance_km": 0.0,
+        "road_access": 0.78,
+        "healthcare_access": 0.65,
+        "water_access": 0.9,
+        "school_access": 0.6,
+        "capacity": 150,
+        "capacity_available": 30,
+        "meets_capacity_threshold": false,
         "explain": [
           {
             "factor": "safety",
-            "value": 0.74,
+            "value": 0.69,
             "weight": 0.3,
-            "contribution": 0.222
+            "contribution": 0.207
           },
           {
             "factor": "distance",
-            "value": 0.7496,
+            "value": 1.0,
             "weight": 0.15,
-            "contribution": 0.1124
+            "contribution": 0.15
           },
           {
             "factor": "road",
-            "value": 0.8,
+            "value": 0.78,
             "weight": 0.15,
-            "contribution": 0.12
+            "contribution": 0.117
           },
           {
             "factor": "healthcare",
-            "value": 0.68,
+            "value": 0.65,
             "weight": 0.1,
-            "contribution": 0.068
+            "contribution": 0.065
           },
           {
             "factor": "school",
-            "value": 0.62,
+            "value": 0.6,
             "weight": 0.05,
-            "contribution": 0.031
+            "contribution": 0.03
           },
           {
             "factor": "water",
-            "value": 0.86,
+            "value": 0.9,
             "weight": 0.1,
-            "contribution": 0.086
+            "contribution": 0.09
           },
           {
             "factor": "capacity_fit",
-            "value": 0.8792,
+            "value": 0.125,
             "weight": 0.15,
-            "contribution": 0.1319
+            "contribution": 0.0187
           }
         ],
         "reasons": [
-          "H_site=0.26 (below 0.4 safety filter)",
-          "Distance 6.3 km from Phata (proximity score 0.75)",
-          "Access: road 0.80, healthcare 0.68, water 0.86, school 0.62",
-          "First-order physical screening capacity: 211 available (habitation pop 240)",
-          "Capacity meets 0.5\u00d7population threshold (211 \u2265 120)",
-          "U_ij suitability score 0.77"
+          "H_site=0.31 (below 0.4 safety filter)",
+          "Distance 0.0 km from Phata (proximity score 1.00)",
+          "Access: road 0.78, healthcare 0.65, water 0.90, school 0.60",
+          "First-order physical screening capacity: 30 available (habitation pop 240)",
+          "Below full capacity threshold (30 < 120) \u2014 split relocation may be required",
+          "U_ij suitability score 0.68"
         ]
       },
       "comparison": {
-        "score_delta": 0.0093,
-        "distance_delta_km": -8.48,
-        "capacity_delta": 568,
+        "score_delta": 0.1029,
+        "distance_delta_km": -14.74,
+        "capacity_delta": 674,
         "notes": [
-          "Top site U_ij=0.78 vs runner-up 0.77 (\u0394 +0.01)",
-          "Runner-up is 8.5 km closer, but lower overall U_ij",
-          "Top site has 568 more available screening capacity",
-          "Lower site hazard at top choice (H=0.22 vs 0.26)"
+          "Top site U_ij=0.78 vs runner-up 0.68 (\u0394 +0.10)",
+          "Runner-up is 14.7 km closer, but lower overall U_ij",
+          "Top site has 674 more available screening capacity",
+          "Lower site hazard at top choice (H=0.22 vs 0.31)"
         ]
       }
     },
@@ -1044,8 +1044,8 @@
         "healthcare_access": 0.8,
         "water_access": 0.85,
         "school_access": 0.7,
-        "capacity": 979,
-        "capacity_available": 779,
+        "capacity": 904,
+        "capacity_available": 704,
         "meets_capacity_threshold": true,
         "explain": [
           {
@@ -1095,86 +1095,86 @@
           "H_site=0.22 (below 0.4 safety filter)",
           "Distance 8.7 km from Kalimath (proximity score 0.65)",
           "Access: road 0.90, healthcare 0.80, water 0.85, school 0.70",
-          "First-order physical screening capacity: 779 available (habitation pop 390)",
-          "Capacity meets 0.5\u00d7population threshold (779 \u2265 195)",
+          "First-order physical screening capacity: 704 available (habitation pop 390)",
+          "Capacity meets 0.5\u00d7population threshold (704 \u2265 195)",
           "U_ij suitability score 0.82"
         ]
       },
       "runner_up": {
-        "site_id": "SITE_H",
-        "site_name": "Kalimath Bench West",
-        "score": 0.7449,
-        "safety": 0.26,
-        "distance_km": 2.22,
-        "road_access": 0.8,
-        "healthcare_access": 0.68,
-        "water_access": 0.86,
-        "school_access": 0.62,
-        "capacity": 321,
-        "capacity_available": 211,
-        "meets_capacity_threshold": true,
+        "site_id": "SITE_C",
+        "site_name": "Phata Valley Bench",
+        "score": 0.6301,
+        "safety": 0.31,
+        "distance_km": 6.74,
+        "road_access": 0.78,
+        "healthcare_access": 0.65,
+        "water_access": 0.9,
+        "school_access": 0.6,
+        "capacity": 150,
+        "capacity_available": 30,
+        "meets_capacity_threshold": false,
         "explain": [
           {
             "factor": "safety",
-            "value": 0.74,
+            "value": 0.69,
             "weight": 0.3,
-            "contribution": 0.222
+            "contribution": 0.207
           },
           {
             "factor": "distance",
-            "value": 0.9114,
+            "value": 0.7304,
             "weight": 0.15,
-            "contribution": 0.1367
+            "contribution": 0.1096
           },
           {
             "factor": "road",
-            "value": 0.8,
+            "value": 0.78,
             "weight": 0.15,
-            "contribution": 0.12
+            "contribution": 0.117
           },
           {
             "factor": "healthcare",
-            "value": 0.68,
+            "value": 0.65,
             "weight": 0.1,
-            "contribution": 0.068
+            "contribution": 0.065
           },
           {
             "factor": "school",
-            "value": 0.62,
+            "value": 0.6,
             "weight": 0.05,
-            "contribution": 0.031
+            "contribution": 0.03
           },
           {
             "factor": "water",
-            "value": 0.86,
+            "value": 0.9,
             "weight": 0.1,
-            "contribution": 0.086
+            "contribution": 0.09
           },
           {
             "factor": "capacity_fit",
-            "value": 0.541,
+            "value": 0.0769,
             "weight": 0.15,
-            "contribution": 0.0812
+            "contribution": 0.0115
           }
         ],
         "reasons": [
-          "H_site=0.26 (below 0.4 safety filter)",
-          "Distance 2.2 km from Kalimath (proximity score 0.91)",
-          "Access: road 0.80, healthcare 0.68, water 0.86, school 0.62",
-          "First-order physical screening capacity: 211 available (habitation pop 390)",
-          "Capacity meets 0.5\u00d7population threshold (211 \u2265 195)",
-          "U_ij suitability score 0.74"
+          "H_site=0.31 (below 0.4 safety filter)",
+          "Distance 6.7 km from Kalimath (proximity score 0.73)",
+          "Access: road 0.78, healthcare 0.65, water 0.90, school 0.60",
+          "First-order physical screening capacity: 30 available (habitation pop 390)",
+          "Below full capacity threshold (30 < 195) \u2014 split relocation may be required",
+          "U_ij suitability score 0.63"
         ]
       },
       "comparison": {
-        "score_delta": 0.072,
-        "distance_delta_km": -6.46,
-        "capacity_delta": 568,
+        "score_delta": 0.1868,
+        "distance_delta_km": -1.94,
+        "capacity_delta": 674,
         "notes": [
-          "Top site U_ij=0.82 vs runner-up 0.74 (\u0394 +0.07)",
-          "Runner-up is 6.5 km closer, but lower overall U_ij",
-          "Top site has 568 more available screening capacity",
-          "Lower site hazard at top choice (H=0.22 vs 0.26)"
+          "Top site U_ij=0.82 vs runner-up 0.63 (\u0394 +0.19)",
+          "Runner-up is 1.9 km closer, but lower overall U_ij",
+          "Top site has 674 more available screening capacity",
+          "Lower site hazard at top choice (H=0.22 vs 0.31)"
         ]
       }
     },
@@ -1191,8 +1191,8 @@
         "healthcare_access": 0.8,
         "water_access": 0.85,
         "school_access": 0.7,
-        "capacity": 979,
-        "capacity_available": 779,
+        "capacity": 904,
+        "capacity_available": 704,
         "meets_capacity_threshold": true,
         "explain": [
           {
@@ -1242,86 +1242,86 @@
           "H_site=0.22 (below 0.4 safety filter)",
           "Distance 6.7 km from Narayankoti (proximity score 0.73)",
           "Access: road 0.90, healthcare 0.80, water 0.85, school 0.70",
-          "First-order physical screening capacity: 779 available (habitation pop 275)",
-          "Capacity meets 0.5\u00d7population threshold (779 \u2265 137)",
+          "First-order physical screening capacity: 704 available (habitation pop 275)",
+          "Capacity meets 0.5\u00d7population threshold (704 \u2265 137)",
           "U_ij suitability score 0.83"
         ]
       },
       "runner_up": {
-        "site_id": "SITE_B",
-        "site_name": "Guptkashi Ridge East",
-        "score": 0.787,
-        "safety": 0.28,
-        "distance_km": 7.34,
-        "road_access": 0.85,
-        "healthcare_access": 0.75,
-        "water_access": 0.8,
-        "school_access": 0.65,
-        "capacity": 474,
-        "capacity_available": 294,
-        "meets_capacity_threshold": true,
+        "site_id": "SITE_C",
+        "site_name": "Phata Valley Bench",
+        "score": 0.6256,
+        "safety": 0.31,
+        "distance_km": 8.3,
+        "road_access": 0.78,
+        "healthcare_access": 0.65,
+        "water_access": 0.9,
+        "school_access": 0.6,
+        "capacity": 150,
+        "capacity_available": 30,
+        "meets_capacity_threshold": false,
         "explain": [
           {
             "factor": "safety",
-            "value": 0.72,
+            "value": 0.69,
             "weight": 0.3,
-            "contribution": 0.216
+            "contribution": 0.207
           },
           {
             "factor": "distance",
-            "value": 0.7065,
+            "value": 0.6681,
             "weight": 0.15,
-            "contribution": 0.106
+            "contribution": 0.1002
           },
           {
             "factor": "road",
-            "value": 0.85,
+            "value": 0.78,
             "weight": 0.15,
-            "contribution": 0.1275
+            "contribution": 0.117
           },
           {
             "factor": "healthcare",
-            "value": 0.75,
+            "value": 0.65,
             "weight": 0.1,
-            "contribution": 0.075
+            "contribution": 0.065
           },
           {
             "factor": "school",
-            "value": 0.65,
+            "value": 0.6,
             "weight": 0.05,
-            "contribution": 0.0325
+            "contribution": 0.03
           },
           {
             "factor": "water",
-            "value": 0.8,
+            "value": 0.9,
             "weight": 0.1,
-            "contribution": 0.08
+            "contribution": 0.09
           },
           {
             "factor": "capacity_fit",
-            "value": 1.0,
+            "value": 0.1091,
             "weight": 0.15,
-            "contribution": 0.15
+            "contribution": 0.0164
           }
         ],
         "reasons": [
-          "H_site=0.28 (below 0.4 safety filter)",
-          "Distance 7.3 km from Narayankoti (proximity score 0.71)",
-          "Access: road 0.85, healthcare 0.75, water 0.80, school 0.65",
-          "First-order physical screening capacity: 294 available (habitation pop 275)",
-          "Capacity meets 0.5\u00d7population threshold (294 \u2265 137)",
-          "U_ij suitability score 0.79"
+          "H_site=0.31 (below 0.4 safety filter)",
+          "Distance 8.3 km from Narayankoti (proximity score 0.67)",
+          "Access: road 0.78, healthcare 0.65, water 0.90, school 0.60",
+          "First-order physical screening capacity: 30 available (habitation pop 275)",
+          "Below full capacity threshold (30 < 137) \u2014 split relocation may be required",
+          "U_ij suitability score 0.63"
         ]
       },
       "comparison": {
-        "score_delta": 0.042,
-        "distance_delta_km": 0.67,
-        "capacity_delta": 485,
+        "score_delta": 0.2034,
+        "distance_delta_km": 1.63,
+        "capacity_delta": 674,
         "notes": [
-          "Top site U_ij=0.83 vs runner-up 0.79 (\u0394 +0.04)",
-          "Top site is 0.7 km closer to the habitation",
-          "Top site has 485 more available screening capacity",
-          "Lower site hazard at top choice (H=0.22 vs 0.28)"
+          "Top site U_ij=0.83 vs runner-up 0.63 (\u0394 +0.20)",
+          "Top site is 1.6 km closer to the habitation",
+          "Top site has 674 more available screening capacity",
+          "Lower site hazard at top choice (H=0.22 vs 0.31)"
         ]
       }
     },
@@ -1338,8 +1338,8 @@
         "healthcare_access": 0.8,
         "water_access": 0.85,
         "school_access": 0.7,
-        "capacity": 979,
-        "capacity_available": 779,
+        "capacity": 904,
+        "capacity_available": 704,
         "meets_capacity_threshold": true,
         "explain": [
           {
@@ -1389,86 +1389,86 @@
           "H_site=0.22 (below 0.4 safety filter)",
           "Distance 18.3 km from Triyuginarayan (proximity score 0.27)",
           "Access: road 0.90, healthcare 0.80, water 0.85, school 0.70",
-          "First-order physical screening capacity: 779 available (habitation pop 195)",
-          "Capacity meets 0.5\u00d7population threshold (779 \u2265 97)",
+          "First-order physical screening capacity: 704 available (habitation pop 195)",
+          "Capacity meets 0.5\u00d7population threshold (704 \u2265 97)",
           "U_ij suitability score 0.76"
         ]
       },
       "runner_up": {
-        "site_id": "SITE_B",
-        "site_name": "Guptkashi Ridge East",
-        "score": 0.7481,
-        "safety": 0.28,
-        "distance_km": 13.81,
-        "road_access": 0.85,
-        "healthcare_access": 0.75,
-        "water_access": 0.8,
-        "school_access": 0.65,
-        "capacity": 474,
-        "capacity_available": 294,
-        "meets_capacity_threshold": true,
+        "site_id": "SITE_C",
+        "site_name": "Phata Valley Bench",
+        "score": 0.5321,
+        "safety": 0.31,
+        "distance_km": 26.88,
+        "road_access": 0.78,
+        "healthcare_access": 0.65,
+        "water_access": 0.9,
+        "school_access": 0.6,
+        "capacity": 150,
+        "capacity_available": 30,
+        "meets_capacity_threshold": false,
         "explain": [
           {
             "factor": "safety",
-            "value": 0.72,
+            "value": 0.69,
             "weight": 0.3,
-            "contribution": 0.216
+            "contribution": 0.207
           },
           {
             "factor": "distance",
-            "value": 0.4474,
+            "value": 0.0,
             "weight": 0.15,
-            "contribution": 0.0671
+            "contribution": 0.0
           },
           {
             "factor": "road",
-            "value": 0.85,
+            "value": 0.78,
             "weight": 0.15,
-            "contribution": 0.1275
+            "contribution": 0.117
           },
           {
             "factor": "healthcare",
-            "value": 0.75,
+            "value": 0.65,
             "weight": 0.1,
-            "contribution": 0.075
+            "contribution": 0.065
           },
           {
             "factor": "school",
-            "value": 0.65,
+            "value": 0.6,
             "weight": 0.05,
-            "contribution": 0.0325
+            "contribution": 0.03
           },
           {
             "factor": "water",
-            "value": 0.8,
+            "value": 0.9,
             "weight": 0.1,
-            "contribution": 0.08
+            "contribution": 0.09
           },
           {
             "factor": "capacity_fit",
-            "value": 1.0,
+            "value": 0.1538,
             "weight": 0.15,
-            "contribution": 0.15
+            "contribution": 0.0231
           }
         ],
         "reasons": [
-          "H_site=0.28 (below 0.4 safety filter)",
-          "Distance 13.8 km from Triyuginarayan (proximity score 0.45)",
-          "Access: road 0.85, healthcare 0.75, water 0.80, school 0.65",
-          "First-order physical screening capacity: 294 available (habitation pop 195)",
-          "Capacity meets 0.5\u00d7population threshold (294 \u2265 97)",
-          "U_ij suitability score 0.75"
+          "H_site=0.31 (below 0.4 safety filter)",
+          "Distance 26.9 km from Triyuginarayan (proximity score 0.00)",
+          "Access: road 0.78, healthcare 0.65, water 0.90, school 0.60",
+          "First-order physical screening capacity: 30 available (habitation pop 195)",
+          "Below full capacity threshold (30 < 97) \u2014 split relocation may be required",
+          "U_ij suitability score 0.53"
         ]
       },
       "comparison": {
-        "score_delta": 0.0109,
-        "distance_delta_km": -4.52,
-        "capacity_delta": 485,
+        "score_delta": 0.2269,
+        "distance_delta_km": 8.55,
+        "capacity_delta": 674,
         "notes": [
-          "Top site U_ij=0.76 vs runner-up 0.75 (\u0394 +0.01)",
-          "Runner-up is 4.5 km closer, but lower overall U_ij",
-          "Top site has 485 more available screening capacity",
-          "Lower site hazard at top choice (H=0.22 vs 0.28)"
+          "Top site U_ij=0.76 vs runner-up 0.53 (\u0394 +0.23)",
+          "Top site is 8.6 km closer to the habitation",
+          "Top site has 674 more available screening capacity",
+          "Lower site hazard at top choice (H=0.22 vs 0.31)"
         ]
       }
     },
@@ -1485,8 +1485,8 @@
         "healthcare_access": 0.8,
         "water_access": 0.85,
         "school_access": 0.7,
-        "capacity": 979,
-        "capacity_available": 779,
+        "capacity": 904,
+        "capacity_available": 704,
         "meets_capacity_threshold": true,
         "explain": [
           {
@@ -1536,86 +1536,86 @@
           "H_site=0.22 (below 0.4 safety filter)",
           "Distance 0.0 km from Okhimath (proximity score 1.00)",
           "Access: road 0.90, healthcare 0.80, water 0.85, school 0.70",
-          "First-order physical screening capacity: 779 available (habitation pop 520)",
-          "Capacity meets 0.5\u00d7population threshold (779 \u2265 260)",
+          "First-order physical screening capacity: 704 available (habitation pop 520)",
+          "Capacity meets 0.5\u00d7population threshold (704 \u2265 260)",
           "U_ij suitability score 0.87"
         ]
       },
       "runner_up": {
-        "site_id": "SITE_B",
-        "site_name": "Guptkashi Ridge East",
-        "score": 0.7363,
-        "safety": 0.28,
-        "distance_km": 4.92,
-        "road_access": 0.85,
-        "healthcare_access": 0.75,
-        "water_access": 0.8,
-        "school_access": 0.65,
-        "capacity": 474,
-        "capacity_available": 294,
-        "meets_capacity_threshold": true,
+        "site_id": "SITE_C",
+        "site_name": "Phata Valley Bench",
+        "score": 0.5792,
+        "safety": 0.31,
+        "distance_km": 14.74,
+        "road_access": 0.78,
+        "healthcare_access": 0.65,
+        "water_access": 0.9,
+        "school_access": 0.6,
+        "capacity": 150,
+        "capacity_available": 30,
+        "meets_capacity_threshold": false,
         "explain": [
           {
             "factor": "safety",
-            "value": 0.72,
+            "value": 0.69,
             "weight": 0.3,
-            "contribution": 0.216
+            "contribution": 0.207
           },
           {
             "factor": "distance",
-            "value": 0.8034,
+            "value": 0.4105,
             "weight": 0.15,
-            "contribution": 0.1205
+            "contribution": 0.0616
           },
           {
             "factor": "road",
-            "value": 0.85,
+            "value": 0.78,
             "weight": 0.15,
-            "contribution": 0.1275
+            "contribution": 0.117
           },
           {
             "factor": "healthcare",
-            "value": 0.75,
+            "value": 0.65,
             "weight": 0.1,
-            "contribution": 0.075
+            "contribution": 0.065
           },
           {
             "factor": "school",
-            "value": 0.65,
+            "value": 0.6,
             "weight": 0.05,
-            "contribution": 0.0325
+            "contribution": 0.03
           },
           {
             "factor": "water",
-            "value": 0.8,
+            "value": 0.9,
             "weight": 0.1,
-            "contribution": 0.08
+            "contribution": 0.09
           },
           {
             "factor": "capacity_fit",
-            "value": 0.5654,
+            "value": 0.0577,
             "weight": 0.15,
-            "contribution": 0.0848
+            "contribution": 0.0087
           }
         ],
         "reasons": [
-          "H_site=0.28 (below 0.4 safety filter)",
-          "Distance 4.9 km from Okhimath (proximity score 0.80)",
-          "Access: road 0.85, healthcare 0.75, water 0.80, school 0.65",
-          "First-order physical screening capacity: 294 available (habitation pop 520)",
-          "Capacity meets 0.5\u00d7population threshold (294 \u2265 260)",
-          "U_ij suitability score 0.74"
+          "H_site=0.31 (below 0.4 safety filter)",
+          "Distance 14.7 km from Okhimath (proximity score 0.41)",
+          "Access: road 0.78, healthcare 0.65, water 0.90, school 0.60",
+          "First-order physical screening capacity: 30 available (habitation pop 520)",
+          "Below full capacity threshold (30 < 260) \u2014 split relocation may be required",
+          "U_ij suitability score 0.58"
         ]
       },
       "comparison": {
-        "score_delta": 0.1327,
-        "distance_delta_km": 4.92,
-        "capacity_delta": 485,
+        "score_delta": 0.2898,
+        "distance_delta_km": 14.74,
+        "capacity_delta": 674,
         "notes": [
-          "Top site U_ij=0.87 vs runner-up 0.74 (\u0394 +0.13)",
-          "Top site is 4.9 km closer to the habitation",
-          "Top site has 485 more available screening capacity",
-          "Lower site hazard at top choice (H=0.22 vs 0.28)"
+          "Top site U_ij=0.87 vs runner-up 0.58 (\u0394 +0.29)",
+          "Top site is 14.7 km closer to the habitation",
+          "Top site has 674 more available screening capacity",
+          "Lower site hazard at top choice (H=0.22 vs 0.31)"
         ]
       }
     },
@@ -1623,72 +1623,6 @@
       "hab_id": "UT_RUD_0012",
       "hab_name": "Chopta",
       "top": {
-        "site_id": "SITE_F",
-        "site_name": "Chopta Meadow South",
-        "score": 0.7298,
-        "safety": 0.27,
-        "distance_km": 2.93,
-        "road_access": 0.72,
-        "healthcare_access": 0.6,
-        "water_access": 0.8,
-        "school_access": 0.55,
-        "capacity": 224,
-        "capacity_available": 144,
-        "meets_capacity_threshold": true,
-        "explain": [
-          {
-            "factor": "safety",
-            "value": 0.73,
-            "weight": 0.3,
-            "contribution": 0.219
-          },
-          {
-            "factor": "distance",
-            "value": 0.8827,
-            "weight": 0.15,
-            "contribution": 0.1324
-          },
-          {
-            "factor": "road",
-            "value": 0.72,
-            "weight": 0.15,
-            "contribution": 0.108
-          },
-          {
-            "factor": "healthcare",
-            "value": 0.6,
-            "weight": 0.1,
-            "contribution": 0.06
-          },
-          {
-            "factor": "school",
-            "value": 0.55,
-            "weight": 0.05,
-            "contribution": 0.0275
-          },
-          {
-            "factor": "water",
-            "value": 0.8,
-            "weight": 0.1,
-            "contribution": 0.08
-          },
-          {
-            "factor": "capacity_fit",
-            "value": 0.6857,
-            "weight": 0.15,
-            "contribution": 0.1029
-          }
-        ],
-        "reasons": [
-          "H_site=0.27 (below 0.4 safety filter)",
-          "Distance 2.9 km from Chopta (proximity score 0.88)",
-          "Access: road 0.72, healthcare 0.60, water 0.80, school 0.55",
-          "First-order physical screening capacity: 144 available (habitation pop 210)",
-          "Capacity meets 0.5\u00d7population threshold (144 \u2265 105)",
-          "U_ij suitability score 0.73"
-        ]
-      },
-      "runner_up": {
         "site_id": "SITE_A",
         "site_name": "Okhimath Plateau North",
         "score": 0.7292,
@@ -1698,8 +1632,8 @@
         "healthcare_access": 0.8,
         "water_access": 0.85,
         "school_access": 0.7,
-        "capacity": 979,
-        "capacity_available": 779,
+        "capacity": 904,
+        "capacity_available": 704,
         "meets_capacity_threshold": true,
         "explain": [
           {
@@ -1749,19 +1683,86 @@
           "H_site=0.22 (below 0.4 safety filter)",
           "Distance 23.3 km from Chopta (proximity score 0.07)",
           "Access: road 0.90, healthcare 0.80, water 0.85, school 0.70",
-          "First-order physical screening capacity: 779 available (habitation pop 210)",
-          "Capacity meets 0.5\u00d7population threshold (779 \u2265 105)",
+          "First-order physical screening capacity: 704 available (habitation pop 210)",
+          "Capacity meets 0.5\u00d7population threshold (704 \u2265 105)",
           "U_ij suitability score 0.73"
         ]
       },
+      "runner_up": {
+        "site_id": "SITE_C",
+        "site_name": "Phata Valley Bench",
+        "score": 0.5304,
+        "safety": 0.31,
+        "distance_km": 36.55,
+        "road_access": 0.78,
+        "healthcare_access": 0.65,
+        "water_access": 0.9,
+        "school_access": 0.6,
+        "capacity": 150,
+        "capacity_available": 30,
+        "meets_capacity_threshold": false,
+        "explain": [
+          {
+            "factor": "safety",
+            "value": 0.69,
+            "weight": 0.3,
+            "contribution": 0.207
+          },
+          {
+            "factor": "distance",
+            "value": 0.0,
+            "weight": 0.15,
+            "contribution": 0.0
+          },
+          {
+            "factor": "road",
+            "value": 0.78,
+            "weight": 0.15,
+            "contribution": 0.117
+          },
+          {
+            "factor": "healthcare",
+            "value": 0.65,
+            "weight": 0.1,
+            "contribution": 0.065
+          },
+          {
+            "factor": "school",
+            "value": 0.6,
+            "weight": 0.05,
+            "contribution": 0.03
+          },
+          {
+            "factor": "water",
+            "value": 0.9,
+            "weight": 0.1,
+            "contribution": 0.09
+          },
+          {
+            "factor": "capacity_fit",
+            "value": 0.1429,
+            "weight": 0.15,
+            "contribution": 0.0214
+          }
+        ],
+        "reasons": [
+          "H_site=0.31 (below 0.4 safety filter)",
+          "Distance 36.6 km from Chopta (proximity score 0.00)",
+          "Access: road 0.78, healthcare 0.65, water 0.90, school 0.60",
+          "First-order physical screening capacity: 30 available (habitation pop 210)",
+          "Below full capacity threshold (30 < 105) \u2014 split relocation may be required",
+          "U_ij suitability score 0.53"
+        ]
+      },
       "comparison": {
-        "score_delta": 0.0006,
-        "distance_delta_km": 20.37,
-        "capacity_delta": -635,
+        "score_delta": 0.1988,
+        "distance_delta_km": 13.25,
+        "capacity_delta": 674,
         "notes": [
-          "Top site U_ij=0.73 vs runner-up 0.73 (\u0394 +0.00)",
-          "Top site is 20.4 km closer to the habitation",
-          "Runner-up has 635 more capacity; top site wins on safety/access balance"
+          "Top site U_ij=0.73 vs runner-up 0.53 (\u0394 +0.20)",
+          "Top site is 13.2 km closer to the habitation",
+          "Top site has 674 more available screening capacity",
+          "Lower site hazard at top choice (H=0.22 vs 0.31)"
         ]
       }
     },
@@ -1769,72 +1770,6 @@
       "hab_id": "UT_RUD_0013",
       "hab_name": "Makku",
       "top": {
-        "site_id": "SITE_L",
-        "site_name": "Makku Valley Floor",
-        "score": 0.7912,
-        "safety": 0.28,
-        "distance_km": 1.47,
-        "road_access": 0.74,
-        "healthcare_access": 0.62,
-        "water_access": 0.83,
-        "school_access": 0.56,
-        "capacity": 248,
-        "capacity_available": 178,
-        "meets_capacity_threshold": true,
-        "explain": [
-          {
-            "factor": "safety",
-            "value": 0.72,
-            "weight": 0.3,
-            "contribution": 0.216
-          },
-          {
-            "factor": "distance",
-            "value": 0.9413,
-            "weight": 0.15,
-            "contribution": 0.1412
-          },
-          {
-            "factor": "road",
-            "value": 0.74,
-            "weight": 0.15,
-            "contribution": 0.111
-          },
-          {
-            "factor": "healthcare",
-            "value": 0.62,
-            "weight": 0.1,
-            "contribution": 0.062
-          },
-          {
-            "factor": "school",
-            "value": 0.56,
-            "weight": 0.05,
-            "contribution": 0.028
-          },
-          {
-            "factor": "water",
-            "value": 0.83,
-            "weight": 0.1,
-            "contribution": 0.083
-          },
-          {
-            "factor": "capacity_fit",
-            "value": 1.0,
-            "weight": 0.15,
-            "contribution": 0.15
-          }
-        ],
-        "reasons": [
-          "H_site=0.28 (below 0.4 safety filter)",
-          "Distance 1.5 km from Makku (proximity score 0.94)",
-          "Access: road 0.74, healthcare 0.62, water 0.83, school 0.56",
-          "First-order physical screening capacity: 178 available (habitation pop 165)",
-          "Capacity meets 0.5\u00d7population threshold (178 \u2265 82)",
-          "U_ij suitability score 0.79"
-        ]
-      },
-      "runner_up": {
         "site_id": "SITE_A",
         "site_name": "Okhimath Plateau North",
         "score": 0.7689,
@@ -1844,8 +1779,8 @@
         "healthcare_access": 0.8,
         "water_access": 0.85,
         "school_access": 0.7,
-        "capacity": 979,
-        "capacity_available": 779,
+        "capacity": 904,
+        "capacity_available": 704,
         "meets_capacity_threshold": true,
         "explain": [
           {
@@ -1895,19 +1830,86 @@
           "H_site=0.22 (below 0.4 safety filter)",
           "Distance 16.7 km from Makku (proximity score 0.33)",
           "Access: road 0.90, healthcare 0.80, water 0.85, school 0.70",
-          "First-order physical screening capacity: 779 available (habitation pop 165)",
-          "Capacity meets 0.5\u00d7population threshold (779 \u2265 82)",
+          "First-order physical screening capacity: 704 available (habitation pop 165)",
+          "Capacity meets 0.5\u00d7population threshold (704 \u2265 82)",
           "U_ij suitability score 0.77"
         ]
       },
+      "runner_up": {
+        "site_id": "SITE_C",
+        "site_name": "Phata Valley Bench",
+        "score": 0.5363,
+        "safety": 0.31,
+        "distance_km": 29.81,
+        "road_access": 0.78,
+        "healthcare_access": 0.65,
+        "water_access": 0.9,
+        "school_access": 0.6,
+        "capacity": 150,
+        "capacity_available": 30,
+        "meets_capacity_threshold": false,
+        "explain": [
+          {
+            "factor": "safety",
+            "value": 0.69,
+            "weight": 0.3,
+            "contribution": 0.207
+          },
+          {
+            "factor": "distance",
+            "value": 0.0,
+            "weight": 0.15,
+            "contribution": 0.0
+          },
+          {
+            "factor": "road",
+            "value": 0.78,
+            "weight": 0.15,
+            "contribution": 0.117
+          },
+          {
+            "factor": "healthcare",
+            "value": 0.65,
+            "weight": 0.1,
+            "contribution": 0.065
+          },
+          {
+            "factor": "school",
+            "value": 0.6,
+            "weight": 0.05,
+            "contribution": 0.03
+          },
+          {
+            "factor": "water",
+            "value": 0.9,
+            "weight": 0.1,
+            "contribution": 0.09
+          },
+          {
+            "factor": "capacity_fit",
+            "value": 0.1818,
+            "weight": 0.15,
+            "contribution": 0.0273
+          }
+        ],
+        "reasons": [
+          "H_site=0.31 (below 0.4 safety filter)",
+          "Distance 29.8 km from Makku (proximity score 0.00)",
+          "Access: road 0.78, healthcare 0.65, water 0.90, school 0.60",
+          "First-order physical screening capacity: 30 available (habitation pop 165)",
+          "Below full capacity threshold (30 < 82) \u2014 split relocation may be required",
+          "U_ij suitability score 0.54"
+        ]
+      },
       "comparison": {
-        "score_delta": 0.0223,
-        "distance_delta_km": 15.22,
-        "capacity_delta": -601,
+        "score_delta": 0.2326,
+        "distance_delta_km": 13.12,
+        "capacity_delta": 674,
         "notes": [
-          "Top site U_ij=0.79 vs runner-up 0.77 (\u0394 +0.02)",
-          "Top site is 15.2 km closer to the habitation",
-          "Runner-up has 601 more capacity; top site wins on safety/access balance"
+          "Top site U_ij=0.77 vs runner-up 0.54 (\u0394 +0.23)",
+          "Top site is 13.1 km closer to the habitation",
+          "Top site has 674 more available screening capacity",
+          "Lower site hazard at top choice (H=0.22 vs 0.31)"
         ]
       }
     },
@@ -1924,8 +1926,8 @@
         "healthcare_access": 0.8,
         "water_access": 0.85,
         "school_access": 0.7,
-        "capacity": 979,
-        "capacity_available": 779,
+        "capacity": 904,
+        "capacity_available": 704,
         "meets_capacity_threshold": true,
         "explain": [
           {
@@ -1975,86 +1977,86 @@
           "H_site=0.22 (below 0.4 safety filter)",
           "Distance 10.3 km from Jagula (proximity score 0.59)",
           "Access: road 0.90, healthcare 0.80, water 0.85, school 0.70",
-          "First-order physical screening capacity: 779 available (habitation pop 145)",
-          "Capacity meets 0.5\u00d7population threshold (779 \u2265 72)",
+          "First-order physical screening capacity: 704 available (habitation pop 145)",
+          "Capacity meets 0.5\u00d7population threshold (704 \u2265 72)",
           "U_ij suitability score 0.81"
         ]
       },
       "runner_up": {
-        "site_id": "SITE_B",
-        "site_name": "Guptkashi Ridge East",
-        "score": 0.7764,
-        "safety": 0.28,
-        "distance_km": 9.1,
-        "road_access": 0.85,
-        "healthcare_access": 0.75,
-        "water_access": 0.8,
-        "school_access": 0.65,
-        "capacity": 474,
-        "capacity_available": 294,
-        "meets_capacity_threshold": true,
+        "site_id": "SITE_C",
+        "site_name": "Phata Valley Bench",
+        "score": 0.5447,
+        "safety": 0.31,
+        "distance_km": 24.21,
+        "road_access": 0.78,
+        "healthcare_access": 0.65,
+        "water_access": 0.9,
+        "school_access": 0.6,
+        "capacity": 150,
+        "capacity_available": 30,
+        "meets_capacity_threshold": false,
         "explain": [
           {
             "factor": "safety",
-            "value": 0.72,
+            "value": 0.69,
             "weight": 0.3,
-            "contribution": 0.216
+            "contribution": 0.207
           },
           {
             "factor": "distance",
-            "value": 0.636,
+            "value": 0.0314,
             "weight": 0.15,
-            "contribution": 0.0954
+            "contribution": 0.0047
           },
           {
             "factor": "road",
-            "value": 0.85,
+            "value": 0.78,
             "weight": 0.15,
-            "contribution": 0.1275
+            "contribution": 0.117
           },
           {
             "factor": "healthcare",
-            "value": 0.75,
+            "value": 0.65,
             "weight": 0.1,
-            "contribution": 0.075
+            "contribution": 0.065
           },
           {
             "factor": "school",
-            "value": 0.65,
+            "value": 0.6,
             "weight": 0.05,
-            "contribution": 0.0325
+            "contribution": 0.03
           },
           {
             "factor": "water",
-            "value": 0.8,
+            "value": 0.9,
             "weight": 0.1,
-            "contribution": 0.08
+            "contribution": 0.09
           },
           {
             "factor": "capacity_fit",
-            "value": 1.0,
+            "value": 0.2069,
             "weight": 0.15,
-            "contribution": 0.15
+            "contribution": 0.031
           }
         ],
         "reasons": [
-          "H_site=0.28 (below 0.4 safety filter)",
-          "Distance 9.1 km from Jagula (proximity score 0.64)",
-          "Access: road 0.85, healthcare 0.75, water 0.80, school 0.65",
-          "First-order physical screening capacity: 294 available (habitation pop 145)",
-          "Capacity meets 0.5\u00d7population threshold (294 \u2265 72)",
-          "U_ij suitability score 0.78"
+          "H_site=0.31 (below 0.4 safety filter)",
+          "Distance 24.2 km from Jagula (proximity score 0.03)",
+          "Access: road 0.78, healthcare 0.65, water 0.90, school 0.60",
+          "First-order physical screening capacity: 30 available (habitation pop 145)",
+          "Below full capacity threshold (30 < 72) \u2014 split relocation may be required",
+          "U_ij suitability score 0.54"
         ]
       },
       "comparison": {
-        "score_delta": 0.031,
-        "distance_delta_km": -1.17,
-        "capacity_delta": 485,
+        "score_delta": 0.2627,
+        "distance_delta_km": 13.94,
+        "capacity_delta": 674,
         "notes": [
-          "Top site U_ij=0.81 vs runner-up 0.78 (\u0394 +0.03)",
-          "Runner-up is 1.2 km closer, but lower overall U_ij",
-          "Top site has 485 more available screening capacity",
-          "Lower site hazard at top choice (H=0.22 vs 0.28)"
+          "Top site U_ij=0.81 vs runner-up 0.54 (\u0394 +0.26)",
+          "Top site is 13.9 km closer to the habitation",
+          "Top site has 674 more available screening capacity",
+          "Lower site hazard at top choice (H=0.22 vs 0.31)"
         ]
       }
     },
@@ -2062,72 +2064,6 @@
       "hab_id": "UT_RUD_0015",
       "hab_name": "Augustmuni",
       "top": {
-        "site_id": "SITE_D",
-        "site_name": "Augustmuni Terrace",
-        "score": 0.7571,
-        "safety": 0.25,
-        "distance_km": 2.22,
-        "road_access": 0.82,
-        "healthcare_access": 0.72,
-        "water_access": 0.88,
-        "school_access": 0.68,
-        "capacity": 453,
-        "capacity_available": 303,
-        "meets_capacity_threshold": true,
-        "explain": [
-          {
-            "factor": "safety",
-            "value": 0.75,
-            "weight": 0.3,
-            "contribution": 0.225
-          },
-          {
-            "factor": "distance",
-            "value": 0.9113,
-            "weight": 0.15,
-            "contribution": 0.1367
-          },
-          {
-            "factor": "road",
-            "value": 0.82,
-            "weight": 0.15,
-            "contribution": 0.123
-          },
-          {
-            "factor": "healthcare",
-            "value": 0.72,
-            "weight": 0.1,
-            "contribution": 0.072
-          },
-          {
-            "factor": "school",
-            "value": 0.68,
-            "weight": 0.05,
-            "contribution": 0.034
-          },
-          {
-            "factor": "water",
-            "value": 0.88,
-            "weight": 0.1,
-            "contribution": 0.088
-          },
-          {
-            "factor": "capacity_fit",
-            "value": 0.5224,
-            "weight": 0.15,
-            "contribution": 0.0784
-          }
-        ],
-        "reasons": [
-          "H_site=0.25 (below 0.4 safety filter)",
-          "Distance 2.2 km from Augustmuni (proximity score 0.91)",
-          "Access: road 0.82, healthcare 0.72, water 0.88, school 0.68",
-          "First-order physical screening capacity: 303 available (habitation pop 580)",
-          "Capacity meets 0.5\u00d7population threshold (303 \u2265 290)",
-          "U_ij suitability score 0.76"
-        ]
-      },
-      "runner_up": {
         "site_id": "SITE_A",
         "site_name": "Okhimath Plateau North",
         "score": 0.719,
@@ -2137,8 +2073,8 @@
         "healthcare_access": 0.8,
         "water_access": 0.85,
         "school_access": 0.7,
-        "capacity": 979,
-        "capacity_available": 779,
+        "capacity": 904,
+        "capacity_available": 704,
         "meets_capacity_threshold": true,
         "explain": [
           {
@@ -2188,19 +2124,86 @@
           "H_site=0.22 (below 0.4 safety filter)",
           "Distance 28.1 km from Augustmuni (proximity score 0.00)",
           "Access: road 0.90, healthcare 0.80, water 0.85, school 0.70",
-          "First-order physical screening capacity: 779 available (habitation pop 580)",
-          "Capacity meets 0.5\u00d7population threshold (779 \u2265 290)",
+          "First-order physical screening capacity: 704 available (habitation pop 580)",
+          "Capacity meets 0.5\u00d7population threshold (704 \u2265 290)",
           "U_ij suitability score 0.72"
         ]
       },
+      "runner_up": {
+        "site_id": "SITE_C",
+        "site_name": "Phata Valley Bench",
+        "score": 0.5686,
+        "safety": 0.31,
+        "distance_km": 16.36,
+        "road_access": 0.78,
+        "healthcare_access": 0.65,
+        "water_access": 0.9,
+        "school_access": 0.6,
+        "capacity": 150,
+        "capacity_available": 30,
+        "meets_capacity_threshold": false,
+        "explain": [
+          {
+            "factor": "safety",
+            "value": 0.69,
+            "weight": 0.3,
+            "contribution": 0.207
+          },
+          {
+            "factor": "distance",
+            "value": 0.3457,
+            "weight": 0.15,
+            "contribution": 0.0518
+          },
+          {
+            "factor": "road",
+            "value": 0.78,
+            "weight": 0.15,
+            "contribution": 0.117
+          },
+          {
+            "factor": "healthcare",
+            "value": 0.65,
+            "weight": 0.1,
+            "contribution": 0.065
+          },
+          {
+            "factor": "school",
+            "value": 0.6,
+            "weight": 0.05,
+            "contribution": 0.03
+          },
+          {
+            "factor": "water",
+            "value": 0.9,
+            "weight": 0.1,
+            "contribution": 0.09
+          },
+          {
+            "factor": "capacity_fit",
+            "value": 0.0517,
+            "weight": 0.15,
+            "contribution": 0.0078
+          }
+        ],
+        "reasons": [
+          "H_site=0.31 (below 0.4 safety filter)",
+          "Distance 16.4 km from Augustmuni (proximity score 0.35)",
+          "Access: road 0.78, healthcare 0.65, water 0.90, school 0.60",
+          "First-order physical screening capacity: 30 available (habitation pop 580)",
+          "Below full capacity threshold (30 < 290) \u2014 split relocation may be required",
+          "U_ij suitability score 0.57"
+        ]
+      },
       "comparison": {
-        "score_delta": 0.0381,
-        "distance_delta_km": 25.93,
-        "capacity_delta": -476,
+        "score_delta": 0.1504,
+        "distance_delta_km": -11.79,
+        "capacity_delta": 674,
         "notes": [
-          "Top site U_ij=0.76 vs runner-up 0.72 (\u0394 +0.04)",
-          "Top site is 25.9 km closer to the habitation",
-          "Runner-up has 476 more capacity; top site wins on safety/access balance"
+          "Top site U_ij=0.72 vs runner-up 0.57 (\u0394 +0.15)",
+          "Runner-up is 11.8 km closer, but lower overall U_ij",
+          "Top site has 674 more available screening capacity",
+          "Lower site hazard at top choice (H=0.22 vs 0.31)"
         ]
       }
     },
@@ -2208,311 +2211,17 @@
       "hab_id": "UT_RUD_0016",
       "hab_name": "Bhiri",
       "top": {
-        "site_id": "SITE_I",
-        "site_name": "Joshiyara Plateau",
-        "score": 0.8148,
-        "safety": 0.24,
-        "distance_km": 5.87,
-        "road_access": 0.84,
-        "healthcare_access": 0.74,
-        "water_access": 0.87,
-        "school_access": 0.7,
-        "capacity": 480,
-        "capacity_available": 340,
-        "meets_capacity_threshold": true,
-        "explain": [
-          {
-            "factor": "safety",
-            "value": 0.76,
-            "weight": 0.3,
-            "contribution": 0.228
-          },
-          {
-            "factor": "distance",
-            "value": 0.7653,
-            "weight": 0.15,
-            "contribution": 0.1148
-          },
-          {
-            "factor": "road",
-            "value": 0.84,
-            "weight": 0.15,
-            "contribution": 0.126
-          },
-          {
-            "factor": "healthcare",
-            "value": 0.74,
-            "weight": 0.1,
-            "contribution": 0.074
-          },
-          {
-            "factor": "school",
-            "value": 0.7,
-            "weight": 0.05,
-            "contribution": 0.035
-          },
-          {
-            "factor": "water",
-            "value": 0.87,
-            "weight": 0.1,
-            "contribution": 0.087
-          },
-          {
-            "factor": "capacity_fit",
-            "value": 1.0,
-            "weight": 0.15,
-            "contribution": 0.15
-          }
-        ],
-        "reasons": [
-          "H_site=0.24 (below 0.4 safety filter)",
-          "Distance 5.9 km from Bhiri (proximity score 0.77)",
-          "Access: road 0.84, healthcare 0.74, water 0.87, school 0.70",
-          "First-order physical screening capacity: 340 available (habitation pop 325)",
-          "Capacity meets 0.5\u00d7population threshold (340 \u2265 162)",
-          "U_ij suitability score 0.81"
-        ]
-      },
-      "runner_up": {
-        "site_id": "SITE_E",
-        "site_name": "Srinagar Riverside Flat",
-        "score": 0.7845,
-        "safety": 0.3,
-        "distance_km": 10.58,
-        "road_access": 0.88,
-        "healthcare_access": 0.78,
-        "water_access": 0.92,
-        "school_access": 0.72,
-        "capacity": 618,
-        "capacity_available": 398,
-        "meets_capacity_threshold": true,
-        "explain": [
-          {
-            "factor": "safety",
-            "value": 0.7,
-            "weight": 0.3,
-            "contribution": 0.21
-          },
-          {
-            "factor": "distance",
-            "value": 0.5766,
-            "weight": 0.15,
-            "contribution": 0.0865
-          },
-          {
-            "factor": "road",
-            "value": 0.88,
-            "weight": 0.15,
-            "contribution": 0.132
-          },
-          {
-            "factor": "healthcare",
-            "value": 0.78,
-            "weight": 0.1,
-            "contribution": 0.078
-          },
-          {
-            "factor": "school",
-            "value": 0.72,
-            "weight": 0.05,
-            "contribution": 0.036
-          },
-          {
-            "factor": "water",
-            "value": 0.92,
-            "weight": 0.1,
-            "contribution": 0.092
-          },
-          {
-            "factor": "capacity_fit",
-            "value": 1.0,
-            "weight": 0.15,
-            "contribution": 0.15
-          }
-        ],
-        "reasons": [
-          "H_site=0.30 (below 0.4 safety filter)",
-          "Distance 10.6 km from Bhiri (proximity score 0.58)",
-          "Access: road 0.88, healthcare 0.78, water 0.92, school 0.72",
-          "First-order physical screening capacity: 398 available (habitation pop 325)",
-          "Capacity meets 0.5\u00d7population threshold (398 \u2265 162)",
-          "U_ij suitability score 0.78"
-        ]
-      },
-      "comparison": {
-        "score_delta": 0.0303,
-        "distance_delta_km": 4.71,
-        "capacity_delta": -58,
-        "notes": [
-          "Top site U_ij=0.81 vs runner-up 0.78 (\u0394 +0.03)",
-          "Top site is 4.7 km closer to the habitation",
-          "Runner-up has 58 more capacity; top site wins on safety/access balance",
-          "Lower site hazard at top choice (H=0.24 vs 0.30)"
-        ]
-      }
-    },
-    "UT_RUD_0017": {
-      "hab_id": "UT_RUD_0017",
-      "hab_name": "Chandrapuri",
-      "top": {
-        "site_id": "SITE_I",
-        "site_name": "Joshiyara Plateau",
-        "score": 0.8324,
-        "safety": 0.24,
-        "distance_km": 2.94,
-        "road_access": 0.84,
-        "healthcare_access": 0.74,
-        "water_access": 0.87,
-        "school_access": 0.7,
-        "capacity": 480,
-        "capacity_available": 340,
-        "meets_capacity_threshold": true,
-        "explain": [
-          {
-            "factor": "safety",
-            "value": 0.76,
-            "weight": 0.3,
-            "contribution": 0.228
-          },
-          {
-            "factor": "distance",
-            "value": 0.8825,
-            "weight": 0.15,
-            "contribution": 0.1324
-          },
-          {
-            "factor": "road",
-            "value": 0.84,
-            "weight": 0.15,
-            "contribution": 0.126
-          },
-          {
-            "factor": "healthcare",
-            "value": 0.74,
-            "weight": 0.1,
-            "contribution": 0.074
-          },
-          {
-            "factor": "school",
-            "value": 0.7,
-            "weight": 0.05,
-            "contribution": 0.035
-          },
-          {
-            "factor": "water",
-            "value": 0.87,
-            "weight": 0.1,
-            "contribution": 0.087
-          },
-          {
-            "factor": "capacity_fit",
-            "value": 1.0,
-            "weight": 0.15,
-            "contribution": 0.15
-          }
-        ],
-        "reasons": [
-          "H_site=0.24 (below 0.4 safety filter)",
-          "Distance 2.9 km from Chandrapuri (proximity score 0.88)",
-          "Access: road 0.84, healthcare 0.74, water 0.87, school 0.70",
-          "First-order physical screening capacity: 340 available (habitation pop 270)",
-          "Capacity meets 0.5\u00d7population threshold (340 \u2265 135)",
-          "U_ij suitability score 0.83"
-        ]
-      },
-      "runner_up": {
-        "site_id": "SITE_E",
-        "site_name": "Srinagar Riverside Flat",
-        "score": 0.767,
-        "safety": 0.3,
-        "distance_km": 13.49,
-        "road_access": 0.88,
-        "healthcare_access": 0.78,
-        "water_access": 0.92,
-        "school_access": 0.72,
-        "capacity": 618,
-        "capacity_available": 398,
-        "meets_capacity_threshold": true,
-        "explain": [
-          {
-            "factor": "safety",
-            "value": 0.7,
-            "weight": 0.3,
-            "contribution": 0.21
-          },
-          {
-            "factor": "distance",
-            "value": 0.4602,
-            "weight": 0.15,
-            "contribution": 0.069
-          },
-          {
-            "factor": "road",
-            "value": 0.88,
-            "weight": 0.15,
-            "contribution": 0.132
-          },
-          {
-            "factor": "healthcare",
-            "value": 0.78,
-            "weight": 0.1,
-            "contribution": 0.078
-          },
-          {
-            "factor": "school",
-            "value": 0.72,
-            "weight": 0.05,
-            "contribution": 0.036
-          },
-          {
-            "factor": "water",
-            "value": 0.92,
-            "weight": 0.1,
-            "contribution": 0.092
-          },
-          {
-            "factor": "capacity_fit",
-            "value": 1.0,
-            "weight": 0.15,
-            "contribution": 0.15
-          }
-        ],
-        "reasons": [
-          "H_site=0.30 (below 0.4 safety filter)",
-          "Distance 13.5 km from Chandrapuri (proximity score 0.46)",
-          "Access: road 0.88, healthcare 0.78, water 0.92, school 0.72",
-          "First-order physical screening capacity: 398 available (habitation pop 270)",
-          "Capacity meets 0.5\u00d7population threshold (398 \u2265 135)",
-          "U_ij suitability score 0.77"
-        ]
-      },
-      "comparison": {
-        "score_delta": 0.0654,
-        "distance_delta_km": 10.55,
-        "capacity_delta": -58,
-        "notes": [
-          "Top site U_ij=0.83 vs runner-up 0.77 (\u0394 +0.07)",
-          "Top site is 10.6 km closer to the habitation",
-          "Runner-up has 58 more capacity; top site wins on safety/access balance",
-          "Lower site hazard at top choice (H=0.24 vs 0.30)"
-        ]
-      }
-    },
-    "UT_RUD_0018": {
-      "hab_id": "UT_RUD_0018",
-      "hab_name": "Srinagar",
-      "top": {
         "site_id": "SITE_A",
         "site_name": "Okhimath Plateau North",
-        "score": 0.7003,
+        "score": 0.719,
         "safety": 0.22,
-        "distance_km": 44.91,
+        "distance_km": 33.29,
         "road_access": 0.9,
         "healthcare_access": 0.8,
         "water_access": 0.85,
         "school_access": 0.7,
-        "capacity": 979,
-        "capacity_available": 779,
+        "capacity": 904,
+        "capacity_available": 704,
         "meets_capacity_threshold": true,
         "explain": [
           {
@@ -2553,95 +2262,389 @@
           },
           {
             "factor": "capacity_fit",
-            "value": 0.8753,
+            "value": 1.0,
             "weight": 0.15,
-            "contribution": 0.1313
+            "contribution": 0.15
+          }
+        ],
+        "reasons": [
+          "H_site=0.22 (below 0.4 safety filter)",
+          "Distance 33.3 km from Bhiri (proximity score 0.00)",
+          "Access: road 0.90, healthcare 0.80, water 0.85, school 0.70",
+          "First-order physical screening capacity: 704 available (habitation pop 325)",
+          "Capacity meets 0.5\u00d7population threshold (704 \u2265 162)",
+          "U_ij suitability score 0.72"
+        ]
+      },
+      "runner_up": {
+        "site_id": "SITE_C",
+        "site_name": "Phata Valley Bench",
+        "score": 0.5567,
+        "safety": 0.31,
+        "distance_km": 19.36,
+        "road_access": 0.78,
+        "healthcare_access": 0.65,
+        "water_access": 0.9,
+        "school_access": 0.6,
+        "capacity": 150,
+        "capacity_available": 30,
+        "meets_capacity_threshold": false,
+        "explain": [
+          {
+            "factor": "safety",
+            "value": 0.69,
+            "weight": 0.3,
+            "contribution": 0.207
+          },
+          {
+            "factor": "distance",
+            "value": 0.2255,
+            "weight": 0.15,
+            "contribution": 0.0338
+          },
+          {
+            "factor": "road",
+            "value": 0.78,
+            "weight": 0.15,
+            "contribution": 0.117
+          },
+          {
+            "factor": "healthcare",
+            "value": 0.65,
+            "weight": 0.1,
+            "contribution": 0.065
+          },
+          {
+            "factor": "school",
+            "value": 0.6,
+            "weight": 0.05,
+            "contribution": 0.03
+          },
+          {
+            "factor": "water",
+            "value": 0.9,
+            "weight": 0.1,
+            "contribution": 0.09
+          },
+          {
+            "factor": "capacity_fit",
+            "value": 0.0923,
+            "weight": 0.15,
+            "contribution": 0.0138
+          }
+        ],
+        "reasons": [
+          "H_site=0.31 (below 0.4 safety filter)",
+          "Distance 19.4 km from Bhiri (proximity score 0.23)",
+          "Access: road 0.78, healthcare 0.65, water 0.90, school 0.60",
+          "First-order physical screening capacity: 30 available (habitation pop 325)",
+          "Below full capacity threshold (30 < 162) \u2014 split relocation may be required",
+          "U_ij suitability score 0.56"
+        ]
+      },
+      "comparison": {
+        "score_delta": 0.1623,
+        "distance_delta_km": -13.93,
+        "capacity_delta": 674,
+        "notes": [
+          "Top site U_ij=0.72 vs runner-up 0.56 (\u0394 +0.16)",
+          "Runner-up is 13.9 km closer, but lower overall U_ij",
+          "Top site has 674 more available screening capacity",
+          "Lower site hazard at top choice (H=0.22 vs 0.31)"
+        ]
+      }
+    },
+    "UT_RUD_0017": {
+      "hab_id": "UT_RUD_0017",
+      "hab_name": "Chandrapuri",
+      "top": {
+        "site_id": "SITE_A",
+        "site_name": "Okhimath Plateau North",
+        "score": 0.719,
+        "safety": 0.22,
+        "distance_km": 34.99,
+        "road_access": 0.9,
+        "healthcare_access": 0.8,
+        "water_access": 0.85,
+        "school_access": 0.7,
+        "capacity": 904,
+        "capacity_available": 704,
+        "meets_capacity_threshold": true,
+        "explain": [
+          {
+            "factor": "safety",
+            "value": 0.78,
+            "weight": 0.3,
+            "contribution": 0.234
+          },
+          {
+            "factor": "distance",
+            "value": 0.0,
+            "weight": 0.15,
+            "contribution": 0.0
+          },
+          {
+            "factor": "road",
+            "value": 0.9,
+            "weight": 0.15,
+            "contribution": 0.135
+          },
+          {
+            "factor": "healthcare",
+            "value": 0.8,
+            "weight": 0.1,
+            "contribution": 0.08
+          },
+          {
+            "factor": "school",
+            "value": 0.7,
+            "weight": 0.05,
+            "contribution": 0.035
+          },
+          {
+            "factor": "water",
+            "value": 0.85,
+            "weight": 0.1,
+            "contribution": 0.085
+          },
+          {
+            "factor": "capacity_fit",
+            "value": 1.0,
+            "weight": 0.15,
+            "contribution": 0.15
+          }
+        ],
+        "reasons": [
+          "H_site=0.22 (below 0.4 safety filter)",
+          "Distance 35.0 km from Chandrapuri (proximity score 0.00)",
+          "Access: road 0.90, healthcare 0.80, water 0.85, school 0.70",
+          "First-order physical screening capacity: 704 available (habitation pop 270)",
+          "Capacity meets 0.5\u00d7population threshold (704 \u2265 135)",
+          "U_ij suitability score 0.72"
+        ]
+      },
+      "runner_up": {
+        "site_id": "SITE_C",
+        "site_name": "Phata Valley Bench",
+        "score": 0.5532,
+        "safety": 0.31,
+        "distance_km": 20.4,
+        "road_access": 0.78,
+        "healthcare_access": 0.65,
+        "water_access": 0.9,
+        "school_access": 0.6,
+        "capacity": 150,
+        "capacity_available": 30,
+        "meets_capacity_threshold": false,
+        "explain": [
+          {
+            "factor": "safety",
+            "value": 0.69,
+            "weight": 0.3,
+            "contribution": 0.207
+          },
+          {
+            "factor": "distance",
+            "value": 0.1839,
+            "weight": 0.15,
+            "contribution": 0.0276
+          },
+          {
+            "factor": "road",
+            "value": 0.78,
+            "weight": 0.15,
+            "contribution": 0.117
+          },
+          {
+            "factor": "healthcare",
+            "value": 0.65,
+            "weight": 0.1,
+            "contribution": 0.065
+          },
+          {
+            "factor": "school",
+            "value": 0.6,
+            "weight": 0.05,
+            "contribution": 0.03
+          },
+          {
+            "factor": "water",
+            "value": 0.9,
+            "weight": 0.1,
+            "contribution": 0.09
+          },
+          {
+            "factor": "capacity_fit",
+            "value": 0.1111,
+            "weight": 0.15,
+            "contribution": 0.0167
+          }
+        ],
+        "reasons": [
+          "H_site=0.31 (below 0.4 safety filter)",
+          "Distance 20.4 km from Chandrapuri (proximity score 0.18)",
+          "Access: road 0.78, healthcare 0.65, water 0.90, school 0.60",
+          "First-order physical screening capacity: 30 available (habitation pop 270)",
+          "Below full capacity threshold (30 < 135) \u2014 split relocation may be required",
+          "U_ij suitability score 0.55"
+        ]
+      },
+      "comparison": {
+        "score_delta": 0.1658,
+        "distance_delta_km": -14.59,
+        "capacity_delta": 674,
+        "notes": [
+          "Top site U_ij=0.72 vs runner-up 0.55 (\u0394 +0.17)",
+          "Runner-up is 14.6 km closer, but lower overall U_ij",
+          "Top site has 674 more available screening capacity",
+          "Lower site hazard at top choice (H=0.22 vs 0.31)"
+        ]
+      }
+    },
+    "UT_RUD_0018": {
+      "hab_id": "UT_RUD_0018",
+      "hab_name": "Srinagar",
+      "top": {
+        "site_id": "SITE_A",
+        "site_name": "Okhimath Plateau North",
+        "score": 0.6877,
+        "safety": 0.22,
+        "distance_km": 44.91,
+        "road_access": 0.9,
+        "healthcare_access": 0.8,
+        "water_access": 0.85,
+        "school_access": 0.7,
+        "capacity": 904,
+        "capacity_available": 704,
+        "meets_capacity_threshold": true,
+        "explain": [
+          {
+            "factor": "safety",
+            "value": 0.78,
+            "weight": 0.3,
+            "contribution": 0.234
+          },
+          {
+            "factor": "distance",
+            "value": 0.0,
+            "weight": 0.15,
+            "contribution": 0.0
+          },
+          {
+            "factor": "road",
+            "value": 0.9,
+            "weight": 0.15,
+            "contribution": 0.135
+          },
+          {
+            "factor": "healthcare",
+            "value": 0.8,
+            "weight": 0.1,
+            "contribution": 0.08
+          },
+          {
+            "factor": "school",
+            "value": 0.7,
+            "weight": 0.05,
+            "contribution": 0.035
+          },
+          {
+            "factor": "water",
+            "value": 0.85,
+            "weight": 0.1,
+            "contribution": 0.085
+          },
+          {
+            "factor": "capacity_fit",
+            "value": 0.791,
+            "weight": 0.15,
+            "contribution": 0.1187
           }
         ],
         "reasons": [
           "H_site=0.22 (below 0.4 safety filter)",
           "Distance 44.9 km from Srinagar (proximity score 0.00)",
           "Access: road 0.90, healthcare 0.80, water 0.85, school 0.70",
-          "First-order physical screening capacity: 779 available (habitation pop 890)",
-          "Capacity meets 0.5\u00d7population threshold (779 \u2265 445)",
-          "U_ij suitability score 0.70"
+          "First-order physical screening capacity: 704 available (habitation pop 890)",
+          "Capacity meets 0.5\u00d7population threshold (704 \u2265 445)",
+          "U_ij suitability score 0.69"
         ]
       },
       "runner_up": {
-        "site_id": "SITE_E",
-        "site_name": "Srinagar Riverside Flat",
-        "score": 0.7474,
-        "safety": 0.3,
-        "distance_km": 2.94,
-        "road_access": 0.88,
-        "healthcare_access": 0.78,
-        "water_access": 0.92,
-        "school_access": 0.72,
-        "capacity": 618,
-        "capacity_available": 398,
+        "site_id": "SITE_C",
+        "site_name": "Phata Valley Bench",
+        "score": 0.5141,
+        "safety": 0.31,
+        "distance_km": 32.02,
+        "road_access": 0.78,
+        "healthcare_access": 0.65,
+        "water_access": 0.9,
+        "school_access": 0.6,
+        "capacity": 150,
+        "capacity_available": 30,
         "meets_capacity_threshold": false,
         "explain": [
           {
             "factor": "safety",
-            "value": 0.7,
+            "value": 0.69,
             "weight": 0.3,
-            "contribution": 0.21
+            "contribution": 0.207
           },
           {
             "factor": "distance",
-            "value": 0.8824,
+            "value": 0.0,
             "weight": 0.15,
-            "contribution": 0.1324
+            "contribution": 0.0
           },
           {
             "factor": "road",
-            "value": 0.88,
+            "value": 0.78,
             "weight": 0.15,
-            "contribution": 0.132
+            "contribution": 0.117
           },
           {
             "factor": "healthcare",
-            "value": 0.78,
+            "value": 0.65,
             "weight": 0.1,
-            "contribution": 0.078
+            "contribution": 0.065
           },
           {
             "factor": "school",
-            "value": 0.72,
+            "value": 0.6,
             "weight": 0.05,
-            "contribution": 0.036
+            "contribution": 0.03
           },
           {
             "factor": "water",
-            "value": 0.92,
+            "value": 0.9,
             "weight": 0.1,
-            "contribution": 0.092
+            "contribution": 0.09
           },
           {
             "factor": "capacity_fit",
-            "value": 0.4472,
+            "value": 0.0337,
             "weight": 0.15,
-            "contribution": 0.0671
+            "contribution": 0.0051
           }
         ],
         "reasons": [
-          "H_site=0.30 (below 0.4 safety filter)",
-          "Distance 2.9 km from Srinagar (proximity score 0.88)",
-          "Access: road 0.88, healthcare 0.78, water 0.92, school 0.72",
-          "First-order physical screening capacity: 398 available (habitation pop 890)",
-          "Below full capacity threshold (398 < 445) \u2014 split relocation may be required",
-          "U_ij suitability score 0.75"
+          "H_site=0.31 (below 0.4 safety filter)",
+          "Distance 32.0 km from Srinagar (proximity score 0.00)",
+          "Access: road 0.78, healthcare 0.65, water 0.90, school 0.60",
+          "First-order physical screening capacity: 30 available (habitation pop 890)",
+          "Below full capacity threshold (30 < 445) \u2014 split relocation may be required",
+          "U_ij suitability score 0.51"
         ]
       },
       "comparison": {
-        "score_delta": -0.0471,
-        "distance_delta_km": -41.97,
-        "capacity_delta": 381,
+        "score_delta": 0.1736,
+        "distance_delta_km": -12.89,
+        "capacity_delta": 674,
         "notes": [
-          "Top site U_ij=0.70 vs runner-up 0.75 (\u0394 +-0.05)",
-          "Runner-up is 42.0 km closer, but lower overall U_ij",
-          "Top site has 381 more available screening capacity",
-          "Lower site hazard at top choice (H=0.22 vs 0.30)"
+          "Top site U_ij=0.69 vs runner-up 0.51 (\u0394 +0.17)",
+          "Runner-up is 12.9 km closer, but lower overall U_ij",
+          "Top site has 674 more available screening capacity",
+          "Lower site hazard at top choice (H=0.22 vs 0.31)"
         ]
       }
     },
@@ -2649,72 +2652,6 @@
       "hab_id": "UT_RUD_0019",
       "hab_name": "Pipalkoti",
       "top": {
-        "site_id": "SITE_G",
-        "site_name": "Pipalkoti Foothill",
-        "score": 0.7644,
-        "safety": 0.29,
-        "distance_km": 2.94,
-        "road_access": 0.86,
-        "healthcare_access": 0.7,
-        "water_access": 0.82,
-        "school_access": 0.66,
-        "capacity": 477,
-        "capacity_available": 287,
-        "meets_capacity_threshold": true,
-        "explain": [
-          {
-            "factor": "safety",
-            "value": 0.71,
-            "weight": 0.3,
-            "contribution": 0.213
-          },
-          {
-            "factor": "distance",
-            "value": 0.8825,
-            "weight": 0.15,
-            "contribution": 0.1324
-          },
-          {
-            "factor": "road",
-            "value": 0.86,
-            "weight": 0.15,
-            "contribution": 0.129
-          },
-          {
-            "factor": "healthcare",
-            "value": 0.7,
-            "weight": 0.1,
-            "contribution": 0.07
-          },
-          {
-            "factor": "school",
-            "value": 0.66,
-            "weight": 0.05,
-            "contribution": 0.033
-          },
-          {
-            "factor": "water",
-            "value": 0.82,
-            "weight": 0.1,
-            "contribution": 0.082
-          },
-          {
-            "factor": "capacity_fit",
-            "value": 0.7,
-            "weight": 0.15,
-            "contribution": 0.105
-          }
-        ],
-        "reasons": [
-          "H_site=0.29 (below 0.4 safety filter)",
-          "Distance 2.9 km from Pipalkoti (proximity score 0.88)",
-          "Access: road 0.86, healthcare 0.70, water 0.82, school 0.66",
-          "First-order physical screening capacity: 287 available (habitation pop 410)",
-          "Capacity meets 0.5\u00d7population threshold (287 \u2265 205)",
-          "U_ij suitability score 0.76"
-        ]
-      },
-      "runner_up": {
         "site_id": "SITE_A",
         "site_name": "Okhimath Plateau North",
         "score": 0.719,
@@ -2724,8 +2661,8 @@
         "healthcare_access": 0.8,
         "water_access": 0.85,
         "school_access": 0.7,
-        "capacity": 979,
-        "capacity_available": 779,
+        "capacity": 904,
+        "capacity_available": 704,
         "meets_capacity_threshold": true,
         "explain": [
           {
@@ -2775,19 +2712,86 @@
           "H_site=0.22 (below 0.4 safety filter)",
           "Distance 33.2 km from Pipalkoti (proximity score 0.00)",
           "Access: road 0.90, healthcare 0.80, water 0.85, school 0.70",
-          "First-order physical screening capacity: 779 available (habitation pop 410)",
-          "Capacity meets 0.5\u00d7population threshold (779 \u2265 205)",
+          "First-order physical screening capacity: 704 available (habitation pop 410)",
+          "Capacity meets 0.5\u00d7population threshold (704 \u2265 205)",
           "U_ij suitability score 0.72"
         ]
       },
+      "runner_up": {
+        "site_id": "SITE_C",
+        "site_name": "Phata Valley Bench",
+        "score": 0.52,
+        "safety": 0.31,
+        "distance_km": 31.72,
+        "road_access": 0.78,
+        "healthcare_access": 0.65,
+        "water_access": 0.9,
+        "school_access": 0.6,
+        "capacity": 150,
+        "capacity_available": 30,
+        "meets_capacity_threshold": false,
+        "explain": [
+          {
+            "factor": "safety",
+            "value": 0.69,
+            "weight": 0.3,
+            "contribution": 0.207
+          },
+          {
+            "factor": "distance",
+            "value": 0.0,
+            "weight": 0.15,
+            "contribution": 0.0
+          },
+          {
+            "factor": "road",
+            "value": 0.78,
+            "weight": 0.15,
+            "contribution": 0.117
+          },
+          {
+            "factor": "healthcare",
+            "value": 0.65,
+            "weight": 0.1,
+            "contribution": 0.065
+          },
+          {
+            "factor": "school",
+            "value": 0.6,
+            "weight": 0.05,
+            "contribution": 0.03
+          },
+          {
+            "factor": "water",
+            "value": 0.9,
+            "weight": 0.1,
+            "contribution": 0.09
+          },
+          {
+            "factor": "capacity_fit",
+            "value": 0.0732,
+            "weight": 0.15,
+            "contribution": 0.011
+          }
+        ],
+        "reasons": [
+          "H_site=0.31 (below 0.4 safety filter)",
+          "Distance 31.7 km from Pipalkoti (proximity score 0.00)",
+          "Access: road 0.78, healthcare 0.65, water 0.90, school 0.60",
+          "First-order physical screening capacity: 30 available (habitation pop 410)",
+          "Below full capacity threshold (30 < 205) \u2014 split relocation may be required",
+          "U_ij suitability score 0.52"
+        ]
+      },
       "comparison": {
-        "score_delta": 0.0454,
-        "distance_delta_km": 30.3,
-        "capacity_delta": -492,
+        "score_delta": 0.199,
+        "distance_delta_km": -1.52,
+        "capacity_delta": 674,
         "notes": [
-          "Top site U_ij=0.76 vs runner-up 0.72 (\u0394 +0.05)",
-          "Top site is 30.3 km closer to the habitation",
-          "Runner-up has 492 more capacity; top site wins on safety/access balance"
+          "Top site U_ij=0.72 vs runner-up 0.52 (\u0394 +0.20)",
+          "Runner-up is 1.5 km closer, but lower overall U_ij",
+          "Top site has 674 more available screening capacity",
+          "Lower site hazard at top choice (H=0.22 vs 0.31)"
         ]
       }
     },
@@ -2804,8 +2808,8 @@
         "healthcare_access": 0.8,
         "water_access": 0.85,
         "school_access": 0.7,
-        "capacity": 979,
-        "capacity_available": 779,
+        "capacity": 904,
+        "capacity_available": 704,
         "meets_capacity_threshold": true,
         "explain": [
           {
@@ -2855,86 +2859,86 @@
           "H_site=0.22 (below 0.4 safety filter)",
           "Distance 10.1 km from Khumera (proximity score 0.59)",
           "Access: road 0.90, healthcare 0.80, water 0.85, school 0.70",
-          "First-order physical screening capacity: 779 available (habitation pop 155)",
-          "Capacity meets 0.5\u00d7population threshold (779 \u2265 77)",
+          "First-order physical screening capacity: 704 available (habitation pop 155)",
+          "Capacity meets 0.5\u00d7population threshold (704 \u2265 77)",
           "U_ij suitability score 0.81"
         ]
       },
       "runner_up": {
-        "site_id": "SITE_B",
-        "site_name": "Guptkashi Ridge East",
-        "score": 0.7918,
-        "safety": 0.28,
-        "distance_km": 6.53,
-        "road_access": 0.85,
-        "healthcare_access": 0.75,
-        "water_access": 0.8,
-        "school_access": 0.65,
-        "capacity": 474,
-        "capacity_available": 294,
-        "meets_capacity_threshold": true,
+        "site_id": "SITE_C",
+        "site_name": "Phata Valley Bench",
+        "score": 0.5577,
+        "safety": 0.31,
+        "distance_km": 21.72,
+        "road_access": 0.78,
+        "healthcare_access": 0.65,
+        "water_access": 0.9,
+        "school_access": 0.6,
+        "capacity": 150,
+        "capacity_available": 30,
+        "meets_capacity_threshold": false,
         "explain": [
           {
             "factor": "safety",
-            "value": 0.72,
+            "value": 0.69,
             "weight": 0.3,
-            "contribution": 0.216
+            "contribution": 0.207
           },
           {
             "factor": "distance",
-            "value": 0.7386,
+            "value": 0.1313,
             "weight": 0.15,
-            "contribution": 0.1108
+            "contribution": 0.0197
           },
           {
             "factor": "road",
-            "value": 0.85,
+            "value": 0.78,
             "weight": 0.15,
-            "contribution": 0.1275
+            "contribution": 0.117
           },
           {
             "factor": "healthcare",
-            "value": 0.75,
+            "value": 0.65,
             "weight": 0.1,
-            "contribution": 0.075
+            "contribution": 0.065
           },
           {
             "factor": "school",
-            "value": 0.65,
+            "value": 0.6,
             "weight": 0.05,
-            "contribution": 0.0325
+            "contribution": 0.03
           },
           {
             "factor": "water",
-            "value": 0.8,
+            "value": 0.9,
             "weight": 0.1,
-            "contribution": 0.08
+            "contribution": 0.09
           },
           {
             "factor": "capacity_fit",
-            "value": 1.0,
+            "value": 0.1935,
             "weight": 0.15,
-            "contribution": 0.15
+            "contribution": 0.029
           }
         ],
         "reasons": [
-          "H_site=0.28 (below 0.4 safety filter)",
-          "Distance 6.5 km from Khumera (proximity score 0.74)",
-          "Access: road 0.85, healthcare 0.75, water 0.80, school 0.65",
-          "First-order physical screening capacity: 294 available (habitation pop 155)",
-          "Capacity meets 0.5\u00d7population threshold (294 \u2265 77)",
-          "U_ij suitability score 0.79"
+          "H_site=0.31 (below 0.4 safety filter)",
+          "Distance 21.7 km from Khumera (proximity score 0.13)",
+          "Access: road 0.78, healthcare 0.65, water 0.90, school 0.60",
+          "First-order physical screening capacity: 30 available (habitation pop 155)",
+          "Below full capacity threshold (30 < 77) \u2014 split relocation may be required",
+          "U_ij suitability score 0.56"
         ]
       },
       "comparison": {
-        "score_delta": 0.0164,
-        "distance_delta_km": -3.61,
-        "capacity_delta": 485,
+        "score_delta": 0.2505,
+        "distance_delta_km": 11.58,
+        "capacity_delta": 674,
         "notes": [
-          "Top site U_ij=0.81 vs runner-up 0.79 (\u0394 +0.02)",
-          "Runner-up is 3.6 km closer, but lower overall U_ij",
-          "Top site has 485 more available screening capacity",
-          "Lower site hazard at top choice (H=0.22 vs 0.28)"
+          "Top site U_ij=0.81 vs runner-up 0.56 (\u0394 +0.25)",
+          "Top site is 11.6 km closer to the habitation",
+          "Top site has 674 more available screening capacity",
+          "Lower site hazard at top choice (H=0.22 vs 0.31)"
         ]
       }
     },
@@ -2951,8 +2955,8 @@
         "healthcare_access": 0.8,
         "water_access": 0.85,
         "school_access": 0.7,
-        "capacity": 979,
-        "capacity_available": 779,
+        "capacity": 904,
+        "capacity_available": 704,
         "meets_capacity_threshold": true,
         "explain": [
           {
@@ -3002,86 +3006,86 @@
           "H_site=0.22 (below 0.4 safety filter)",
           "Distance 13.0 km from Deoria (proximity score 0.48)",
           "Access: road 0.90, healthcare 0.80, water 0.85, school 0.70",
-          "First-order physical screening capacity: 779 available (habitation pop 380)",
-          "Capacity meets 0.5\u00d7population threshold (779 \u2265 190)",
+          "First-order physical screening capacity: 704 available (habitation pop 380)",
+          "Capacity meets 0.5\u00d7population threshold (704 \u2265 190)",
           "U_ij suitability score 0.79"
         ]
       },
       "runner_up": {
-        "site_id": "SITE_B",
-        "site_name": "Guptkashi Ridge East",
-        "score": 0.7359,
-        "safety": 0.28,
-        "distance_km": 10.19,
-        "road_access": 0.85,
-        "healthcare_access": 0.75,
-        "water_access": 0.8,
-        "school_access": 0.65,
-        "capacity": 474,
-        "capacity_available": 294,
-        "meets_capacity_threshold": true,
+        "site_id": "SITE_C",
+        "site_name": "Phata Valley Bench",
+        "score": 0.6099,
+        "safety": 0.31,
+        "distance_km": 10.15,
+        "road_access": 0.78,
+        "healthcare_access": 0.65,
+        "water_access": 0.9,
+        "school_access": 0.6,
+        "capacity": 150,
+        "capacity_available": 30,
+        "meets_capacity_threshold": false,
         "explain": [
           {
             "factor": "safety",
-            "value": 0.72,
+            "value": 0.69,
             "weight": 0.3,
-            "contribution": 0.216
+            "contribution": 0.207
           },
           {
             "factor": "distance",
-            "value": 0.5924,
+            "value": 0.594,
             "weight": 0.15,
-            "contribution": 0.0889
+            "contribution": 0.0891
           },
           {
             "factor": "road",
-            "value": 0.85,
+            "value": 0.78,
             "weight": 0.15,
-            "contribution": 0.1275
+            "contribution": 0.117
           },
           {
             "factor": "healthcare",
-            "value": 0.75,
+            "value": 0.65,
             "weight": 0.1,
-            "contribution": 0.075
+            "contribution": 0.065
           },
           {
             "factor": "school",
-            "value": 0.65,
+            "value": 0.6,
             "weight": 0.05,
-            "contribution": 0.0325
+            "contribution": 0.03
           },
           {
             "factor": "water",
-            "value": 0.8,
+            "value": 0.9,
             "weight": 0.1,
-            "contribution": 0.08
+            "contribution": 0.09
           },
           {
             "factor": "capacity_fit",
-            "value": 0.7737,
+            "value": 0.0789,
             "weight": 0.15,
-            "contribution": 0.1161
+            "contribution": 0.0118
           }
         ],
         "reasons": [
-          "H_site=0.28 (below 0.4 safety filter)",
+          "H_site=0.31 (below 0.4 safety filter)",
           "Distance 10.2 km from Deoria (proximity score 0.59)",
-          "Access: road 0.85, healthcare 0.75, water 0.80, school 0.65",
-          "First-order physical screening capacity: 294 available (habitation pop 380)",
-          "Capacity meets 0.5\u00d7population threshold (294 \u2265 190)",
-          "U_ij suitability score 0.74"
+          "Access: road 0.78, healthcare 0.65, water 0.90, school 0.60",
+          "First-order physical screening capacity: 30 available (habitation pop 380)",
+          "Below full capacity threshold (30 < 190) \u2014 split relocation may be required",
+          "U_ij suitability score 0.61"
         ]
       },
       "comparison": {
-        "score_delta": 0.0552,
-        "distance_delta_km": -2.8,
-        "capacity_delta": 485,
+        "score_delta": 0.1812,
+        "distance_delta_km": -2.84,
+        "capacity_delta": 674,
         "notes": [
-          "Top site U_ij=0.79 vs runner-up 0.74 (\u0394 +0.06)",
+          "Top site U_ij=0.79 vs runner-up 0.61 (\u0394 +0.18)",
           "Runner-up is 2.8 km closer, but lower overall U_ij",
-          "Top site has 485 more available screening capacity",
-          "Lower site hazard at top choice (H=0.22 vs 0.28)"
+          "Top site has 674 more available screening capacity",
+          "Lower site hazard at top choice (H=0.22 vs 0.31)"
         ]
       }
     },
@@ -3089,120 +3093,54 @@
       "hab_id": "UT_RUD_0022",
       "hab_name": "Sari",
       "top": {
-        "site_id": "SITE_F",
-        "site_name": "Chopta Meadow South",
-        "score": 0.7486,
-        "safety": 0.27,
-        "distance_km": 7.65,
-        "road_access": 0.72,
-        "healthcare_access": 0.6,
-        "water_access": 0.8,
-        "school_access": 0.55,
-        "capacity": 224,
-        "capacity_available": 144,
+        "site_id": "SITE_A",
+        "site_name": "Okhimath Plateau North",
+        "score": 0.719,
+        "safety": 0.22,
+        "distance_km": 26.33,
+        "road_access": 0.9,
+        "healthcare_access": 0.8,
+        "water_access": 0.85,
+        "school_access": 0.7,
+        "capacity": 904,
+        "capacity_available": 704,
         "meets_capacity_threshold": true,
         "explain": [
           {
             "factor": "safety",
-            "value": 0.73,
+            "value": 0.78,
             "weight": 0.3,
-            "contribution": 0.219
+            "contribution": 0.234
           },
           {
             "factor": "distance",
-            "value": 0.694,
+            "value": 0.0,
             "weight": 0.15,
-            "contribution": 0.1041
+            "contribution": 0.0
           },
           {
             "factor": "road",
-            "value": 0.72,
+            "value": 0.9,
             "weight": 0.15,
-            "contribution": 0.108
+            "contribution": 0.135
           },
           {
             "factor": "healthcare",
-            "value": 0.6,
-            "weight": 0.1,
-            "contribution": 0.06
-          },
-          {
-            "factor": "school",
-            "value": 0.55,
-            "weight": 0.05,
-            "contribution": 0.0275
-          },
-          {
-            "factor": "water",
             "value": 0.8,
             "weight": 0.1,
             "contribution": 0.08
           },
           {
-            "factor": "capacity_fit",
-            "value": 1.0,
-            "weight": 0.15,
-            "contribution": 0.15
-          }
-        ],
-        "reasons": [
-          "H_site=0.27 (below 0.4 safety filter)",
-          "Distance 7.7 km from Sari (proximity score 0.69)",
-          "Access: road 0.72, healthcare 0.60, water 0.80, school 0.55",
-          "First-order physical screening capacity: 144 available (habitation pop 125)",
-          "Capacity meets 0.5\u00d7population threshold (144 \u2265 62)",
-          "U_ij suitability score 0.75"
-        ]
-      },
-      "runner_up": {
-        "site_id": "SITE_L",
-        "site_name": "Makku Valley Floor",
-        "score": 0.7315,
-        "safety": 0.28,
-        "distance_km": 11.42,
-        "road_access": 0.74,
-        "healthcare_access": 0.62,
-        "water_access": 0.83,
-        "school_access": 0.56,
-        "capacity": 248,
-        "capacity_available": 178,
-        "meets_capacity_threshold": true,
-        "explain": [
-          {
-            "factor": "safety",
-            "value": 0.72,
-            "weight": 0.3,
-            "contribution": 0.216
-          },
-          {
-            "factor": "distance",
-            "value": 0.5431,
-            "weight": 0.15,
-            "contribution": 0.0815
-          },
-          {
-            "factor": "road",
-            "value": 0.74,
-            "weight": 0.15,
-            "contribution": 0.111
-          },
-          {
-            "factor": "healthcare",
-            "value": 0.62,
-            "weight": 0.1,
-            "contribution": 0.062
-          },
-          {
             "factor": "school",
-            "value": 0.56,
+            "value": 0.7,
             "weight": 0.05,
-            "contribution": 0.028
+            "contribution": 0.035
           },
           {
             "factor": "water",
-            "value": 0.83,
+            "value": 0.85,
             "weight": 0.1,
-            "contribution": 0.083
+            "contribution": 0.085
           },
           {
             "factor": "capacity_fit",
@@ -3212,23 +3150,89 @@
           }
         ],
         "reasons": [
-          "H_site=0.28 (below 0.4 safety filter)",
-          "Distance 11.4 km from Sari (proximity score 0.54)",
-          "Access: road 0.74, healthcare 0.62, water 0.83, school 0.56",
-          "First-order physical screening capacity: 178 available (habitation pop 125)",
-          "Capacity meets 0.5\u00d7population threshold (178 \u2265 62)",
-          "U_ij suitability score 0.73"
+          "H_site=0.22 (below 0.4 safety filter)",
+          "Distance 26.3 km from Sari (proximity score 0.00)",
+          "Access: road 0.90, healthcare 0.80, water 0.85, school 0.70",
+          "First-order physical screening capacity: 704 available (habitation pop 125)",
+          "Capacity meets 0.5\u00d7population threshold (704 \u2265 62)",
+          "U_ij suitability score 0.72"
+        ]
+      },
+      "runner_up": {
+        "site_id": "SITE_C",
+        "site_name": "Phata Valley Bench",
+        "score": 0.545,
+        "safety": 0.31,
+        "distance_km": 38.15,
+        "road_access": 0.78,
+        "healthcare_access": 0.65,
+        "water_access": 0.9,
+        "school_access": 0.6,
+        "capacity": 150,
+        "capacity_available": 30,
+        "meets_capacity_threshold": false,
+        "explain": [
+          {
+            "factor": "safety",
+            "value": 0.69,
+            "weight": 0.3,
+            "contribution": 0.207
+          },
+          {
+            "factor": "distance",
+            "value": 0.0,
+            "weight": 0.15,
+            "contribution": 0.0
+          },
+          {
+            "factor": "road",
+            "value": 0.78,
+            "weight": 0.15,
+            "contribution": 0.117
+          },
+          {
+            "factor": "healthcare",
+            "value": 0.65,
+            "weight": 0.1,
+            "contribution": 0.065
+          },
+          {
+            "factor": "school",
+            "value": 0.6,
+            "weight": 0.05,
+            "contribution": 0.03
+          },
+          {
+            "factor": "water",
+            "value": 0.9,
+            "weight": 0.1,
+            "contribution": 0.09
+          },
+          {
+            "factor": "capacity_fit",
+            "value": 0.24,
+            "weight": 0.15,
+            "contribution": 0.036
+          }
+        ],
+        "reasons": [
+          "H_site=0.31 (below 0.4 safety filter)",
+          "Distance 38.2 km from Sari (proximity score 0.00)",
+          "Access: road 0.78, healthcare 0.65, water 0.90, school 0.60",
+          "First-order physical screening capacity: 30 available (habitation pop 125)",
+          "Below full capacity threshold (30 < 62) \u2014 split relocation may be required",
+          "U_ij suitability score 0.54"
         ]
       },
       "comparison": {
-        "score_delta": 0.0171,
-        "distance_delta_km": 3.77,
-        "capacity_delta": -34,
+        "score_delta": 0.174,
+        "distance_delta_km": 11.82,
+        "capacity_delta": 674,
         "notes": [
-          "Top site U_ij=0.75 vs runner-up 0.73 (\u0394 +0.02)",
-          "Top site is 3.8 km closer to the habitation",
-          "Runner-up has 34 more capacity; top site wins on safety/access balance",
-          "Lower site hazard at top choice (H=0.27 vs 0.28)"
+          "Top site U_ij=0.72 vs runner-up 0.55 (\u0394 +0.17)",
+          "Top site is 11.8 km closer to the habitation",
+          "Top site has 674 more available screening capacity",
+          "Lower site hazard at top choice (H=0.22 vs 0.31)"
         ]
       }
     },
@@ -3245,8 +3249,8 @@
         "healthcare_access": 0.8,
         "water_access": 0.85,
         "school_access": 0.7,
-        "capacity": 979,
-        "capacity_available": 779,
+        "capacity": 904,
+        "capacity_available": 704,
         "meets_capacity_threshold": true,
         "explain": [
           {
@@ -3296,86 +3300,86 @@
           "H_site=0.22 (below 0.4 safety filter)",
           "Distance 10.1 km from Toshi (proximity score 0.60)",
           "Access: road 0.90, healthcare 0.80, water 0.85, school 0.70",
-          "First-order physical screening capacity: 779 available (habitation pop 200)",
-          "Capacity meets 0.5\u00d7population threshold (779 \u2265 100)",
+          "First-order physical screening capacity: 704 available (habitation pop 200)",
+          "Capacity meets 0.5\u00d7population threshold (704 \u2265 100)",
           "U_ij suitability score 0.81"
         ]
       },
       "runner_up": {
-        "site_id": "SITE_B",
-        "site_name": "Guptkashi Ridge East",
-        "score": 0.7843,
-        "safety": 0.28,
-        "distance_km": 7.78,
-        "road_access": 0.85,
-        "healthcare_access": 0.75,
-        "water_access": 0.8,
-        "school_access": 0.65,
-        "capacity": 474,
-        "capacity_available": 294,
-        "meets_capacity_threshold": true,
+        "site_id": "SITE_C",
+        "site_name": "Phata Valley Bench",
+        "score": 0.6247,
+        "safety": 0.31,
+        "distance_km": 9.47,
+        "road_access": 0.78,
+        "healthcare_access": 0.65,
+        "water_access": 0.9,
+        "school_access": 0.6,
+        "capacity": 150,
+        "capacity_available": 30,
+        "meets_capacity_threshold": false,
         "explain": [
           {
             "factor": "safety",
-            "value": 0.72,
+            "value": 0.69,
             "weight": 0.3,
-            "contribution": 0.216
+            "contribution": 0.207
           },
           {
             "factor": "distance",
-            "value": 0.6887,
+            "value": 0.6211,
             "weight": 0.15,
-            "contribution": 0.1033
+            "contribution": 0.0932
           },
           {
             "factor": "road",
-            "value": 0.85,
+            "value": 0.78,
             "weight": 0.15,
-            "contribution": 0.1275
+            "contribution": 0.117
           },
           {
             "factor": "healthcare",
-            "value": 0.75,
+            "value": 0.65,
             "weight": 0.1,
-            "contribution": 0.075
+            "contribution": 0.065
           },
           {
             "factor": "school",
-            "value": 0.65,
+            "value": 0.6,
             "weight": 0.05,
-            "contribution": 0.0325
+            "contribution": 0.03
           },
           {
             "factor": "water",
-            "value": 0.8,
+            "value": 0.9,
             "weight": 0.1,
-            "contribution": 0.08
+            "contribution": 0.09
           },
           {
             "factor": "capacity_fit",
-            "value": 1.0,
+            "value": 0.15,
             "weight": 0.15,
-            "contribution": 0.15
+            "contribution": 0.0225
           }
         ],
         "reasons": [
-          "H_site=0.28 (below 0.4 safety filter)",
-          "Distance 7.8 km from Toshi (proximity score 0.69)",
-          "Access: road 0.85, healthcare 0.75, water 0.80, school 0.65",
-          "First-order physical screening capacity: 294 available (habitation pop 200)",
-          "Capacity meets 0.5\u00d7population threshold (294 \u2265 100)",
-          "U_ij suitability score 0.78"
+          "H_site=0.31 (below 0.4 safety filter)",
+          "Distance 9.5 km from Toshi (proximity score 0.62)",
+          "Access: road 0.78, healthcare 0.65, water 0.90, school 0.60",
+          "First-order physical screening capacity: 30 available (habitation pop 200)",
+          "Below full capacity threshold (30 < 100) \u2014 split relocation may be required",
+          "U_ij suitability score 0.62"
         ]
       },
       "comparison": {
-        "score_delta": 0.0241,
-        "distance_delta_km": -2.32,
-        "capacity_delta": 485,
+        "score_delta": 0.1837,
+        "distance_delta_km": -0.63,
+        "capacity_delta": 674,
         "notes": [
-          "Top site U_ij=0.81 vs runner-up 0.78 (\u0394 +0.02)",
-          "Runner-up is 2.3 km closer, but lower overall U_ij",
-          "Top site has 485 more available screening capacity",
-          "Lower site hazard at top choice (H=0.22 vs 0.28)"
+          "Top site U_ij=0.81 vs runner-up 0.62 (\u0394 +0.18)",
+          "Runner-up is 0.6 km closer, but lower overall U_ij",
+          "Top site has 674 more available screening capacity",
+          "Lower site hazard at top choice (H=0.22 vs 0.31)"
         ]
       }
     },
@@ -3383,188 +3387,42 @@
       "hab_id": "UT_RUD_0024",
       "hab_name": "Kamleshwar",
       "top": {
-        "site_id": "SITE_E",
-        "site_name": "Srinagar Riverside Flat",
-        "score": 0.7987,
-        "safety": 0.3,
-        "distance_km": 8.22,
-        "road_access": 0.88,
-        "healthcare_access": 0.78,
-        "water_access": 0.92,
-        "school_access": 0.72,
-        "capacity": 618,
-        "capacity_available": 398,
-        "meets_capacity_threshold": true,
-        "explain": [
-          {
-            "factor": "safety",
-            "value": 0.7,
-            "weight": 0.3,
-            "contribution": 0.21
-          },
-          {
-            "factor": "distance",
-            "value": 0.6712,
-            "weight": 0.15,
-            "contribution": 0.1007
-          },
-          {
-            "factor": "road",
-            "value": 0.88,
-            "weight": 0.15,
-            "contribution": 0.132
-          },
-          {
-            "factor": "healthcare",
-            "value": 0.78,
-            "weight": 0.1,
-            "contribution": 0.078
-          },
-          {
-            "factor": "school",
-            "value": 0.72,
-            "weight": 0.05,
-            "contribution": 0.036
-          },
-          {
-            "factor": "water",
-            "value": 0.92,
-            "weight": 0.1,
-            "contribution": 0.092
-          },
-          {
-            "factor": "capacity_fit",
-            "value": 1.0,
-            "weight": 0.15,
-            "contribution": 0.15
-          }
-        ],
-        "reasons": [
-          "H_site=0.30 (below 0.4 safety filter)",
-          "Distance 8.2 km from Kamleshwar (proximity score 0.67)",
-          "Access: road 0.88, healthcare 0.78, water 0.92, school 0.72",
-          "First-order physical screening capacity: 398 available (habitation pop 175)",
-          "Capacity meets 0.5\u00d7population threshold (398 \u2265 87)",
-          "U_ij suitability score 0.80"
-        ]
-      },
-      "runner_up": {
-        "site_id": "SITE_D",
-        "site_name": "Augustmuni Terrace",
-        "score": 0.7958,
-        "safety": 0.25,
-        "distance_km": 7.7,
-        "road_access": 0.82,
-        "healthcare_access": 0.72,
-        "water_access": 0.88,
-        "school_access": 0.68,
-        "capacity": 453,
-        "capacity_available": 303,
-        "meets_capacity_threshold": true,
-        "explain": [
-          {
-            "factor": "safety",
-            "value": 0.75,
-            "weight": 0.3,
-            "contribution": 0.225
-          },
-          {
-            "factor": "distance",
-            "value": 0.6921,
-            "weight": 0.15,
-            "contribution": 0.1038
-          },
-          {
-            "factor": "road",
-            "value": 0.82,
-            "weight": 0.15,
-            "contribution": 0.123
-          },
-          {
-            "factor": "healthcare",
-            "value": 0.72,
-            "weight": 0.1,
-            "contribution": 0.072
-          },
-          {
-            "factor": "school",
-            "value": 0.68,
-            "weight": 0.05,
-            "contribution": 0.034
-          },
-          {
-            "factor": "water",
-            "value": 0.88,
-            "weight": 0.1,
-            "contribution": 0.088
-          },
-          {
-            "factor": "capacity_fit",
-            "value": 1.0,
-            "weight": 0.15,
-            "contribution": 0.15
-          }
-        ],
-        "reasons": [
-          "H_site=0.25 (below 0.4 safety filter)",
-          "Distance 7.7 km from Kamleshwar (proximity score 0.69)",
-          "Access: road 0.82, healthcare 0.72, water 0.88, school 0.68",
-          "First-order physical screening capacity: 303 available (habitation pop 175)",
-          "Capacity meets 0.5\u00d7population threshold (303 \u2265 87)",
-          "U_ij suitability score 0.80"
-        ]
-      },
-      "comparison": {
-        "score_delta": 0.0029,
-        "distance_delta_km": -0.52,
-        "capacity_delta": 95,
-        "notes": [
-          "Top site U_ij=0.80 vs runner-up 0.80 (\u0394 +0.00)",
-          "Runner-up is 0.5 km closer, but lower overall U_ij",
-          "Top site has 95 more available screening capacity"
-        ]
-      }
-    },
-    "UT_RUD_0025": {
-      "hab_id": "UT_RUD_0025",
-      "hab_name": "Joshiyara",
-      "top": {
-        "site_id": "SITE_I",
-        "site_name": "Joshiyara Plateau",
-        "score": 0.85,
-        "safety": 0.24,
-        "distance_km": 0.0,
-        "road_access": 0.84,
-        "healthcare_access": 0.74,
-        "water_access": 0.87,
+        "site_id": "SITE_A",
+        "site_name": "Okhimath Plateau North",
+        "score": 0.719,
+        "safety": 0.22,
+        "distance_km": 33.77,
+        "road_access": 0.9,
+        "healthcare_access": 0.8,
+        "water_access": 0.85,
         "school_access": 0.7,
-        "capacity": 480,
-        "capacity_available": 340,
+        "capacity": 904,
+        "capacity_available": 704,
         "meets_capacity_threshold": true,
         "explain": [
           {
             "factor": "safety",
-            "value": 0.76,
+            "value": 0.78,
             "weight": 0.3,
-            "contribution": 0.228
+            "contribution": 0.234
           },
           {
             "factor": "distance",
-            "value": 1.0,
+            "value": 0.0,
             "weight": 0.15,
-            "contribution": 0.15
+            "contribution": 0.0
           },
           {
             "factor": "road",
-            "value": 0.84,
+            "value": 0.9,
             "weight": 0.15,
-            "contribution": 0.126
+            "contribution": 0.135
           },
           {
             "factor": "healthcare",
-            "value": 0.74,
+            "value": 0.8,
             "weight": 0.1,
-            "contribution": 0.074
+            "contribution": 0.08
           },
           {
             "factor": "school",
@@ -3574,9 +3432,9 @@
           },
           {
             "factor": "water",
-            "value": 0.87,
+            "value": 0.85,
             "weight": 0.1,
-            "contribution": 0.087
+            "contribution": 0.085
           },
           {
             "factor": "capacity_fit",
@@ -3586,63 +3444,144 @@
           }
         ],
         "reasons": [
-          "H_site=0.24 (below 0.4 safety filter)",
-          "Distance 0.0 km from Joshiyara (proximity score 1.00)",
-          "Access: road 0.84, healthcare 0.74, water 0.87, school 0.70",
-          "First-order physical screening capacity: 340 available (habitation pop 340)",
-          "Capacity meets 0.5\u00d7population threshold (340 \u2265 170)",
-          "U_ij suitability score 0.85"
+          "H_site=0.22 (below 0.4 safety filter)",
+          "Distance 33.8 km from Kamleshwar (proximity score 0.00)",
+          "Access: road 0.90, healthcare 0.80, water 0.85, school 0.70",
+          "First-order physical screening capacity: 704 available (habitation pop 175)",
+          "Capacity meets 0.5\u00d7population threshold (704 \u2265 87)",
+          "U_ij suitability score 0.72"
         ]
       },
       "runner_up": {
-        "site_id": "SITE_E",
-        "site_name": "Srinagar Riverside Flat",
-        "score": 0.7536,
-        "safety": 0.3,
-        "distance_km": 15.73,
-        "road_access": 0.88,
-        "healthcare_access": 0.78,
-        "water_access": 0.92,
-        "school_access": 0.72,
-        "capacity": 618,
-        "capacity_available": 398,
+        "site_id": "SITE_C",
+        "site_name": "Phata Valley Bench",
+        "score": 0.5583,
+        "safety": 0.31,
+        "distance_km": 21.07,
+        "road_access": 0.78,
+        "healthcare_access": 0.65,
+        "water_access": 0.9,
+        "school_access": 0.6,
+        "capacity": 150,
+        "capacity_available": 30,
+        "meets_capacity_threshold": false,
+        "explain": [
+          {
+            "factor": "safety",
+            "value": 0.69,
+            "weight": 0.3,
+            "contribution": 0.207
+          },
+          {
+            "factor": "distance",
+            "value": 0.1571,
+            "weight": 0.15,
+            "contribution": 0.0236
+          },
+          {
+            "factor": "road",
+            "value": 0.78,
+            "weight": 0.15,
+            "contribution": 0.117
+          },
+          {
+            "factor": "healthcare",
+            "value": 0.65,
+            "weight": 0.1,
+            "contribution": 0.065
+          },
+          {
+            "factor": "school",
+            "value": 0.6,
+            "weight": 0.05,
+            "contribution": 0.03
+          },
+          {
+            "factor": "water",
+            "value": 0.9,
+            "weight": 0.1,
+            "contribution": 0.09
+          },
+          {
+            "factor": "capacity_fit",
+            "value": 0.1714,
+            "weight": 0.15,
+            "contribution": 0.0257
+          }
+        ],
+        "reasons": [
+          "H_site=0.31 (below 0.4 safety filter)",
+          "Distance 21.1 km from Kamleshwar (proximity score 0.16)",
+          "Access: road 0.78, healthcare 0.65, water 0.90, school 0.60",
+          "First-order physical screening capacity: 30 available (habitation pop 175)",
+          "Below full capacity threshold (30 < 87) \u2014 split relocation may be required",
+          "U_ij suitability score 0.56"
+        ]
+      },
+      "comparison": {
+        "score_delta": 0.1607,
+        "distance_delta_km": -12.7,
+        "capacity_delta": 674,
+        "notes": [
+          "Top site U_ij=0.72 vs runner-up 0.56 (\u0394 +0.16)",
+          "Runner-up is 12.7 km closer, but lower overall U_ij",
+          "Top site has 674 more available screening capacity",
+          "Lower site hazard at top choice (H=0.22 vs 0.31)"
+        ]
+      }
+    },
+    "UT_RUD_0025": {
+      "hab_id": "UT_RUD_0025",
+      "hab_name": "Joshiyara",
+      "top": {
+        "site_id": "SITE_A",
+        "site_name": "Okhimath Plateau North",
+        "score": 0.719,
+        "safety": 0.22,
+        "distance_km": 32.31,
+        "road_access": 0.9,
+        "healthcare_access": 0.8,
+        "water_access": 0.85,
+        "school_access": 0.7,
+        "capacity": 904,
+        "capacity_available": 704,
         "meets_capacity_threshold": true,
         "explain": [
           {
             "factor": "safety",
-            "value": 0.7,
+            "value": 0.78,
             "weight": 0.3,
-            "contribution": 0.21
+            "contribution": 0.234
           },
           {
             "factor": "distance",
-            "value": 0.371,
+            "value": 0.0,
             "weight": 0.15,
-            "contribution": 0.0556
+            "contribution": 0.0
           },
           {
             "factor": "road",
-            "value": 0.88,
+            "value": 0.9,
             "weight": 0.15,
-            "contribution": 0.132
+            "contribution": 0.135
           },
           {
             "factor": "healthcare",
-            "value": 0.78,
+            "value": 0.8,
             "weight": 0.1,
-            "contribution": 0.078
+            "contribution": 0.08
           },
           {
             "factor": "school",
-            "value": 0.72,
+            "value": 0.7,
             "weight": 0.05,
-            "contribution": 0.036
+            "contribution": 0.035
           },
           {
             "factor": "water",
-            "value": 0.92,
+            "value": 0.85,
             "weight": 0.1,
-            "contribution": 0.092
+            "contribution": 0.085
           },
           {
             "factor": "capacity_fit",
@@ -3652,23 +3591,89 @@
           }
         ],
         "reasons": [
-          "H_site=0.30 (below 0.4 safety filter)",
-          "Distance 15.7 km from Joshiyara (proximity score 0.37)",
-          "Access: road 0.88, healthcare 0.78, water 0.92, school 0.72",
-          "First-order physical screening capacity: 398 available (habitation pop 340)",
-          "Capacity meets 0.5\u00d7population threshold (398 \u2265 170)",
-          "U_ij suitability score 0.75"
+          "H_site=0.22 (below 0.4 safety filter)",
+          "Distance 32.3 km from Joshiyara (proximity score 0.00)",
+          "Access: road 0.90, healthcare 0.80, water 0.85, school 0.70",
+          "First-order physical screening capacity: 704 available (habitation pop 340)",
+          "Capacity meets 0.5\u00d7population threshold (704 \u2265 170)",
+          "U_ij suitability score 0.72"
+        ]
+      },
+      "runner_up": {
+        "site_id": "SITE_C",
+        "site_name": "Phata Valley Bench",
+        "score": 0.5664,
+        "safety": 0.31,
+        "distance_km": 17.65,
+        "road_access": 0.78,
+        "healthcare_access": 0.65,
+        "water_access": 0.9,
+        "school_access": 0.6,
+        "capacity": 150,
+        "capacity_available": 30,
+        "meets_capacity_threshold": false,
+        "explain": [
+          {
+            "factor": "safety",
+            "value": 0.69,
+            "weight": 0.3,
+            "contribution": 0.207
+          },
+          {
+            "factor": "distance",
+            "value": 0.2942,
+            "weight": 0.15,
+            "contribution": 0.0441
+          },
+          {
+            "factor": "road",
+            "value": 0.78,
+            "weight": 0.15,
+            "contribution": 0.117
+          },
+          {
+            "factor": "healthcare",
+            "value": 0.65,
+            "weight": 0.1,
+            "contribution": 0.065
+          },
+          {
+            "factor": "school",
+            "value": 0.6,
+            "weight": 0.05,
+            "contribution": 0.03
+          },
+          {
+            "factor": "water",
+            "value": 0.9,
+            "weight": 0.1,
+            "contribution": 0.09
+          },
+          {
+            "factor": "capacity_fit",
+            "value": 0.0882,
+            "weight": 0.15,
+            "contribution": 0.0132
+          }
+        ],
+        "reasons": [
+          "H_site=0.31 (below 0.4 safety filter)",
+          "Distance 17.6 km from Joshiyara (proximity score 0.29)",
+          "Access: road 0.78, healthcare 0.65, water 0.90, school 0.60",
+          "First-order physical screening capacity: 30 available (habitation pop 340)",
+          "Below full capacity threshold (30 < 170) \u2014 split relocation may be required",
+          "U_ij suitability score 0.57"
         ]
       },
       "comparison": {
-        "score_delta": 0.0964,
-        "distance_delta_km": 15.73,
-        "capacity_delta": -58,
+        "score_delta": 0.1526,
+        "distance_delta_km": -14.66,
+        "capacity_delta": 674,
         "notes": [
-          "Top site U_ij=0.85 vs runner-up 0.75 (\u0394 +0.10)",
-          "Top site is 15.7 km closer to the habitation",
-          "Runner-up has 58 more capacity; top site wins on safety/access balance",
-          "Lower site hazard at top choice (H=0.24 vs 0.30)"
+          "Top site U_ij=0.72 vs runner-up 0.57 (\u0394 +0.15)",
+          "Runner-up is 14.7 km closer, but lower overall U_ij",
+          "Top site has 674 more available screening capacity",
+          "Lower site hazard at top choice (H=0.22 vs 0.31)"
         ]
       }
     }

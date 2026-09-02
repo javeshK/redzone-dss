@@ -1,10 +1,428 @@
 {
-  "generated_at": "2026-08-28T14:54:18.032699+05:30",
+  "generated_at": "2026-09-03T01:35:41.385963+05:30",
   "thresholds": {
     "h_ff": 0.65,
     "h_hab": 0.7,
     "pct_red": 30.0
   },
-  "alert_count": 0,
-  "alerts": []
+  "alert_count": 25,
+  "alerts": [
+    {
+      "id": "ALERT_UT_RUD_0020",
+      "habitation_id": "UT_RUD_0020",
+      "habitation_name": "Khumera",
+      "severity": "high",
+      "priority": "Immediate",
+      "h": 0.9118,
+      "h_ff": 0.7768,
+      "pct_red": 100.0,
+      "reasons": [
+        "Flash-flood hazard H_ff=0.78 exceeds threshold 0.65 (elevated rainfall / stream proximity)",
+        "Multi-hazard H=0.91 exceeds threshold 0.7",
+        "100% of 300 m buffer in red zone (threshold 30.0%)",
+        "Priority class Immediate \u2014 relocation screening recommended"
+      ],
+      "action": "Review relocation recommendation and monitor rainfall forecasts"
+    },
+    {
+      "id": "ALERT_UT_RUD_0024",
+      "habitation_id": "UT_RUD_0024",
+      "habitation_name": "Kamleshwar",
+      "severity": "high",
+      "priority": "Immediate",
+      "h": 0.8911,
+      "h_ff": 0.803,
+      "pct_red": 100.0,
+      "reasons": [
+        "Flash-flood hazard H_ff=0.80 exceeds threshold 0.65 (elevated rainfall / stream proximity)",
+        "Multi-hazard H=0.89 exceeds threshold 0.7",
+        "100% of 300 m buffer in red zone (threshold 30.0%)",
+        "Priority class Immediate \u2014 relocation screening recommended"
+      ],
+      "action": "Review relocation recommendation and monitor rainfall forecasts"
+    },
+    {
+      "id": "ALERT_UT_RUD_0005",
+      "habitation_id": "UT_RUD_0005",
+      "habitation_name": "Rudraprayag Town",
+      "severity": "high",
+      "priority": "Immediate",
+      "h": 0.8903,
+      "h_ff": 0.8572,
+      "pct_red": 100.0,
+      "reasons": [
+        "Flash-flood hazard H_ff=0.86 exceeds threshold 0.65 (elevated rainfall / stream proximity)",
+        "Multi-hazard H=0.89 exceeds threshold 0.7",
+        "100% of 300 m buffer in red zone (threshold 30.0%)",
+        "Priority class Immediate \u2014 relocation screening recommended"
+      ],
+      "action": "Review relocation recommendation and monitor rainfall forecasts"
+    },
+    {
+      "id": "ALERT_UT_RUD_0016",
+      "habitation_id": "UT_RUD_0016",
+      "habitation_name": "Bhiri",
+      "severity": "high",
+      "priority": "Immediate",
+      "h": 0.8879,
+      "h_ff": 0.7782,
+      "pct_red": 99.8,
+      "reasons": [
+        "Flash-flood hazard H_ff=0.78 exceeds threshold 0.65 (elevated rainfall / stream proximity)",
+        "Multi-hazard H=0.89 exceeds threshold 0.7",
+        "100% of 300 m buffer in red zone (threshold 30.0%)",
+        "Priority class Immediate \u2014 relocation screening recommended"
+      ],
+      "action": "Review relocation recommendation and monitor rainfall forecasts"
+    },
+    {
+      "id": "ALERT_UT_RUD_0017",
+      "habitation_id": "UT_RUD_0017",
+      "habitation_name": "Chandrapuri",
+      "severity": "high",
+      "priority": "Immediate",
+      "h": 0.8817,
+      "h_ff": 0.7621,
+      "pct_red": 100.0,
+      "reasons": [
+        "Flash-flood hazard H_ff=0.76 exceeds threshold 0.65 (elevated rainfall / stream proximity)",
+        "Multi-hazard H=0.88 exceeds threshold 0.7",
+        "100% of 300 m buffer in red zone (threshold 30.0%)",
+        "Priority class Immediate \u2014 relocation screening recommended"
+      ],
+      "action": "Review relocation recommendation and monitor rainfall forecasts"
+    },
+    {
+      "id": "ALERT_UT_RUD_0008",
+      "habitation_id": "UT_RUD_0008",
+      "habitation_name": "Kalimath",
+      "severity": "high",
+      "priority": "Immediate",
+      "h": 0.8641,
+      "h_ff": 0.7869,
+      "pct_red": 98.9,
+      "reasons": [
+        "Flash-flood hazard H_ff=0.79 exceeds threshold 0.65 (elevated rainfall / stream proximity)",
+        "Multi-hazard H=0.86 exceeds threshold 0.7",
+        "99% of 300 m buffer in red zone (threshold 30.0%)",
+        "Priority class Immediate \u2014 relocation screening recommended"
+      ],
+      "action": "Review relocation recommendation and monitor rainfall forecasts"
+    },
+    {
+      "id": "ALERT_UT_RUD_0019",
+      "habitation_id": "UT_RUD_0019",
+      "habitation_name": "Pipalkoti",
+      "severity": "high",
+      "priority": "Immediate",
+      "h": 0.8592,
+      "h_ff": 0.6479,
+      "pct_red": 97.9,
+      "reasons": [
+        "Multi-hazard H=0.86 exceeds threshold 0.7",
+        "98% of 300 m buffer in red zone (threshold 30.0%)",
+        "Priority class Immediate \u2014 relocation screening recommended"
+      ],
+      "action": "Review relocation recommendation and monitor rainfall forecasts"
+    },
+    {
+      "id": "ALERT_UT_RUD_0025",
+      "habitation_id": "UT_RUD_0025",
+      "habitation_name": "Joshiyara",
+      "severity": "high",
+      "priority": "Immediate",
+      "h": 0.855,
+      "h_ff": 0.7288,
+      "pct_red": 98.4,
+      "reasons": [
+        "Flash-flood hazard H_ff=0.73 exceeds threshold 0.65 (elevated rainfall / stream proximity)",
+        "Multi-hazard H=0.85 exceeds threshold 0.7",
+        "98% of 300 m buffer in red zone (threshold 30.0%)",
+        "Priority class Immediate \u2014 relocation screening recommended"
+      ],
+      "action": "Review relocation recommendation and monitor rainfall forecasts"
+    },
+    {
+      "id": "ALERT_UT_RUD_0012",
+      "habitation_id": "UT_RUD_0012",
+      "habitation_name": "Chopta",
+      "severity": "high",
+      "priority": "Immediate",
+      "h": 0.8436,
+      "h_ff": 0.7611,
+      "pct_red": 99.9,
+      "reasons": [
+        "Flash-flood hazard H_ff=0.76 exceeds threshold 0.65 (elevated rainfall / stream proximity)",
+        "Multi-hazard H=0.84 exceeds threshold 0.7",
+        "100% of 300 m buffer in red zone (threshold 30.0%)",
+        "Priority class Immediate \u2014 relocation screening recommended"
+      ],
+      "action": "Review relocation recommendation and monitor rainfall forecasts"
+    },
+    {
+      "id": "ALERT_UT_RUD_0002",
+      "habitation_id": "UT_RUD_0002",
+      "habitation_name": "Guptkashi",
+      "severity": "high",
+      "priority": "Immediate",
+      "h": 0.8389,
+      "h_ff": 0.5725,
+      "pct_red": 73.6,
+      "reasons": [
+        "Multi-hazard H=0.84 exceeds threshold 0.7",
+        "74% of 300 m buffer in red zone (threshold 30.0%)",
+        "Priority class Immediate \u2014 relocation screening recommended"
+      ],
+      "action": "Review relocation recommendation and monitor rainfall forecasts"
+    },
+    {
+      "id": "ALERT_UT_RUD_0003",
+      "habitation_id": "UT_RUD_0003",
+      "habitation_name": "Agastyamuni",
+      "severity": "high",
+      "priority": "Immediate",
+      "h": 0.8346,
+      "h_ff": 0.6994,
+      "pct_red": 100.0,
+      "reasons": [
+        "Flash-flood hazard H_ff=0.70 exceeds threshold 0.65 (elevated rainfall / stream proximity)",
+        "Multi-hazard H=0.83 exceeds threshold 0.7",
+        "100% of 300 m buffer in red zone (threshold 30.0%)",
+        "Priority class Immediate \u2014 relocation screening recommended"
+      ],
+      "action": "Review relocation recommendation and monitor rainfall forecasts"
+    },
+    {
+      "id": "ALERT_UT_RUD_0014",
+      "habitation_id": "UT_RUD_0014",
+      "habitation_name": "Jagula",
+      "severity": "high",
+      "priority": "Immediate",
+      "h": 0.8278,
+      "h_ff": 0.5695,
+      "pct_red": 97.2,
+      "reasons": [
+        "Multi-hazard H=0.83 exceeds threshold 0.7",
+        "97% of 300 m buffer in red zone (threshold 30.0%)",
+        "Priority class Immediate \u2014 relocation screening recommended"
+      ],
+      "action": "Review relocation recommendation and monitor rainfall forecasts"
+    },
+    {
+      "id": "ALERT_UT_RUD_0022",
+      "habitation_id": "UT_RUD_0022",
+      "habitation_name": "Sari",
+      "severity": "high",
+      "priority": "Immediate",
+      "h": 0.8261,
+      "h_ff": 0.6617,
+      "pct_red": 93.7,
+      "reasons": [
+        "Flash-flood hazard H_ff=0.66 exceeds threshold 0.65 (elevated rainfall / stream proximity)",
+        "Multi-hazard H=0.83 exceeds threshold 0.7",
+        "94% of 300 m buffer in red zone (threshold 30.0%)",
+        "Priority class Immediate \u2014 relocation screening recommended"
+      ],
+      "action": "Review relocation recommendation and monitor rainfall forecasts"
+    },
+    {
+      "id": "ALERT_UT_RUD_0010",
+      "habitation_id": "UT_RUD_0010",
+      "habitation_name": "Triyuginarayan",
+      "severity": "high",
+      "priority": "Immediate",
+      "h": 0.8225,
+      "h_ff": 0.6985,
+      "pct_red": 99.9,
+      "reasons": [
+        "Flash-flood hazard H_ff=0.70 exceeds threshold 0.65 (elevated rainfall / stream proximity)",
+        "Multi-hazard H=0.82 exceeds threshold 0.7",
+        "100% of 300 m buffer in red zone (threshold 30.0%)",
+        "Priority class Immediate \u2014 relocation screening recommended"
+      ],
+      "action": "Review relocation recommendation and monitor rainfall forecasts"
+    },
+    {
+      "id": "ALERT_UT_RUD_0015",
+      "habitation_id": "UT_RUD_0015",
+      "habitation_name": "Augustmuni",
+      "severity": "high",
+      "priority": "Immediate",
+      "h": 0.8171,
+      "h_ff": 0.7509,
+      "pct_red": 99.8,
+      "reasons": [
+        "Flash-flood hazard H_ff=0.75 exceeds threshold 0.65 (elevated rainfall / stream proximity)",
+        "Multi-hazard H=0.82 exceeds threshold 0.7",
+        "100% of 300 m buffer in red zone (threshold 30.0%)",
+        "Priority class Immediate \u2014 relocation screening recommended"
+      ],
+      "action": "Review relocation recommendation and monitor rainfall forecasts"
+    },
+    {
+      "id": "ALERT_UT_RUD_0004",
+      "habitation_id": "UT_RUD_0004",
+      "habitation_name": "Tilwara",
+      "severity": "high",
+      "priority": "Immediate",
+      "h": 0.8079,
+      "h_ff": 0.7619,
+      "pct_red": 100.0,
+      "reasons": [
+        "Flash-flood hazard H_ff=0.76 exceeds threshold 0.65 (elevated rainfall / stream proximity)",
+        "Multi-hazard H=0.81 exceeds threshold 0.7",
+        "100% of 300 m buffer in red zone (threshold 30.0%)",
+        "Priority class Immediate \u2014 relocation screening recommended"
+      ],
+      "action": "Review relocation recommendation and monitor rainfall forecasts"
+    },
+    {
+      "id": "ALERT_UT_RUD_0011",
+      "habitation_id": "UT_RUD_0011",
+      "habitation_name": "Okhimath",
+      "severity": "high",
+      "priority": "Immediate",
+      "h": 0.8028,
+      "h_ff": 0.768,
+      "pct_red": 90.2,
+      "reasons": [
+        "Flash-flood hazard H_ff=0.77 exceeds threshold 0.65 (elevated rainfall / stream proximity)",
+        "Multi-hazard H=0.80 exceeds threshold 0.7",
+        "90% of 300 m buffer in red zone (threshold 30.0%)",
+        "Priority class Immediate \u2014 relocation screening recommended"
+      ],
+      "action": "Review relocation recommendation and monitor rainfall forecasts"
+    },
+    {
+      "id": "ALERT_UT_RUD_0006",
+      "habitation_id": "UT_RUD_0006",
+      "habitation_name": "Gaurikund",
+      "severity": "high",
+      "priority": "Immediate",
+      "h": 0.7915,
+      "h_ff": 0.5771,
+      "pct_red": 97.1,
+      "reasons": [
+        "Multi-hazard H=0.79 exceeds threshold 0.7",
+        "97% of 300 m buffer in red zone (threshold 30.0%)",
+        "Priority class Immediate \u2014 relocation screening recommended"
+      ],
+      "action": "Review relocation recommendation and monitor rainfall forecasts"
+    },
+    {
+      "id": "ALERT_UT_RUD_0023",
+      "habitation_id": "UT_RUD_0023",
+      "habitation_name": "Toshi",
+      "severity": "high",
+      "priority": "Immediate",
+      "h": 0.7908,
+      "h_ff": 0.6994,
+      "pct_red": 93.5,
+      "reasons": [
+        "Flash-flood hazard H_ff=0.70 exceeds threshold 0.65 (elevated rainfall / stream proximity)",
+        "Multi-hazard H=0.79 exceeds threshold 0.7",
+        "94% of 300 m buffer in red zone (threshold 30.0%)",
+        "Priority class Immediate \u2014 relocation screening recommended"
+      ],
+      "action": "Review relocation recommendation and monitor rainfall forecasts"
+    },
+    {
+      "id": "ALERT_UT_RUD_0013",
+      "habitation_id": "UT_RUD_0013",
+      "habitation_name": "Makku",
+      "severity": "high",
+      "priority": "Immediate",
+      "h": 0.7892,
+      "h_ff": 0.6567,
+      "pct_red": 96.1,
+      "reasons": [
+        "Flash-flood hazard H_ff=0.66 exceeds threshold 0.65 (elevated rainfall / stream proximity)",
+        "Multi-hazard H=0.79 exceeds threshold 0.7",
+        "96% of 300 m buffer in red zone (threshold 30.0%)",
+        "Priority class Immediate \u2014 relocation screening recommended"
+      ],
+      "action": "Review relocation recommendation and monitor rainfall forecasts"
+    },
+    {
+      "id": "ALERT_UT_RUD_0021",
+      "habitation_id": "UT_RUD_0021",
+      "habitation_name": "Deoria",
+      "severity": "high",
+      "priority": "Immediate",
+      "h": 0.771,
+      "h_ff": 0.6352,
+      "pct_red": 97.5,
+      "reasons": [
+        "Multi-hazard H=0.77 exceeds threshold 0.7",
+        "98% of 300 m buffer in red zone (threshold 30.0%)",
+        "Priority class Immediate \u2014 relocation screening recommended"
+      ],
+      "action": "Review relocation recommendation and monitor rainfall forecasts"
+    },
+    {
+      "id": "ALERT_UT_RUD_0001",
+      "habitation_id": "UT_RUD_0001",
+      "habitation_name": "Ukhimath",
+      "severity": "high",
+      "priority": "Immediate",
+      "h": 0.7692,
+      "h_ff": 0.6867,
+      "pct_red": 89.8,
+      "reasons": [
+        "Flash-flood hazard H_ff=0.69 exceeds threshold 0.65 (elevated rainfall / stream proximity)",
+        "Multi-hazard H=0.77 exceeds threshold 0.7",
+        "90% of 300 m buffer in red zone (threshold 30.0%)",
+        "Priority class Immediate \u2014 relocation screening recommended"
+      ],
+      "action": "Review relocation recommendation and monitor rainfall forecasts"
+    },
+    {
+      "id": "ALERT_UT_RUD_0018",
+      "habitation_id": "UT_RUD_0018",
+      "habitation_name": "Srinagar",
+      "severity": "high",
+      "priority": "Immediate",
+      "h": 0.7449,
+      "h_ff": 0.6999,
+      "pct_red": 95.3,
+      "reasons": [
+        "Flash-flood hazard H_ff=0.70 exceeds threshold 0.65 (elevated rainfall / stream proximity)",
+        "Multi-hazard H=0.74 exceeds threshold 0.7",
+        "95% of 300 m buffer in red zone (threshold 30.0%)",
+        "Priority class Immediate \u2014 relocation screening recommended"
+      ],
+      "action": "Review relocation recommendation and monitor rainfall forecasts"
+    },
+    {
+      "id": "ALERT_UT_RUD_0009",
+      "habitation_id": "UT_RUD_0009",
+      "habitation_name": "Narayankoti",
+      "severity": "high",
+      "priority": "Immediate",
+      "h": 0.7259,
+      "h_ff": 0.6247,
+      "pct_red": 88.3,
+      "reasons": [
+        "Multi-hazard H=0.73 exceeds threshold 0.7",
+        "88% of 300 m buffer in red zone (threshold 30.0%)",
+        "Priority class Immediate \u2014 relocation screening recommended"
+      ],
+      "action": "Review relocation recommendation and monitor rainfall forecasts"
+    },
+    {
+      "id": "ALERT_UT_RUD_0007",
+      "habitation_id": "UT_RUD_0007",
+      "habitation_name": "Phata",
+      "severity": "high",
+      "priority": "Immediate",
+      "h": 0.6674,
+      "h_ff": 0.5924,
+      "pct_red": 40.5,
+      "reasons": [
+        "40% of 300 m buffer in red zone (threshold 30.0%)",
+        "Priority class Immediate \u2014 relocation screening recommended"
+      ],
+      "action": "Review relocation recommendation and monitor rainfall forecasts"
+    }
+  ]
 }
