@@ -14,6 +14,7 @@ from shapely.geometry import LineString, MultiLineString, box
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from _config import REPO_ROOT, ensure_dirs, load_paths
 from _crs import COMPUTE_CRS, DISPLAY_CRS, normalize_0_1, to_compute, to_display, validate_utm_geometry
+from _district import bbox_fallback_gdf, filter_rudraprayag
 
 try:
     import rasterio
@@ -29,16 +30,8 @@ def load_district(paths: dict) -> gpd.GeoDataFrame:
     district_path = REPO_ROOT / paths["raw"]["district"]
     if district_path.exists():
         gdf = gpd.read_file(district_path)
-        if gdf.crs is None:
-            gdf = gdf.set_crs(DISPLAY_CRS)
-        return to_display(gdf)
-    bbox = paths["bbox"]
-    geom = box(bbox["min_lon"], bbox["min_lat"], bbox["max_lon"], bbox["max_lat"])
-    return gpd.GeoDataFrame(
-        [{"name": "Rudraprayag", "state": "Uttarakhand", "district_code": "UT_RUD"}],
-        geometry=[geom],
-        crs=DISPLAY_CRS,
-    )
+        return filter_rudraprayag(gdf)
+    return bbox_fallback_gdf(paths["bbox"])
 
 
 def create_synthetic_dem(district: gpd.GeoDataFrame, out_path: Path, res: float = 90.0) -> Path:

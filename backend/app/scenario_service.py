@@ -25,9 +25,23 @@ class ScenarioService:
             return json.loads(path.read_text(encoding="utf-8"))
         return None
 
-    def get_rainfall_scenario(self, factor: float) -> dict[str, Any]:
+    def get_rainfall_scenario(
+        self,
+        factor: float,
+        *,
+        scenario_date: str | None = None,
+        mode: str = "baseline",
+    ) -> dict[str, Any]:
         if factor not in ALLOWED_FACTORS:
             return {"error": f"factor must be one of {list(ALLOWED_FACTORS)}", "factor": factor}
+
+        if scenario_date or mode != "baseline":
+            return compute_scenario_hazard(
+                factor,
+                scenario_date=scenario_date,
+                mode=mode,
+            )
+
         precomputed = self._load_precomputed()
         key = str(factor)
         if precomputed and key in precomputed:

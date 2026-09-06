@@ -1,71 +1,71 @@
 {
-  "generated_at": "2026-09-03T01:35:40.787734+05:30",
-  "data_as_of": "2026-09-03T01:35:16.487302+05:30",
+  "generated_at": "2026-09-05T03:17:30.411462+05:30",
+  "data_as_of": "2026-09-05T03:17:22.430493+05:30",
   "pipeline_version": "2.0.0",
   "out_dir": "out",
   "public_data_dir": "frontend\\public\\data",
   "files": [
     {
       "file": "alerts.json",
-      "out_bytes": 180,
-      "public_bytes": 180,
-      "sha256": "58ec013f9c7a09df4df386e4f46df2253bcd564884bd260db5b1e912cd5ac658",
+      "out_bytes": 8420,
+      "public_bytes": 8420,
+      "sha256": "e49738b69e153f5c27fb2da802dfed452a31e05fc591a40b6d56cd50dc6456cb",
       "in_sync": true
     },
     {
       "file": "district.geojson",
-      "out_bytes": 7979936,
-      "public_bytes": 7979936,
-      "sha256": "4aa7bbf95b30b3fe7d83ff880b73a38fef7db3b921e8800449c879a11117472c",
+      "out_bytes": 6960,
+      "public_bytes": 6960,
+      "sha256": "ad81bb5c19c68e4d745beeb86bc889669d156498b3c46b1d35a310f184ca42d3",
       "in_sync": true
     },
     {
       "file": "habitations.geojson",
-      "out_bytes": 63349,
-      "public_bytes": 63349,
-      "sha256": "55c3087ffb675a0f172e97e9578715154b6cea5c29917975d1a81023cabf1ad7",
+      "out_bytes": 60445,
+      "public_bytes": 60445,
+      "sha256": "88247043ae3b0bdb3d14f2d8afc044848140c8455130de8a42f2ea9848f014a8",
       "in_sync": true
     },
     {
       "file": "landslides.geojson",
-      "out_bytes": 54720877,
-      "public_bytes": 54720877,
-      "sha256": "adc441292c20e468e01d7235c2315c5ead18ccddca85f54d821bbad260b60c19",
+      "out_bytes": 522260,
+      "public_bytes": 522260,
+      "sha256": "848389f73a3b1ba9d57cae15de9195d3662867bc8df9c80f7954e4c85d49ec3c",
       "in_sync": true
     },
     {
       "file": "meta.json",
-      "out_bytes": 4594,
-      "public_bytes": 4594,
-      "sha256": "4c121e6b696c46c20ce600901f713fbfc00ef930b124bd67737f1ec1a5d3a403",
+      "out_bytes": 4565,
+      "public_bytes": 4565,
+      "sha256": "be75bda967f2a8fd604bd416b13e257c54a125977f042fa1c0f25b5aa70446a0",
       "in_sync": true
     },
     {
       "file": "recommendations.json",
-      "out_bytes": 110989,
-      "public_bytes": 110989,
-      "sha256": "7427f4fc1827decbcef07e1f5710c0f48fd379090f563edfa2de8de6b4f304ac",
+      "out_bytes": 110595,
+      "public_bytes": 110595,
+      "sha256": "af3d32f3f04152b976a76496052bf9fddb5aaa41abe1e7999e4ab21206e40303",
       "in_sync": true
     },
     {
       "file": "red_zones.geojson",
-      "out_bytes": 10849623,
-      "public_bytes": 10849623,
-      "sha256": "8aff138a3785e4fa83969af14a13754be7aa20142f402ed319841c4dc1b4e1dd",
+      "out_bytes": 1797221,
+      "public_bytes": 1797221,
+      "sha256": "57253445a9d33a87b581070d44c25a3e55e2ddaf3e17f993532f3d4399dfbc12",
       "in_sync": true
     },
     {
       "file": "sites.geojson",
-      "out_bytes": 1617,
-      "public_bytes": 1617,
-      "sha256": "37cdab7927ba86ea89032547a1fad00de5417f91366bf6d4066ad3b99aa2acc9",
+      "out_bytes": 3149,
+      "public_bytes": 3149,
+      "sha256": "aec483aa7fb17cc454ffbccb6ea78d7ddd041033a49c3772efceb220bf29326a",
       "in_sync": true
     },
     {
       "file": "streams.geojson",
-      "out_bytes": 1852816,
-      "public_bytes": 1852816,
-      "sha256": "5f37b18d2ff206a91fd61a041fa7c7af183e2e41b1a4c3d5da3fb3321971ad2d",
+      "out_bytes": 483620,
+      "public_bytes": 483620,
+      "sha256": "29808958fee0306fa8411221d0f20a4a4ab27eb34a86926b5b4b0b4ecd01ac72",
       "in_sync": true
     }
   ],
@@ -77,8 +77,8 @@
       "path": "data\\rudraprayag\\raw\\district.geojson"
     },
     "dem": {
-      "sha256": "6dbc6af294498c9f5dfcdc2e24fdda0aa600df93662684ed1a7a153fe0891580",
-      "data_as_of": "2026-09-03T01:11:21.794419+05:30",
+      "sha256": "cfda3c67382e0129f8fea9713c56785ae4aedd220c9a6f7a49e4db57f595acc5",
+      "data_as_of": "2026-09-05T02:44:30+05:30",
       "path": "data\\rudraprayag\\raw\\dem"
     },
     "landslides": {
@@ -87,8 +87,8 @@
       "path": "data\\rudraprayag\\raw\\landslides.geojson"
     },
     "rainfall": {
-      "sha256": "13b96a348ddbd39723c6495c855ef4874d71eda93ce7ccb2d5ccb20bc569e415",
-      "data_as_of": "2026-09-03T01:19:50.769884+05:30",
+      "sha256": "73b5a5aa42423c19698587443e5a32d039f0d672cf7639bd9fc0fa9f5efacad7",
+      "data_as_of": "2026-09-05T03:17:22.430493+05:30",
       "path": "data\\rudraprayag\\raw\\rainfall.tif"
     },
     "villages": {
@@ -102,18 +102,18 @@
       "path": "data\\rudraprayag\\raw\\osm_waterways.geojson"
     },
     "habitations": {
-      "sha256": "55c3087ffb675a0f172e97e9578715154b6cea5c29917975d1a81023cabf1ad7",
-      "data_as_of": "2026-09-03T01:35:16.487302+05:30",
+      "sha256": "88247043ae3b0bdb3d14f2d8afc044848140c8455130de8a42f2ea9848f014a8",
+      "data_as_of": "2026-09-05T03:16:25.591094+05:30",
       "path": "out\\habitations.geojson"
     },
     "red_zones": {
-      "sha256": "8aff138a3785e4fa83969af14a13754be7aa20142f402ed319841c4dc1b4e1dd",
-      "data_as_of": "2026-09-03T01:31:33.157545+05:30",
+      "sha256": "57253445a9d33a87b581070d44c25a3e55e2ddaf3e17f993532f3d4399dfbc12",
+      "data_as_of": "2026-09-05T03:15:49.469379+05:30",
       "path": "out\\red_zones.geojson"
     },
     "sites": {
-      "sha256": "37cdab7927ba86ea89032547a1fad00de5417f91366bf6d4066ad3b99aa2acc9",
-      "data_as_of": "2026-09-03T01:35:16.454981+05:30",
+      "sha256": "aec483aa7fb17cc454ffbccb6ea78d7ddd041033a49c3772efceb220bf29326a",
+      "data_as_of": "2026-09-05T03:16:25.559095+05:30",
       "path": "out\\sites.geojson"
     }
   }

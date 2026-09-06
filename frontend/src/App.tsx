@@ -41,7 +41,7 @@ export default function App() {
         <GlobalBanners />
         <main className="app-main">
           <ErrorBoundary>
-            <Routes>
+            <Routes key={lang}>
               <Route path="/" element={<Overview />} />
               <Route path="/map" element={<RiskMap />} />
               <Route path="/habitation" element={<HabitationPanel />} />

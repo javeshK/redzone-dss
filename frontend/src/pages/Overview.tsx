@@ -81,6 +81,15 @@ export default function Overview() {
 
       {displayMeta && <KpiCards kpis={displayMeta.kpis} />}
 
+      <section className="card how-to-use-card">
+        <h3>{t('overview.howToUse')}</h3>
+        <ol className="how-to-steps">
+          <li>{t('overview.step1')}</li>
+          <li>{t('overview.step2')}</li>
+          <li>{t('overview.step3')}</li>
+        </ol>
+      </section>
+
       <AlertPanel />
 
       <div className="overview-grid">
@@ -118,13 +127,13 @@ export default function Overview() {
 
       <div className="action-bar">
         <button className="btn-primary" onClick={() => navigate('/map')}>
-          Open Risk Map
+          {t('btn.openMap')}
         </button>
         <button className="btn-secondary" onClick={() => navigate('/habitation')}>
-          View Habitations
+          {t('btn.checkVillage')}
         </button>
         <button className="btn-secondary" onClick={() => navigate('/planner')}>
-          Relocation Planner
+          {t('btn.findRelocation')}
         </button>
       </div>
     </div>

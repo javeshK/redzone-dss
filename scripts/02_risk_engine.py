@@ -27,6 +27,7 @@ except ImportError:
 MIN_ZONE_AREA_HA = 2.0
 SIMPLIFY_TOLERANCE_M = 75.0
 MAX_VERTICES = 500
+MAX_MAP_LANDSLIDE_POINTS = 500
 STREAM_PROX_CAP_M = 1000.0
 KDE_BANDWIDTH_M = 500.0
 ZONE_CLASS_TO_INT = {"Yellow": 1, "Orange": 2, "Red": 3}
@@ -44,7 +45,10 @@ def load_landslides(paths: dict, district: gpd.GeoDataFrame) -> tuple[gpd.GeoDat
         gdf = gpd.clip(gdf, district)
         if len(gdf) > 0:
             gdf["source"] = "OPEN_DATA"
-            gdf.to_file(out_path, driver="GeoJSON")
+            map_gdf = gdf if len(gdf) <= MAX_MAP_LANDSLIDE_POINTS else gdf.sample(
+                MAX_MAP_LANDSLIDE_POINTS, random_state=42
+            )
+            map_gdf.to_file(out_path, driver="GeoJSON")
             return gdf, "OPEN_DATA"
     if out_path.exists():
         gdf = gpd.read_file(out_path)
@@ -336,6 +340,9 @@ def main() -> None:
     district = gpd.read_file(REPO_ROOT / paths["out"]["district"])
     if district.crs is None:
         district = district.set_crs(DISPLAY_CRS)
+    if len(district) > 1:
+        from _district import filter_rudraprayag
+        district = filter_rudraprayag(district)
 
     print("Loading landslides...")
     landslides, ls_provenance = load_landslides(paths, district)

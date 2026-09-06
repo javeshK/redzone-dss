@@ -19,6 +19,8 @@ from app.schemas import (
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 OUT_DIR = REPO_ROOT / "out"
+MAX_API_LANDSLIDE_FEATURES = 500
+MAX_API_STREAM_FEATURES = 300
 
 
 class DataStore:
@@ -36,11 +38,18 @@ class DataStore:
     def load(self, force: bool = False) -> None:
         if self._loaded and not force:
             return
-        self._district = self._read_geojson("district.geojson")
+        self._district = self._normalize_district(self._read_geojson("district.geojson"))
         self._habitations = self._read_geojson("habitations.geojson")
         self._sites = self._read_geojson("sites.geojson")
-        for name in ("red_zones", "landslides", "streams"):
-            self._layers[name] = self._read_geojson(f"{name}.geojson")
+        self._layers = {
+            "red_zones": self._read_geojson("red_zones.geojson"),
+            "landslides": self._thin_features(
+                self._read_geojson("landslides.geojson"), MAX_API_LANDSLIDE_FEATURES
+            ),
+            "streams": self._thin_features(
+                self._read_geojson("streams.geojson"), MAX_API_STREAM_FEATURES
+            ),
+        }
         meta_raw = self._read_json("meta.json")
         self._meta = MetaResponse(**meta_raw)
         rec_raw = self._read_json("recommendations.json")
@@ -59,6 +68,41 @@ class DataStore:
         if not path.exists():
             return {"type": "FeatureCollection", "features": []}
         return json.loads(path.read_text(encoding="utf-8"))
+
+    @staticmethod
+    def _thin_features(data: dict[str, Any], max_features: int) -> dict[str, Any]:
+        feats = data.get("features", [])
+        if len(feats) <= max_features:
+            return data
+        step = max(1, len(feats) // max_features)
+        thinned = feats[::step][:max_features]
+        return {**data, "features": thinned}
+
+    @staticmethod
+    def _normalize_district(data: dict[str, Any]) -> dict[str, Any]:
+        feats = data.get("features", [])
+        if len(feats) <= 1:
+            return data
+        for f in feats:
+            props = f.get("properties", {})
+            if "Rudraprayag" in str(props):
+                return {"type": "FeatureCollection", "features": [f]}
+        # India-wide ADM2 dump — bbox fallback polygon
+        bbox = [78.75, 30.05, 79.55, 30.75]
+        return {
+            "type": "FeatureCollection",
+            "features": [{
+                "type": "Feature",
+                "properties": {"name": "Rudraprayag", "state": "Uttarakhand", "district_code": "UT_RUD"},
+                "geometry": {
+                    "type": "Polygon",
+                    "coordinates": [[
+                        [bbox[0], bbox[1]], [bbox[2], bbox[1]],
+                        [bbox[2], bbox[3]], [bbox[0], bbox[3]], [bbox[0], bbox[1]],
+                    ]],
+                },
+            }],
+        }
 
     def _build_habitation_index(self) -> None:
         self._habitation_index = {}

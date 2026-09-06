@@ -23,7 +23,7 @@ This attempts live sources and falls back to documented derived data:
 |-------|-------------|----------|
 | District | geoBoundaries ADM2 | Bbox |
 | DEM | OpenTopography SRTM GL1 | Terrain-derived from bbox |
-| Rainfall | CHIRPS/ERA5 | Orographic model from DEM |
+| Rainfall | IMD gridded via imdlib (June 2013) | Orographic model from DEM |
 | Landslides | GSI/bharatlas | Steep-slope proxy from DEM |
 | OSM | Overpass API | Pipeline derives from TWI |
 | Villages | DataMeet | Buffer polygons from demo points |

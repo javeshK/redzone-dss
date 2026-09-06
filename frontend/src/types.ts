@@ -138,6 +138,8 @@ export interface AlertData {
   alerts: AlertItem[];
 }
 
+export type RainfallScenarioMode = 'baseline' | 'historical' | 'forecast';
+
 export interface ScenarioResponse {
   factor: number;
   rainfall_factor: number;
@@ -145,6 +147,10 @@ export interface ScenarioResponse {
   h_min: number;
   h_max: number;
   h_mean: number;
+  mode?: RainfallScenarioMode;
+  date?: string | null;
+  precip_mm?: number | null;
+  rainfall_source?: string | null;
   habitations: Array<{
     id: string;
     name: string;
@@ -191,10 +197,10 @@ export interface LayerVisibility {
 export const DEFAULT_LAYERS: LayerVisibility = {
   district: true,
   red_zones: true,
-  landslides: true,
-  streams: true,
+  landslides: false,
+  streams: false,
   habitations: true,
-  sites: true,
+  sites: false,
 };
 
 export const PRIORITY_COLORS: Record<PriorityClass, string> = {

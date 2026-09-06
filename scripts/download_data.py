@@ -124,6 +124,15 @@ def _district_bounds(paths: dict) -> tuple[float, float, float, float]:
     return bbox["min_lon"], bbox["min_lat"], bbox["max_lon"], bbox["max_lat"]
 
 
+def _effective_bbox(paths: dict) -> tuple[float, float, float, float]:
+    """District bounds when clipped; otherwise Rudraprayag bbox from config."""
+    min_lon, min_lat, max_lon, max_lat = _district_bounds(paths)
+    if (max_lon - min_lon) > 3.0 or (max_lat - min_lat) > 3.0:
+        bbox = paths["bbox"]
+        return bbox["min_lon"], bbox["min_lat"], bbox["max_lon"], bbox["max_lat"]
+    return min_lon, min_lat, max_lon, max_lat
+
+
 def download_dem(paths: dict) -> dict:
     """Fetch SRTM via OpenTopography or generate terrain-derived DEM."""
     dem_dir = REPO_ROOT / paths["raw"]["dem"]
@@ -131,7 +140,7 @@ def download_dem(paths: dict) -> dict:
     out_path = dem_dir / "srtm_rudraprayag.tif"
     entry = {"layer": "dem", "source": "DERIVED_TERRAIN", "live": False, "path": str(out_path)}
 
-    min_lon, min_lat, max_lon, max_lat = _district_bounds(paths)
+    min_lon, min_lat, max_lon, max_lat = _effective_bbox(paths)
     url = OPENTOPO_SRTM_URL.format(
         min_lat=min_lat, max_lat=max_lat, min_lon=min_lon, max_lon=max_lon
     )
@@ -173,8 +182,22 @@ def download_dem(paths: dict) -> dict:
 
 
 def download_rainfall(paths: dict) -> dict:
-    """Fetch rainfall raster or generate orographic pattern from DEM."""
+    """Fetch IMD rainfall via imdlib, or fall back to orographic pattern from DEM."""
     out_path = REPO_ROOT / paths["raw"]["rainfall"]
+    raw_dir = REPO_ROOT / paths["raw_dir"]
+    imd_cache = raw_dir / "imd"
+    min_lon, min_lat, max_lon, max_lat = _effective_bbox(paths)
+
+    from _imd_rainfall import fetch_imd_rainfall_geotiff
+
+    entry = fetch_imd_rainfall_geotiff(
+        out_path,
+        bbox=(min_lon, min_lat, max_lon, max_lat),
+        imd_cache_dir=imd_cache,
+    )
+    if entry.get("live"):
+        return entry
+
     entry = {"layer": "rainfall", "source": "DERIVED_OROGRAPHIC", "live": False, "path": str(out_path)}
 
     dem_dir = REPO_ROOT / paths["raw"]["dem"]
@@ -183,7 +206,7 @@ def download_rainfall(paths: dict) -> dict:
         print("  [warn] No DEM for rainfall derivation")
         return entry
 
-    print("Generating orographic rainfall pattern from DEM (CHIRPS/ERA5 unavailable)...")
+    print("  Falling back to orographic rainfall pattern from DEM...")
     with rasterio.open(dem_files[0]) as dem_src:
         dem = dem_src.read(1).astype(float)
         dem[dem == dem_src.nodata] = np.nan
@@ -259,7 +282,7 @@ def _osm_to_geojson(osm_data: dict, geom_type: str = "line") -> dict:
 
 def download_osm(paths: dict) -> list[dict]:
     """Fetch OSM waterways, roads, amenities via Overpass."""
-    min_lon, min_lat, max_lon, max_lat = _district_bounds(paths)
+    min_lon, min_lat, max_lon, max_lat = _effective_bbox(paths)
     bbox = (min_lon, min_lat, max_lon, max_lat)
     entries = []
 

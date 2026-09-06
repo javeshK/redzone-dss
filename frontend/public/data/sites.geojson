@@ -8,12 +8,12 @@
         "id": "SITE_A",
         "name": "Okhimath Plateau North",
         "h_mean": 0.22,
-        "slope_mean_deg": 8.1,
+        "slope_mean_deg": 11.6,
         "area_ha": 24.0,
         "p_buildable": 0.72,
         "p_protected": 0.0,
-        "capacity": 904,
-        "capacity_available": 704,
+        "capacity": 760,
+        "capacity_available": 560,
         "existing_population": 200,
         "f_road": 0.9,
         "f_water": 0.85,
@@ -37,12 +37,12 @@
         "id": "SITE_C",
         "name": "Phata Valley Bench",
         "h_mean": 0.31,
-        "slope_mean_deg": 17.2,
+        "slope_mean_deg": 18.0,
         "area_ha": 10.5,
         "p_buildable": 0.75,
         "p_protected": 0.05,
-        "capacity": 150,
-        "capacity_available": 30,
+        "capacity": 141,
+        "capacity_available": 21,
         "existing_population": 120,
         "f_road": 0.78,
         "f_water": 0.9,
@@ -57,6 +57,64 @@
         "coordinates": [
           79.02,
           30.42
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "SITE_E",
+        "name": "Srinagar Riverside Flat",
+        "h_mean": 0.3,
+        "slope_mean_deg": 6.6,
+        "area_ha": 18.5,
+        "p_buildable": 0.65,
+        "p_protected": 0.02,
+        "capacity": 507,
+        "capacity_available": 287,
+        "existing_population": 220,
+        "f_road": 0.88,
+        "f_water": 0.92,
+        "f_health": 0.78,
+        "source": "EXPERT_SCREENED",
+        "hazard_source": "EXPERT_SCREENED",
+        "screening_note": "First-order physical screening capacity",
+        "screened": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          78.8,
+          30.24
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "SITE_G",
+        "name": "Pipalkoti Foothill",
+        "h_mean": 0.29,
+        "slope_mean_deg": 5.1,
+        "area_ha": 15.5,
+        "p_buildable": 0.74,
+        "p_protected": 0.0,
+        "capacity": 417,
+        "capacity_available": 227,
+        "existing_population": 190,
+        "f_road": 0.86,
+        "f_water": 0.82,
+        "f_health": 0.7,
+        "source": "EXPERT_SCREENED",
+        "hazard_source": "EXPERT_SCREENED",
+        "screening_note": "First-order physical screening capacity",
+        "screened": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          79.33,
+          30.38
         ]
       }
     }

@@ -1,6 +1,11 @@
-import { useEffect } from 'react';
-import { MapContainer, TileLayer, GeoJSON, CircleMarker, Popup, Polyline, useMap } from 'react-leaflet';
+import { memo, useEffect, useMemo } from 'react';
+import { MapContainer, TileLayer, GeoJSON, CircleMarker, Popup, useMap } from 'react-leaflet';
+import L, { type PathOptions } from 'leaflet';
 import { LayerVisibility, PRIORITY_COLORS, ZONE_COLORS, HabitationSummary, SiteSummary } from '../types';
+import { getPriorityPlainLabel } from '../utils/plainLanguage';
+
+const MAX_LANDSLIDE_FEATURES = 500;
+const MAX_STREAM_FEATURES = 300;
 
 interface MapViewProps {
   bbox?: number[];
@@ -16,6 +21,18 @@ interface MapViewProps {
   highlightedSiteId?: string | null;
   recommendedSiteId?: string | null;
   height?: string;
+}
+
+function thinCollection(
+  fc: GeoJSON.FeatureCollection | undefined,
+  max: number
+): GeoJSON.FeatureCollection | undefined {
+  if (!fc?.features?.length || fc.features.length <= max) return fc;
+  const step = Math.ceil(fc.features.length / max);
+  return {
+    ...fc,
+    features: fc.features.filter((_, i) => i % step === 0).slice(0, max),
+  };
 }
 
 function FitBounds({ bbox }: { bbox: number[] }) {
@@ -34,28 +51,9 @@ const zoneStyle = (feature?: GeoJSON.Feature) => {
   return { fillColor: color, fillOpacity: 0.35, color, weight: 1.5 };
 };
 
-function extractPoints(geometry: GeoJSON.Geometry): [number, number][] {
-  if (geometry.type === 'Point') {
-    const [lon, lat] = geometry.coordinates;
-    return [[lat, lon]];
-  }
-  if (geometry.type === 'MultiPoint') {
-    return geometry.coordinates.map(([lon, lat]) => [lat, lon]);
-  }
-  return [];
-}
+const streamStyle: PathOptions = { color: '#4a7c9b', weight: 2, opacity: 0.75 };
 
-function extractLineStrings(geometry: GeoJSON.Geometry): [number, number][][] {
-  if (geometry.type === 'LineString') {
-    return [geometry.coordinates.map(([lon, lat]) => [lat, lon])];
-  }
-  if (geometry.type === 'MultiLineString') {
-    return geometry.coordinates.map((line) => line.map(([lon, lat]) => [lat, lon]));
-  }
-  return [];
-}
-
-export default function MapView({
+function MapView({
   bbox = [78.75, 30.05, 79.55, 30.75],
   districtGeojson,
   redZones,
@@ -72,8 +70,35 @@ export default function MapView({
 }: MapViewProps) {
   const center: [number, number] = [(bbox[1] + bbox[3]) / 2, (bbox[0] + bbox[2]) / 2];
 
+  const thinLandslides = useMemo(
+    () => (layers.landslides ? thinCollection(landslides, MAX_LANDSLIDE_FEATURES) : undefined),
+    [landslides, layers.landslides]
+  );
+  const thinStreams = useMemo(
+    () => (layers.streams ? thinCollection(streams, MAX_STREAM_FEATURES) : undefined),
+    [streams, layers.streams]
+  );
+
+  const landslidePointLayer = useMemo(
+    () => (_feature: GeoJSON.Feature, latlng: L.LatLng) =>
+      L.circleMarker(latlng, {
+        radius: 4,
+        color: '#6b5344',
+        fillColor: '#8b7355',
+        fillOpacity: 0.75,
+        weight: 1,
+      }),
+    []
+  );
+
   return (
-    <MapContainer center={center} zoom={10} style={{ height, width: '100%' }} scrollWheelZoom>
+    <MapContainer
+      center={center}
+      zoom={10}
+      style={{ height, width: '100%' }}
+      scrollWheelZoom
+      preferCanvas
+    >
       <TileLayer
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -83,7 +108,7 @@ export default function MapView({
       {layers.district && districtGeojson && (
         <GeoJSON
           data={districtGeojson}
-          style={{ fillColor: 'transparent', color: '#2c3e50', weight: 2, dashArray: '6 4' }}
+          style={{ fillColor: 'transparent', color: '#2d5a3d', weight: 2, dashArray: '6 4' }}
         />
       )}
 
@@ -91,27 +116,12 @@ export default function MapView({
         <GeoJSON data={redZones} style={zoneStyle} />
       )}
 
-      {layers.streams && streams && streams.features.flatMap((f, i) =>
-        extractLineStrings(f.geometry as GeoJSON.Geometry).map((positions, j) => (
-          <Polyline
-            key={`stream-${i}-${j}`}
-            positions={positions}
-            pathOptions={{ color: '#2980b9', weight: 2, opacity: 0.8 }}
-          />
-        ))
+      {thinStreams && (
+        <GeoJSON data={thinStreams} style={streamStyle} />
       )}
 
-      {layers.landslides && landslides?.features.flatMap((f, i) =>
-        extractPoints(f.geometry as GeoJSON.Geometry).map((center, j) => (
-          <CircleMarker
-            key={`ls-${i}-${j}`}
-            center={center}
-            radius={5}
-            pathOptions={{ color: '#8e44ad', fillColor: '#8e44ad', fillOpacity: 0.8 }}
-          >
-            <Popup>Landslide inventory point</Popup>
-          </CircleMarker>
-        ))
+      {thinLandslides && (
+        <GeoJSON data={thinLandslides} pointToLayer={landslidePointLayer} />
       )}
 
       {layers.habitations && habitations.map((h) => (
@@ -131,8 +141,8 @@ export default function MapView({
         >
           <Popup>
             <strong>{h.name}</strong><br />
-            Priority: {h.priority}<br />
-            H: {h.h.toFixed(2)} | V: {h.v.toFixed(2)}
+            {getPriorityPlainLabel(h.priority)}<br />
+            {h.pct_red.toFixed(0)}% in danger zone
           </Popup>
         </CircleMarker>
       ))}
@@ -146,18 +156,17 @@ export default function MapView({
             center={[s.lat, s.lon]}
             radius={isRecommended ? 12 : isHighlighted ? 10 : 8}
             pathOptions={{
-              color: isRecommended ? '#c0392b' : '#16a085',
-              fillColor: isRecommended ? '#e74c3c' : '#1abc9c',
+              color: isRecommended ? '#2d5a3d' : '#4a7c9b',
+              fillColor: isRecommended ? '#3d7352' : '#5b8fa8',
               fillOpacity: 0.85,
               weight: isRecommended || isHighlighted ? 3 : 2,
             }}
           >
             <Popup>
               <strong>{s.name}</strong>
-              {isRecommended && <><br /><em>Recommended site</em></>}
+              {isRecommended && <><br /><em>Recommended relocation center</em></>}
               <br />
-              H: {s.h_mean.toFixed(2)}<br />
-              Capacity available: {s.capacity_available}
+              Space for {s.capacity_available} people
             </Popup>
           </CircleMarker>
         );
@@ -165,3 +174,5 @@ export default function MapView({
     </MapContainer>
   );
 }
+
+export default memo(MapView);

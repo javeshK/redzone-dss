@@ -5,6 +5,7 @@ import type {
   HabitationSummary,
   HealthResponse,
   MetaResponse,
+  RainfallScenarioMode,
   RecommendationResponse,
   RefreshStatus,
   ScenarioResponse,
@@ -232,15 +233,29 @@ export async function getAlerts(): Promise<AlertData> {
   return fetchWithFallback<AlertData>('/alerts', '/alerts.json');
 }
 
-export async function getRainfallScenario(factor: number): Promise<ScenarioResponse> {
+export async function getRainfallScenario(
+  factor: number,
+  options?: { date?: string; mode?: RainfallScenarioMode },
+): Promise<ScenarioResponse> {
+  const params = new URLSearchParams({ factor: String(factor) });
+  if (options?.mode && options.mode !== 'baseline') {
+    params.set('mode', options.mode);
+    if (options.date) params.set('date', options.date);
+  }
   const useApi = await checkApi();
   if (useApi) {
     try {
-      const r = await fetch(`${API_BASE}/scenario/rainfall?factor=${factor}`);
+      const r = await fetch(`${API_BASE}/scenario/rainfall?${params}`);
       if (r.ok) return r.json();
-    } catch {
+      const err = await r.json().catch(() => ({}));
+      throw new Error(err.detail ?? 'Scenario request failed');
+    } catch (e) {
+      if (e instanceof Error && e.message !== 'Scenario request failed') throw e;
       apiAvailable = false;
     }
+  }
+  if (options?.mode && options.mode !== 'baseline') {
+    throw new Error('Date-based scenarios require the API (start backend)');
   }
   const r = await fetch(`${STATIC_BASE}/scenarios.json`);
   if (r.ok) {

@@ -1,73 +1,73 @@
 {
   "pipeline_version": "2.0.0",
-  "started_at": "2026-09-03T01:19:43.821547+05:30",
-  "ended_at": "2026-09-03T01:35:42.276390+05:30",
-  "duration_s": 958.5,
-  "success": true,
+  "started_at": "2026-09-05T03:33:00.971201+05:30",
+  "ended_at": "2026-09-05T03:34:13.490002+05:30",
+  "duration_s": 72.5,
+  "success": false,
   "steps": [
     {
       "script": "06_fetch_rainfall.py",
       "ok": true,
       "returncode": 0,
-      "started_at": "2026-09-03T01:19:43.822548+05:30",
-      "ended_at": "2026-09-03T01:19:50.995885+05:30",
-      "duration_s": 7.2
+      "started_at": "2026-09-05T03:33:00.971201+05:30",
+      "ended_at": "2026-09-05T03:33:14.399523+05:30",
+      "duration_s": 13.4
     },
     {
       "script": "01_preprocess.py",
-      "ok": true,
-      "returncode": 0,
-      "started_at": "2026-09-03T01:19:50.996889+05:30",
-      "ended_at": "2026-09-03T01:20:26.367339+05:30",
-      "duration_s": 35.4
+      "ok": false,
+      "returncode": 1,
+      "started_at": "2026-09-05T03:33:14.400524+05:30",
+      "ended_at": "2026-09-05T03:33:19.631105+05:30",
+      "duration_s": 5.2
     },
     {
       "script": "02_risk_engine.py",
       "ok": true,
       "returncode": 0,
-      "started_at": "2026-09-03T01:20:26.382341+05:30",
-      "ended_at": "2026-09-03T01:31:33.474497+05:30",
-      "duration_s": 667.1
+      "started_at": "2026-09-05T03:33:19.631105+05:30",
+      "ended_at": "2026-09-05T03:33:48.463977+05:30",
+      "duration_s": 28.8
     },
     {
       "script": "03_vuln_engine.py",
       "ok": true,
       "returncode": 0,
-      "started_at": "2026-09-03T01:31:33.482700+05:30",
-      "ended_at": "2026-09-03T01:35:12.501914+05:30",
-      "duration_s": 219.0
+      "started_at": "2026-09-05T03:33:48.463977+05:30",
+      "ended_at": "2026-09-05T03:34:07.307438+05:30",
+      "duration_s": 18.8
     },
     {
       "script": "04_relocation.py",
       "ok": true,
       "returncode": 0,
-      "started_at": "2026-09-03T01:35:12.501914+05:30",
-      "ended_at": "2026-09-03T01:35:16.635972+05:30",
-      "duration_s": 4.1
+      "started_at": "2026-09-05T03:34:07.307438+05:30",
+      "ended_at": "2026-09-05T03:34:09.714084+05:30",
+      "duration_s": 2.4
     },
     {
       "script": "05_export.py",
-      "ok": true,
-      "returncode": 0,
-      "started_at": "2026-09-03T01:35:16.644128+05:30",
-      "ended_at": "2026-09-03T01:35:41.035714+05:30",
-      "duration_s": 24.4
+      "ok": false,
+      "returncode": 1,
+      "started_at": "2026-09-05T03:34:09.714084+05:30",
+      "ended_at": "2026-09-05T03:34:12.842372+05:30",
+      "duration_s": 3.1
     },
     {
       "script": "08_alerts.py",
       "ok": true,
       "returncode": 0,
-      "started_at": "2026-09-03T01:35:41.060208+05:30",
-      "ended_at": "2026-09-03T01:35:41.394163+05:30",
-      "duration_s": 0.3
+      "started_at": "2026-09-05T03:34:12.842372+05:30",
+      "ended_at": "2026-09-05T03:34:13.010369+05:30",
+      "duration_s": 0.2
     },
     {
       "script": "09_export_pdf.py",
       "ok": true,
       "returncode": 0,
-      "started_at": "2026-09-03T01:35:41.394163+05:30",
-      "ended_at": "2026-09-03T01:35:42.276390+05:30",
-      "duration_s": 0.9
+      "started_at": "2026-09-05T03:34:13.010369+05:30",
+      "ended_at": "2026-09-05T03:34:13.490002+05:30",
+      "duration_s": 0.5
     }
   ]
 }

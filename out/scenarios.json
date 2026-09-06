@@ -3,209 +3,209 @@
     "factor": 1.0,
     "rainfall_factor": 1.0,
     "has_rainfall": true,
-    "h_min": 0.096,
-    "h_max": 0.8472,
-    "h_mean": 0.5102,
+    "h_min": 0.683,
+    "h_max": 1.0,
+    "h_mean": 0.8163,
     "habitations": [
       {
         "id": "UT_RUD_0001",
         "name": "Ukhimath",
-        "h_ls": 0.0977,
-        "h_ff": 0.2815,
-        "h": 0.3517,
-        "zone_class": "Yellow"
+        "h_ls": 0.2675,
+        "h_ff": 0.7227,
+        "h": 0.7969,
+        "zone_class": "Red"
       },
       {
         "id": "UT_RUD_0002",
         "name": "Guptkashi",
-        "h_ls": 0.4602,
-        "h_ff": 0.1509,
-        "h": 0.5417,
-        "zone_class": "Orange"
+        "h_ls": 0.3893,
+        "h_ff": 0.6223,
+        "h": 0.7693,
+        "zone_class": "Red"
       },
       {
         "id": "UT_RUD_0003",
         "name": "Agastyamuni",
-        "h_ls": 0.3158,
-        "h_ff": 0.2539,
-        "h": 0.4895,
-        "zone_class": "Yellow"
+        "h_ls": 0.3464,
+        "h_ff": 0.7316,
+        "h": 0.8246,
+        "zone_class": "Red"
       },
       {
         "id": "UT_RUD_0004",
         "name": "Tilwara",
-        "h_ls": 0.062,
-        "h_ff": 0.325,
-        "h": 0.3669,
-        "zone_class": "Yellow"
+        "h_ls": 0.1632,
+        "h_ff": 0.7879,
+        "h": 0.8225,
+        "zone_class": "Red"
       },
       {
         "id": "UT_RUD_0005",
         "name": "Rudraprayag Town",
-        "h_ls": 0.0041,
-        "h_ff": 0.3709,
-        "h": 0.3735,
-        "zone_class": "Yellow"
+        "h_ls": 0.15,
+        "h_ff": 0.903,
+        "h": 0.9175,
+        "zone_class": "Red"
       },
       {
         "id": "UT_RUD_0006",
         "name": "Gaurikund",
-        "h_ls": 0.3924,
-        "h_ff": 0.2354,
-        "h": 0.5355,
-        "zone_class": "Orange"
+        "h_ls": 0.5086,
+        "h_ff": 0.5985,
+        "h": 0.8027,
+        "zone_class": "Red"
       },
       {
         "id": "UT_RUD_0007",
         "name": "Phata",
-        "h_ls": 0.0596,
-        "h_ff": 0.1798,
-        "h": 0.2287,
-        "zone_class": "Green"
+        "h_ls": 0.1951,
+        "h_ff": 0.6221,
+        "h": 0.6958,
+        "zone_class": "Orange"
       },
       {
         "id": "UT_RUD_0008",
         "name": "Kalimath",
-        "h_ls": 0.2354,
-        "h_ff": 0.3638,
-        "h": 0.5136,
-        "zone_class": "Orange"
+        "h_ls": 0.3998,
+        "h_ff": 0.8079,
+        "h": 0.8847,
+        "zone_class": "Red"
       },
       {
         "id": "UT_RUD_0009",
         "name": "Narayankoti",
-        "h_ls": 0.1531,
-        "h_ff": 0.2362,
-        "h": 0.3532,
-        "zone_class": "Yellow"
+        "h_ls": 0.1706,
+        "h_ff": 0.6527,
+        "h": 0.712,
+        "zone_class": "Red"
       },
       {
         "id": "UT_RUD_0010",
         "name": "Triyuginarayan",
-        "h_ls": 0.3366,
-        "h_ff": 0.4499,
-        "h": 0.6351,
-        "zone_class": "Orange"
+        "h_ls": 0.4535,
+        "h_ff": 0.7279,
+        "h": 0.8513,
+        "zone_class": "Red"
       },
       {
         "id": "UT_RUD_0011",
         "name": "Okhimath",
-        "h_ls": 0.0249,
-        "h_ff": 0.351,
-        "h": 0.3672,
-        "zone_class": "Yellow"
+        "h_ls": 0.15,
+        "h_ff": 0.8169,
+        "h": 0.8443,
+        "zone_class": "Red"
       },
       {
         "id": "UT_RUD_0012",
         "name": "Chopta",
-        "h_ls": 0.2631,
-        "h_ff": 0.4875,
-        "h": 0.6223,
-        "zone_class": "Orange"
+        "h_ls": 0.4262,
+        "h_ff": 0.7899,
+        "h": 0.8794,
+        "zone_class": "Red"
       },
       {
         "id": "UT_RUD_0013",
         "name": "Makku",
-        "h_ls": 0.2947,
-        "h_ff": 0.3519,
-        "h": 0.5429,
-        "zone_class": "Orange"
+        "h_ls": 0.3164,
+        "h_ff": 0.6712,
+        "h": 0.7753,
+        "zone_class": "Red"
       },
       {
         "id": "UT_RUD_0014",
         "name": "Jagula",
-        "h_ls": 0.4947,
-        "h_ff": 0.2184,
-        "h": 0.6051,
-        "zone_class": "Orange"
+        "h_ls": 0.4856,
+        "h_ff": 0.5999,
+        "h": 0.7942,
+        "zone_class": "Red"
       },
       {
         "id": "UT_RUD_0015",
         "name": "Augustmuni",
-        "h_ls": 0.1547,
-        "h_ff": 0.3801,
-        "h": 0.476,
-        "zone_class": "Yellow"
+        "h_ls": 0.0,
+        "h_ff": 0.0,
+        "h": 0.0,
+        "zone_class": "Green"
       },
       {
         "id": "UT_RUD_0016",
         "name": "Bhiri",
-        "h_ls": 0.3602,
-        "h_ff": 0.3305,
-        "h": 0.5717,
-        "zone_class": "Orange"
+        "h_ls": 0.444,
+        "h_ff": 0.8225,
+        "h": 0.9013,
+        "zone_class": "Red"
       },
       {
         "id": "UT_RUD_0017",
         "name": "Chandrapuri",
-        "h_ls": 0.3583,
-        "h_ff": 0.2946,
-        "h": 0.5474,
-        "zone_class": "Orange"
+        "h_ls": 0.3052,
+        "h_ff": 0.8022,
+        "h": 0.8625,
+        "zone_class": "Red"
       },
       {
         "id": "UT_RUD_0018",
         "name": "Srinagar",
-        "h_ls": 0.0019,
-        "h_ff": 0.2061,
-        "h": 0.2076,
+        "h_ls": 0.0,
+        "h_ff": 0.0,
+        "h": 0.0,
         "zone_class": "Green"
       },
       {
         "id": "UT_RUD_0019",
         "name": "Pipalkoti",
-        "h_ls": 0.469,
-        "h_ff": 0.2114,
-        "h": 0.5813,
-        "zone_class": "Orange"
+        "h_ls": 0.0,
+        "h_ff": 0.0,
+        "h": 0.0,
+        "zone_class": "Green"
       },
       {
         "id": "UT_RUD_0020",
         "name": "Khumera",
-        "h_ls": 0.4756,
-        "h_ff": 0.3621,
-        "h": 0.6654,
-        "zone_class": "Orange"
+        "h_ls": 0.6,
+        "h_ff": 0.7937,
+        "h": 0.9175,
+        "zone_class": "Red"
       },
       {
         "id": "UT_RUD_0021",
         "name": "Deoria",
-        "h_ls": 0.2635,
-        "h_ff": 0.2726,
-        "h": 0.4642,
-        "zone_class": "Yellow"
+        "h_ls": 0.3281,
+        "h_ff": 0.6588,
+        "h": 0.7708,
+        "zone_class": "Red"
       },
       {
         "id": "UT_RUD_0022",
         "name": "Sari",
-        "h_ls": 0.427,
-        "h_ff": 0.4647,
-        "h": 0.6932,
-        "zone_class": "Orange"
+        "h_ls": 0.509,
+        "h_ff": 0.6865,
+        "h": 0.8461,
+        "zone_class": "Red"
       },
       {
         "id": "UT_RUD_0023",
         "name": "Toshi",
-        "h_ls": 0.1802,
-        "h_ff": 0.2858,
-        "h": 0.4144,
-        "zone_class": "Yellow"
+        "h_ls": 0.2856,
+        "h_ff": 0.715,
+        "h": 0.7964,
+        "zone_class": "Red"
       },
       {
         "id": "UT_RUD_0024",
         "name": "Kamleshwar",
-        "h_ls": 0.3039,
-        "h_ff": 0.3744,
-        "h": 0.5645,
-        "zone_class": "Orange"
+        "h_ls": 0.0,
+        "h_ff": 0.0,
+        "h": 0.0,
+        "zone_class": "Green"
       },
       {
         "id": "UT_RUD_0025",
         "name": "Joshiyara",
-        "h_ls": 0.3035,
-        "h_ff": 0.2598,
-        "h": 0.4844,
-        "zone_class": "Yellow"
+        "h_ls": 0.4322,
+        "h_ff": 0.7682,
+        "h": 0.8684,
+        "zone_class": "Red"
       }
     ],
     "note": "Scenario mode: rainfall scaled by 1.0x for decision-support exploration only"
@@ -214,209 +214,209 @@
     "factor": 1.2,
     "rainfall_factor": 1.2,
     "has_rainfall": true,
-    "h_min": 0.096,
-    "h_max": 0.8836,
-    "h_mean": 0.5344,
+    "h_min": 0.683,
+    "h_max": 1.0,
+    "h_mean": 0.8163,
     "habitations": [
       {
         "id": "UT_RUD_0001",
         "name": "Ukhimath",
-        "h_ls": 0.1034,
-        "h_ff": 0.3005,
-        "h": 0.3728,
-        "zone_class": "Yellow"
+        "h_ls": 0.2675,
+        "h_ff": 0.7227,
+        "h": 0.7969,
+        "zone_class": "Red"
       },
       {
         "id": "UT_RUD_0002",
         "name": "Guptkashi",
-        "h_ls": 0.4649,
-        "h_ff": 0.1665,
-        "h": 0.554,
-        "zone_class": "Orange"
+        "h_ls": 0.3893,
+        "h_ff": 0.6223,
+        "h": 0.7693,
+        "zone_class": "Red"
       },
       {
         "id": "UT_RUD_0003",
         "name": "Agastyamuni",
-        "h_ls": 0.3191,
-        "h_ff": 0.2648,
-        "h": 0.4994,
-        "zone_class": "Yellow"
+        "h_ls": 0.3464,
+        "h_ff": 0.7316,
+        "h": 0.8246,
+        "zone_class": "Red"
       },
       {
         "id": "UT_RUD_0004",
         "name": "Tilwara",
-        "h_ls": 0.0658,
-        "h_ff": 0.3377,
-        "h": 0.3813,
-        "zone_class": "Yellow"
+        "h_ls": 0.1632,
+        "h_ff": 0.7879,
+        "h": 0.8225,
+        "zone_class": "Red"
       },
       {
         "id": "UT_RUD_0005",
         "name": "Rudraprayag Town",
-        "h_ls": 0.0049,
-        "h_ff": 0.3736,
-        "h": 0.3767,
-        "zone_class": "Yellow"
+        "h_ls": 0.15,
+        "h_ff": 0.903,
+        "h": 0.9175,
+        "zone_class": "Red"
       },
       {
         "id": "UT_RUD_0006",
         "name": "Gaurikund",
-        "h_ls": 0.4019,
-        "h_ff": 0.2671,
-        "h": 0.5617,
-        "zone_class": "Orange"
+        "h_ls": 0.5086,
+        "h_ff": 0.5985,
+        "h": 0.8027,
+        "zone_class": "Red"
       },
       {
         "id": "UT_RUD_0007",
         "name": "Phata",
-        "h_ls": 0.0648,
-        "h_ff": 0.1972,
-        "h": 0.2493,
-        "zone_class": "Green"
+        "h_ls": 0.1951,
+        "h_ff": 0.6221,
+        "h": 0.6958,
+        "zone_class": "Orange"
       },
       {
         "id": "UT_RUD_0008",
         "name": "Kalimath",
-        "h_ls": 0.24,
-        "h_ff": 0.3792,
-        "h": 0.5282,
-        "zone_class": "Orange"
+        "h_ls": 0.3998,
+        "h_ff": 0.8079,
+        "h": 0.8847,
+        "zone_class": "Red"
       },
       {
         "id": "UT_RUD_0009",
         "name": "Narayankoti",
-        "h_ls": 0.1598,
-        "h_ff": 0.2585,
-        "h": 0.377,
-        "zone_class": "Yellow"
+        "h_ls": 0.1706,
+        "h_ff": 0.6527,
+        "h": 0.712,
+        "zone_class": "Red"
       },
       {
         "id": "UT_RUD_0010",
         "name": "Triyuginarayan",
-        "h_ls": 0.3517,
-        "h_ff": 0.5002,
-        "h": 0.6759,
-        "zone_class": "Orange"
+        "h_ls": 0.4535,
+        "h_ff": 0.7279,
+        "h": 0.8513,
+        "zone_class": "Red"
       },
       {
         "id": "UT_RUD_0011",
         "name": "Okhimath",
-        "h_ls": 0.0299,
-        "h_ff": 0.3676,
-        "h": 0.3865,
-        "zone_class": "Yellow"
+        "h_ls": 0.15,
+        "h_ff": 0.8169,
+        "h": 0.8443,
+        "zone_class": "Red"
       },
       {
         "id": "UT_RUD_0012",
         "name": "Chopta",
-        "h_ls": 0.2767,
-        "h_ff": 0.5328,
-        "h": 0.662,
-        "zone_class": "Orange"
+        "h_ls": 0.4262,
+        "h_ff": 0.7899,
+        "h": 0.8794,
+        "zone_class": "Red"
       },
       {
         "id": "UT_RUD_0013",
         "name": "Makku",
-        "h_ls": 0.3064,
-        "h_ff": 0.391,
-        "h": 0.5776,
-        "zone_class": "Orange"
+        "h_ls": 0.3164,
+        "h_ff": 0.6712,
+        "h": 0.7753,
+        "zone_class": "Red"
       },
       {
         "id": "UT_RUD_0014",
         "name": "Jagula",
-        "h_ls": 0.5036,
-        "h_ff": 0.2482,
-        "h": 0.6268,
-        "zone_class": "Orange"
+        "h_ls": 0.4856,
+        "h_ff": 0.5999,
+        "h": 0.7942,
+        "zone_class": "Red"
       },
       {
         "id": "UT_RUD_0015",
         "name": "Augustmuni",
-        "h_ls": 0.1625,
-        "h_ff": 0.406,
-        "h": 0.5025,
-        "zone_class": "Orange"
+        "h_ls": 0.0,
+        "h_ff": 0.0,
+        "h": 0.0,
+        "zone_class": "Green"
       },
       {
         "id": "UT_RUD_0016",
         "name": "Bhiri",
-        "h_ls": 0.3633,
-        "h_ff": 0.341,
-        "h": 0.5804,
-        "zone_class": "Orange"
+        "h_ls": 0.444,
+        "h_ff": 0.8225,
+        "h": 0.9013,
+        "zone_class": "Red"
       },
       {
         "id": "UT_RUD_0017",
         "name": "Chandrapuri",
-        "h_ls": 0.3603,
-        "h_ff": 0.3011,
-        "h": 0.5529,
-        "zone_class": "Orange"
+        "h_ls": 0.3052,
+        "h_ff": 0.8022,
+        "h": 0.8625,
+        "zone_class": "Red"
       },
       {
         "id": "UT_RUD_0018",
         "name": "Srinagar",
-        "h_ls": 0.0022,
-        "h_ff": 0.2074,
-        "h": 0.2091,
+        "h_ls": 0.0,
+        "h_ff": 0.0,
+        "h": 0.0,
         "zone_class": "Green"
       },
       {
         "id": "UT_RUD_0019",
         "name": "Pipalkoti",
-        "h_ls": 0.4728,
-        "h_ff": 0.2241,
-        "h": 0.591,
-        "zone_class": "Orange"
+        "h_ls": 0.0,
+        "h_ff": 0.0,
+        "h": 0.0,
+        "zone_class": "Green"
       },
       {
         "id": "UT_RUD_0020",
         "name": "Khumera",
-        "h_ls": 0.4807,
-        "h_ff": 0.3791,
-        "h": 0.6776,
-        "zone_class": "Orange"
+        "h_ls": 0.6,
+        "h_ff": 0.7937,
+        "h": 0.9175,
+        "zone_class": "Red"
       },
       {
         "id": "UT_RUD_0021",
         "name": "Deoria",
-        "h_ls": 0.2717,
-        "h_ff": 0.3,
-        "h": 0.4902,
-        "zone_class": "Yellow"
+        "h_ls": 0.3281,
+        "h_ff": 0.6588,
+        "h": 0.7708,
+        "zone_class": "Red"
       },
       {
         "id": "UT_RUD_0022",
         "name": "Sari",
-        "h_ls": 0.4451,
-        "h_ff": 0.5253,
-        "h": 0.7366,
+        "h_ls": 0.509,
+        "h_ff": 0.6865,
+        "h": 0.8461,
         "zone_class": "Red"
       },
       {
         "id": "UT_RUD_0023",
         "name": "Toshi",
-        "h_ls": 0.1854,
-        "h_ff": 0.303,
-        "h": 0.4322,
-        "zone_class": "Yellow"
+        "h_ls": 0.2856,
+        "h_ff": 0.715,
+        "h": 0.7964,
+        "zone_class": "Red"
       },
       {
         "id": "UT_RUD_0024",
         "name": "Kamleshwar",
-        "h_ls": 0.3082,
-        "h_ff": 0.3887,
-        "h": 0.5771,
-        "zone_class": "Orange"
+        "h_ls": 0.0,
+        "h_ff": 0.0,
+        "h": 0.0,
+        "zone_class": "Green"
       },
       {
         "id": "UT_RUD_0025",
         "name": "Joshiyara",
-        "h_ls": 0.3053,
-        "h_ff": 0.266,
-        "h": 0.4901,
-        "zone_class": "Yellow"
+        "h_ls": 0.4322,
+        "h_ff": 0.7682,
+        "h": 0.8684,
+        "zone_class": "Red"
       }
     ],
     "note": "Scenario mode: rainfall scaled by 1.2x for decision-support exploration only"
@@ -425,209 +425,209 @@
     "factor": 1.5,
     "rainfall_factor": 1.5,
     "has_rainfall": true,
-    "h_min": 0.096,
-    "h_max": 0.9258,
-    "h_mean": 0.5688,
+    "h_min": 0.683,
+    "h_max": 1.0,
+    "h_mean": 0.8163,
     "habitations": [
       {
         "id": "UT_RUD_0001",
         "name": "Ukhimath",
-        "h_ls": 0.112,
-        "h_ff": 0.3289,
-        "h": 0.404,
-        "zone_class": "Yellow"
+        "h_ls": 0.2675,
+        "h_ff": 0.7227,
+        "h": 0.7969,
+        "zone_class": "Red"
       },
       {
         "id": "UT_RUD_0002",
         "name": "Guptkashi",
-        "h_ls": 0.472,
-        "h_ff": 0.19,
-        "h": 0.5723,
-        "zone_class": "Orange"
+        "h_ls": 0.3893,
+        "h_ff": 0.6223,
+        "h": 0.7693,
+        "zone_class": "Red"
       },
       {
         "id": "UT_RUD_0003",
         "name": "Agastyamuni",
-        "h_ls": 0.324,
-        "h_ff": 0.2811,
-        "h": 0.514,
-        "zone_class": "Orange"
+        "h_ls": 0.3464,
+        "h_ff": 0.7316,
+        "h": 0.8246,
+        "zone_class": "Red"
       },
       {
         "id": "UT_RUD_0004",
         "name": "Tilwara",
-        "h_ls": 0.0715,
-        "h_ff": 0.3566,
-        "h": 0.4026,
-        "zone_class": "Yellow"
+        "h_ls": 0.1632,
+        "h_ff": 0.7879,
+        "h": 0.8225,
+        "zone_class": "Red"
       },
       {
         "id": "UT_RUD_0005",
         "name": "Rudraprayag Town",
-        "h_ls": 0.0061,
-        "h_ff": 0.3777,
-        "h": 0.3815,
-        "zone_class": "Yellow"
+        "h_ls": 0.15,
+        "h_ff": 0.903,
+        "h": 0.9175,
+        "zone_class": "Red"
       },
       {
         "id": "UT_RUD_0006",
         "name": "Gaurikund",
-        "h_ls": 0.4162,
-        "h_ff": 0.3145,
-        "h": 0.5998,
-        "zone_class": "Orange"
+        "h_ls": 0.5086,
+        "h_ff": 0.5985,
+        "h": 0.8027,
+        "zone_class": "Red"
       },
       {
         "id": "UT_RUD_0007",
         "name": "Phata",
-        "h_ls": 0.0727,
-        "h_ff": 0.2234,
-        "h": 0.2799,
-        "zone_class": "Green"
+        "h_ls": 0.1951,
+        "h_ff": 0.6221,
+        "h": 0.6958,
+        "zone_class": "Orange"
       },
       {
         "id": "UT_RUD_0008",
         "name": "Kalimath",
-        "h_ls": 0.247,
-        "h_ff": 0.4022,
-        "h": 0.5498,
-        "zone_class": "Orange"
+        "h_ls": 0.3998,
+        "h_ff": 0.8079,
+        "h": 0.8847,
+        "zone_class": "Red"
       },
       {
         "id": "UT_RUD_0009",
         "name": "Narayankoti",
-        "h_ls": 0.1698,
-        "h_ff": 0.292,
-        "h": 0.4122,
-        "zone_class": "Yellow"
+        "h_ls": 0.1706,
+        "h_ff": 0.6527,
+        "h": 0.712,
+        "zone_class": "Red"
       },
       {
         "id": "UT_RUD_0010",
         "name": "Triyuginarayan",
-        "h_ls": 0.3743,
-        "h_ff": 0.5756,
-        "h": 0.7344,
+        "h_ls": 0.4535,
+        "h_ff": 0.7279,
+        "h": 0.8513,
         "zone_class": "Red"
       },
       {
         "id": "UT_RUD_0011",
         "name": "Okhimath",
-        "h_ls": 0.0374,
-        "h_ff": 0.3926,
-        "h": 0.4153,
-        "zone_class": "Yellow"
+        "h_ls": 0.15,
+        "h_ff": 0.8169,
+        "h": 0.8443,
+        "zone_class": "Red"
       },
       {
         "id": "UT_RUD_0012",
         "name": "Chopta",
-        "h_ls": 0.297,
-        "h_ff": 0.6007,
-        "h": 0.7193,
+        "h_ls": 0.4262,
+        "h_ff": 0.7899,
+        "h": 0.8794,
         "zone_class": "Red"
       },
       {
         "id": "UT_RUD_0013",
         "name": "Makku",
-        "h_ls": 0.324,
-        "h_ff": 0.4495,
-        "h": 0.6279,
-        "zone_class": "Orange"
+        "h_ls": 0.3164,
+        "h_ff": 0.6712,
+        "h": 0.7753,
+        "zone_class": "Red"
       },
       {
         "id": "UT_RUD_0014",
         "name": "Jagula",
-        "h_ls": 0.517,
-        "h_ff": 0.2929,
-        "h": 0.6585,
-        "zone_class": "Orange"
+        "h_ls": 0.4856,
+        "h_ff": 0.5999,
+        "h": 0.7942,
+        "zone_class": "Red"
       },
       {
         "id": "UT_RUD_0015",
         "name": "Augustmuni",
-        "h_ls": 0.1741,
-        "h_ff": 0.4447,
-        "h": 0.5414,
-        "zone_class": "Orange"
+        "h_ls": 0.0,
+        "h_ff": 0.0,
+        "h": 0.0,
+        "zone_class": "Green"
       },
       {
         "id": "UT_RUD_0016",
         "name": "Bhiri",
-        "h_ls": 0.368,
-        "h_ff": 0.3567,
-        "h": 0.5934,
-        "zone_class": "Orange"
+        "h_ls": 0.444,
+        "h_ff": 0.8225,
+        "h": 0.9013,
+        "zone_class": "Red"
       },
       {
         "id": "UT_RUD_0017",
         "name": "Chandrapuri",
-        "h_ls": 0.3632,
-        "h_ff": 0.3109,
-        "h": 0.5612,
-        "zone_class": "Orange"
+        "h_ls": 0.3052,
+        "h_ff": 0.8022,
+        "h": 0.8625,
+        "zone_class": "Red"
       },
       {
         "id": "UT_RUD_0018",
         "name": "Srinagar",
-        "h_ls": 0.0028,
-        "h_ff": 0.2092,
-        "h": 0.2115,
+        "h_ls": 0.0,
+        "h_ff": 0.0,
+        "h": 0.0,
         "zone_class": "Green"
       },
       {
         "id": "UT_RUD_0019",
         "name": "Pipalkoti",
-        "h_ls": 0.4786,
-        "h_ff": 0.2431,
-        "h": 0.6053,
-        "zone_class": "Orange"
+        "h_ls": 0.0,
+        "h_ff": 0.0,
+        "h": 0.0,
+        "zone_class": "Green"
       },
       {
         "id": "UT_RUD_0020",
         "name": "Khumera",
-        "h_ls": 0.4884,
-        "h_ff": 0.4047,
-        "h": 0.6954,
-        "zone_class": "Orange"
+        "h_ls": 0.6,
+        "h_ff": 0.7937,
+        "h": 0.9175,
+        "zone_class": "Red"
       },
       {
         "id": "UT_RUD_0021",
         "name": "Deoria",
-        "h_ls": 0.2841,
-        "h_ff": 0.3413,
-        "h": 0.5284,
-        "zone_class": "Orange"
+        "h_ls": 0.3281,
+        "h_ff": 0.6588,
+        "h": 0.7708,
+        "zone_class": "Red"
       },
       {
         "id": "UT_RUD_0022",
         "name": "Sari",
-        "h_ls": 0.4724,
-        "h_ff": 0.6162,
-        "h": 0.7975,
+        "h_ls": 0.509,
+        "h_ff": 0.6865,
+        "h": 0.8461,
         "zone_class": "Red"
       },
       {
         "id": "UT_RUD_0023",
         "name": "Toshi",
-        "h_ls": 0.1931,
-        "h_ff": 0.3289,
-        "h": 0.4585,
-        "zone_class": "Yellow"
+        "h_ls": 0.2856,
+        "h_ff": 0.715,
+        "h": 0.7964,
+        "zone_class": "Red"
       },
       {
         "id": "UT_RUD_0024",
         "name": "Kamleshwar",
-        "h_ls": 0.3146,
-        "h_ff": 0.4101,
-        "h": 0.5957,
-        "zone_class": "Orange"
+        "h_ls": 0.0,
+        "h_ff": 0.0,
+        "h": 0.0,
+        "zone_class": "Green"
       },
       {
         "id": "UT_RUD_0025",
         "name": "Joshiyara",
-        "h_ls": 0.3081,
-        "h_ff": 0.2752,
-        "h": 0.4985,
-        "zone_class": "Yellow"
+        "h_ls": 0.4322,
+        "h_ff": 0.7682,
+        "h": 0.8684,
+        "zone_class": "Red"
       }
     ],
     "note": "Scenario mode: rainfall scaled by 1.5x for decision-support exploration only"

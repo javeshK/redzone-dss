@@ -96,8 +96,15 @@ def _load_base_components(paths: dict) -> dict[str, Any] | None:
     }
 
 
-def compute_scenario_hazard(factor: float, weights: dict | None = None, paths: dict | None = None) -> dict:
-    """Recompute H_ls, H_ff, H with scaled rainfall factor."""
+def compute_scenario_hazard(
+    factor: float,
+    weights: dict | None = None,
+    paths: dict | None = None,
+    *,
+    scenario_date: str | None = None,
+    mode: str = "baseline",
+) -> dict:
+    """Recompute H_ls, H_ff, H with scaled rainfall factor and optional date/mode."""
     if factor not in ALLOWED_FACTORS:
         raise ValueError(f"factor must be one of {ALLOWED_FACTORS}")
     weights = weights or load_weights()
@@ -106,11 +113,37 @@ def compute_scenario_hazard(factor: float, weights: dict | None = None, paths: d
     if comp is None:
         return {"factor": factor, "error": "processed rasters unavailable", "habitations": []}
 
-    r_scaled = np.clip(comp["rainfall"] * factor, 0.0, 1.0)
+    rainfall = comp["rainfall"]
+    date_meta: dict = {"mode": mode, "date": scenario_date}
+
+    if scenario_date and mode != "baseline":
+        from _rainfall_date import build_rainfall_grid_for_date, _parse_date
+
+        try:
+            target = _parse_date(scenario_date)
+            rainfall, date_meta = build_rainfall_grid_for_date(
+                target,
+                mode,  # type: ignore[arg-type]
+                rainfall.shape,
+                comp["mask"],
+                comp["rainfall"],
+                paths,
+            )
+        except ValueError as e:
+            return {
+                "factor": factor,
+                "error": str(e),
+                "habitations": [],
+                "mode": mode,
+                "date": scenario_date,
+            }
+
+    r_scaled = np.clip(rainfall * factor, 0.0, 1.0)
     ls_w = weights["hazard"]["landslide"]
     ff_w = weights["hazard"]["flash_flood"]
 
-    if comp["has_rainfall"]:
+    has_rain = comp["has_rainfall"] or (scenario_date is not None and mode != "baseline")
+    if has_rain:
         h_ls = ls_w["slope"] * comp["slope_s"] + ls_w["landslide_density"] * comp["kde"] + ls_w["rainfall"] * r_scaled
         h_ff = ff_w["wetness_stream"] * comp["wetness"] + ff_w["rainfall"] * r_scaled
     else:
@@ -151,15 +184,29 @@ def compute_scenario_hazard(factor: float, weights: dict | None = None, paths: d
                 })
 
     valid_h = h[comp["mask"] & ~np.isnan(h)]
+    note = f"Scenario mode: rainfall scaled by {factor}x for decision-support exploration only"
+    if scenario_date and mode != "baseline":
+        src = date_meta.get("source", mode)
+        mm = date_meta.get("precip_mm")
+        mm_part = f", {mm} mm" if mm is not None else ""
+        note = (
+            f"Scenario: {mode} rainfall for {scenario_date} ({src}{mm_part}) "
+            f"× {factor} — planning exploration only, not an official forecast"
+        )
+
     return {
         "factor": factor,
         "rainfall_factor": factor,
-        "has_rainfall": comp["has_rainfall"],
+        "has_rainfall": comp["has_rainfall"] or mode != "baseline",
+        "mode": mode,
+        "date": scenario_date,
+        "precip_mm": date_meta.get("precip_mm"),
+        "rainfall_source": date_meta.get("source"),
         "h_min": round(float(np.nanmin(valid_h)), 4) if len(valid_h) else 0,
         "h_max": round(float(np.nanmax(valid_h)), 4) if len(valid_h) else 0,
         "h_mean": round(float(np.nanmean(valid_h)), 4) if len(valid_h) else 0,
         "habitations": hab_results,
-        "note": f"Scenario mode: rainfall scaled by {factor}x for decision-support exploration only",
+        "note": note,
     }
 
 

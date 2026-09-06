@@ -27,6 +27,20 @@ def test_rainfall_scenario_invalid_factor():
     assert r.status_code == 400
 
 
+def test_rainfall_scenario_historical_date():
+    r = client.get("/api/scenario/rainfall?factor=1.0&mode=historical&date=2013-06-16")
+    assert r.status_code == 200
+    data = r.json()
+    assert data["mode"] == "historical"
+    assert data["date"] == "2013-06-16"
+    assert data.get("precip_mm") is not None or data.get("rainfall_source")
+
+
+def test_rainfall_scenario_requires_date_for_historical():
+    r = client.get("/api/scenario/rainfall?factor=1.0&mode=historical")
+    assert r.status_code == 400
+
+
 def test_scenario_hazard_bounds_increase_with_factor():
     r1 = client.get("/api/scenario/rainfall?factor=1.0")
     r2 = client.get("/api/scenario/rainfall?factor=1.5")
