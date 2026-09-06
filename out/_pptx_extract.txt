@@ -1,0 +1,213 @@
+SLIDE_COUNT=6
+NOTES_COUNT=5
+
+================================================================================
+ppt/slides/slide1.xml
+================================================================================
+TITLE PAGE
+SMART INDIA HACKATHON 2026
+Problem Statement ID –
+26191
+Problem Statement Title -
+Intelligent Identification of Hazard-Based Red Zones, Carrying Capacity Assessment, and Immediate Relocation Needs for
+Vulnerable Habitations
+Theme-
+Disaster Management
+PS Category- Software/Hardware
+Team ID-
+Team Name – The Alchemists
+
+================================================================================
+ppt/slides/slide2.xml
+================================================================================
+RakshaGrid
+2
+@SIH Idea submission- Template
+The Alchemists
+THE PROBLEM
+Scattered
+multi-source hazard data
+Risk depends on hazard + vulnerability
+No unified relocation decision-support system
+OUR SOLUTION
+RakshaGrid
+uses GIS + MCA scoring to:
+→ Identify Red Zones
+→ Assess Vulnerability & Risk
+→ Evaluate Carrying Capacity
+→ Prioritize Relocation
+
+================================================================================
+ppt/slides/slide3.xml
+================================================================================
+TECHNICAL APPROACH
+3
+@SIH Idea submission- Template
+The Alchemists
+MULTI-SOURCE DATA
+Hazard • Terrain / DEM • Rainfall
+Population • OSM roads • GSI inventory
+GIS + DATA ENGINE
+Data Ingestion & Cleaning
+GIS Processing • Spatial Analysis
+Raster overlays
+MCA SCORING
+Hazard + Vulnerability (MCA)
+Risk Scoring • Red Zone Identification
+DECISION SUPPORT LAYER
+Carrying Capacity • Safe-Site Suitability
+Relocation Priority • GIS Dashboard • Hindi/EN
+AUTHORITIES / USERS
+Disaster Management Authorities
+Local Administration • Response Teams
+Technologies Frontend
+React / TypeScript
+Interactive GIS Dashboard
+Backend
+Python +
+FastAPI
+REST APIs
+Scoring
+Explainable multi-criteria GIS scoring
+Rule-based plain-language explanations
+GIS & Storage
+GeoPandas
+/
+GeoJSON
+File-based
+artifacts
+Optimization
+Relocation Priority & Safe-Site Matching
+Regional Language
+Hindi / English (हिं/EN)
+Methodology
+01 — Data Collection
+Hazard, terrain, population & OSM/GSI data
+02 — Data Processing
+Cleaning, validation & spatial processing
+03 — Risk Assessment
+Hazard + vulnerability → risk score & Red Zones
+04 — Capacity & Relocation
+Safe-site suitability + capacity → relocation priority
+05 — Decision Support
+GIS dashboard + rule-based explanations + recommendations
+
+================================================================================
+ppt/slides/slide4.xml
+================================================================================
+FEASIBILITY AND VIABILITY
+4
+@SIH Idea submission- Template
+The Alchemists
+FEASIBILITY ASPECT
+OUR APPROACH
+CHALLENGE / RISK
+MITIGATION
+Technology
+React, Python, FastAPI, GIS, GeoJSON artifacts
+Integration complexity
+Modular architecture + REST APIs
+Data
+Multi-source hazard, terrain, population & infrastructure data
+Data quality, format & resolution
+Cleaning, validation & normalization
+MCA Scoring
+Explainable multi-criteria GIS scoring
+Weight / data gaps
+Rule-based plain-language explanations
+Scalability
+Rudraprayag MVP → extensible to other districts
+Increasing data volume
+File artifacts + REST APIs
+Refresh & Scenarios
+Scheduled refresh + scenario exploration
+Changing hazard conditions
+Nightly pipeline; not a forecast
+Relocation Planning
+Capacity, accessibility & suitability-based matching
+Limited safe-site capacity
+Multi-factor site evaluation
+Deployment
+Web GIS dashboard + Hindi/EN UI
+Adoption & operational constraints
+Phased deployment + human-in-the-loop decisions
+
+================================================================================
+ppt/slides/slide5.xml
+================================================================================
+IMPACT AND BENEFITS
+5
+@SIH Idea submission- Template
+The Alchemists
+KEY BENEFITS
+Social Impact
+Reduced risk to life & property
+Early identification of vulnerable habitations
+Safer and planned relocation
+Economic Impact
+Better allocation of emergency resources
+Reduced potential disaster losses
+Prioritized intervention
+Governance Impact
+Faster, evidence-based decisions
+Transparent risk prioritization
+TARGET USERS
+Disaster Management Authorities
+Faster risk identification & prioritization
+Local Administration
+Data-driven relocation planning
+Emergency Response Teams
+Better resource allocation & preparedness
+Vulnerable Communities
+Reduced exposure to high-risk zones
+represents June 2013 tragedy data
+represents regional language support
+
+================================================================================
+ppt/slides/slide6.xml
+================================================================================
+RESEARCH  AND REFERENCES
+6
+@SIH Idea submission- Template
+The Alchemists
+RESEARCH AREAS
+Multi-Hazard Risk Assessment
+GIS-Based Vulnerability Mapping
+Vulnerability Analysis
+Carrying Capacity Assessment
+Safe-Site Suitability
+Relocation Planning & Optimization
+Rule-based explainable scoring
+DATA / INFORMATION SOURCES
+Digital Elevation / Terrain Data
+Rainfall & Weather Data
+Population & Demographic Data
+GSI Landslide Inventory
+OSM Roads & Waterways
+Village / habitation polygons
+Administrative Boundaries
+
+================================================================================
+NOTES ppt/notesSlides/notesSlide1.xml
+================================================================================
+2
+
+================================================================================
+NOTES ppt/notesSlides/notesSlide2.xml
+================================================================================
+3
+
+================================================================================
+NOTES ppt/notesSlides/notesSlide3.xml
+================================================================================
+4
+
+================================================================================
+NOTES ppt/notesSlides/notesSlide4.xml
+================================================================================
+5
+
+================================================================================
+NOTES ppt/notesSlides/notesSlide5.xml
+================================================================================
+6

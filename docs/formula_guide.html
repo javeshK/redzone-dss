@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>RedZone DSS — Formula study guide</title>
+  <style>
+    :root {
+      --ink: #1a1f24;
+      --muted: #4a5560;
+      --paper: #f6f1e8;
+      --card: #fffdf8;
+      --line: #d9cfc0;
+      --red: #b42318;
+      --orange: #c2410c;
+      --yellow: #a16207;
+      --green: #1b6b3a;
+      --blue: #1d4e89;
+      --chip: #ece4d6;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: "Source Serif 4", "Iowan Old Style", Georgia, serif;
+      background: var(--paper);
+      color: var(--ink);
+      line-height: 1.55;
+    }
+    header {
+      background: #14181c;
+      color: #f4eee4;
+      padding: 2.2rem 1.4rem 1.8rem;
+    }
+    header .wrap, main, footer .wrap { max-width: 860px; margin: 0 auto; }
+    header h1 { margin: 0 0 0.4rem; font-size: 1.85rem; letter-spacing: -0.02em; }
+    header p { margin: 0.35rem 0; color: #c9c0b3; font-size: 1rem; }
+    .badge {
+      display: inline-block;
+      font-family: ui-monospace, Consolas, monospace;
+      font-size: 0.75rem;
+      letter-spacing: 0.04em;
+      border: 1px solid #6b6358;
+      padding: 0.15rem 0.45rem;
+      margin-right: 0.35rem;
+      color: #e8dcc8;
+    }
+    nav.toc {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 1rem 1.2rem;
+      margin: 1.4rem 0 2rem;
+    }
+    nav.toc h2 { margin: 0 0 0.6rem; font-size: 1.05rem; }
+    nav.toc ol { margin: 0; padding-left: 1.2rem; columns: 1; }
+    nav.toc a { color: var(--blue); text-decoration: none; }
+    nav.toc a:hover { text-decoration: underline; }
+    h2 {
+      font-size: 1.45rem;
+      margin: 2.4rem 0 0.7rem;
+      padding-top: 0.4rem;
+      border-top: 2px solid #14181c;
+    }
+    h3 { font-size: 1.12rem; margin: 1.4rem 0 0.5rem; }
+    p { margin: 0.55rem 0; }
+    ul, ol { margin: 0.4rem 0 0.8rem; }
+    li { margin: 0.25rem 0; }
+    .muted { color: var(--muted); }
+    .formula {
+      font-family: ui-monospace, Consolas, monospace;
+      background: #14181c;
+      color: #f3eadc;
+      padding: 0.9rem 1rem;
+      border-radius: 8px;
+      overflow-x: auto;
+      font-size: 0.92rem;
+      line-height: 1.45;
+    }
+    .callout {
+      border-left: 4px solid var(--blue);
+      background: #eef3f8;
+      padding: 0.7rem 0.95rem;
+      margin: 0.9rem 0;
+    }
+    .warn {
+      border-left: 4px solid var(--red);
+      background: #fbecea;
+      padding: 0.7rem 0.95rem;
+      margin: 0.9rem 0;
+    }
+    .say {
+      border-left: 4px solid var(--green);
+      background: #e8f3eb;
+      padding: 0.7rem 0.95rem;
+      margin: 0.9rem 0;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.95rem;
+      background: var(--card);
+      margin: 0.7rem 0 1rem;
+    }
+    th, td {
+      border: 1px solid var(--line);
+      padding: 0.45rem 0.55rem;
+      text-align: left;
+      vertical-align: top;
+    }
+    th { background: #efe7d8; font-weight: 650; }
+    .steps { counter-reset: step; list-style: none; padding: 0; }
+    .steps li {
+      counter-increment: step;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 0.75rem 0.9rem 0.75rem 2.6rem;
+      margin: 0.55rem 0;
+      position: relative;
+    }
+    .steps li::before {
+      content: counter(step);
+      position: absolute;
+      left: 0.7rem;
+      top: 0.75rem;
+      width: 1.35rem;
+      height: 1.35rem;
+      border-radius: 50%;
+      background: #14181c;
+      color: #fff;
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      font-size: 0.8rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    details.q {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 0.55rem 0.85rem;
+      margin: 0.45rem 0;
+    }
+    details.q summary {
+      cursor: pointer;
+      font-weight: 650;
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      font-size: 0.95rem;
+    }
+    details.q .ans { margin-top: 0.45rem; color: #1f3d2b; }
+    .calc {
+      background: #14181c;
+      color: #efe7d8;
+      border-radius: 10px;
+      padding: 1rem;
+      margin: 1rem 0 1.3rem;
+      font-family: ui-sans-serif, system-ui, sans-serif;
+    }
+    .calc h3 { margin: 0 0 0.7rem; color: #fff; font-size: 1rem; }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 0.55rem;
+    }
+    .calc label { display: block; font-size: 0.75rem; color: #c9c0b3; margin-bottom: 0.15rem; }
+    .calc input {
+      width: 100%;
+      padding: 0.4rem 0.45rem;
+      border: 1px solid #3a4148;
+      background: #1e252c;
+      color: #fff;
+      border-radius: 6px;
+    }
+    .out {
+      margin-top: 0.75rem;
+      padding: 0.65rem 0.75rem;
+      background: #1e252c;
+      border-radius: 6px;
+      font-family: ui-monospace, Consolas, monospace;
+      font-size: 0.88rem;
+      white-space: pre-wrap;
+    }
+    .zone {
+      display: inline-block;
+      padding: 0.05rem 0.4rem;
+      border-radius: 4px;
+      color: #fff;
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      font-size: 0.8rem;
+    }
+    .z-red { background: var(--red); }
+    .z-orange { background: var(--orange); }
+    .z-yellow { background: var(--yellow); }
+    .z-green { background: var(--green); }
+    footer {
+      margin-top: 3rem;
+      padding: 1.4rem;
+      background: #efe7d8;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+    @media print {
+      header { background: #fff; color: #000; }
+      header p, .badge { color: #333; }
+      .calc { break-inside: avoid; }
+      details.q { break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <span class="badge">PS 26191</span>
+      <span class="badge">Rudraprayag</span>
+      <span class="badge">No ML — MCA only</span>
+      <h1>Formula study guide</h1>
+      <p>Written for someone who did not derive these equations. Every score is a 0–1 “how bad / how good” number. We combine them with weights that add to 1.</p>
+      <p>Open this file in a browser. Use the calculators. Open the short questions and try to answer before revealing.</p>
+    </div>
+  </header>
+
+  <main>
+    <nav class="toc">
+      <h2>Contents</h2>
+      <ol>
+        <li><a href="#idea">The one idea that unlocks everything</a></li>
+        <li><a href="#pipeline">What happens, in order</a></li>
+        <li><a href="#clip">Clip and min-max (the two tools)</a></li>
+        <li><a href="#ingredients">Ingredients of hazard: S, L, R, W</a></li>
+        <li><a href="#hls">Landslide score H_ls</a></li>
+        <li><a href="#hff">Flash-flood score H_ff</a></li>
+        <li><a href="#h">Combined hazard H (the “OR” formula)</a></li>
+        <li><a href="#zones">Red / Orange / Yellow / Green</a></li>
+        <li><a href="#v">Vulnerability V</a></li>
+        <li><a href="#p">Priority P and Immediate override</a></li>
+        <li><a href="#sites">Site screening</a></li>
+        <li><a href="#c">Carrying capacity C</a></li>
+        <li><a href="#u">Site suitability U_ij</a></li>
+        <li><a href="#story">One village, start to finish</a></li>
+        <li><a href="#traps">Numbers that will trap you</a></li>
+      </ol>
+    </nav>
+
+    <h2 id="idea">1. The one idea that unlocks everything</h2>
+    <p>Judges hear “formula” and think physics. Ours is closer to a <strong>weighted report card</strong>.</p>
+    <ul>
+      <li>Every input is forced into the range <strong>0 to 1</strong>.</li>
+      <li><strong>1 = more of that thing</strong> (steeper, wetter, more people, safer site — depending on the factor).</li>
+      <li>We multiply each factor by a <strong>weight</strong> (importance) and add.</li>
+      <li>Weights for one formula always add to <strong>1.00</strong>, so the result also stays in 0–1.</li>
+    </ul>
+    <p>Example you already understand: exam marks.</p>
+    <div class="formula">Final = 0.45×math + 0.40×physics + 0.15×english</div>
+    <p>That is exactly how landslide hazard is built. Math → slope, physics → past landslides, english → rainfall.</p>
+    <div class="say"><strong>Say to a judge:</strong> “This is multi-criteria analysis, not a trained neural network. Weights are expert defaults in weights.yaml, not fitted AUC.”</div>
+
+    <h2 id="pipeline">2. What happens, in order</h2>
+    <ol class="steps">
+      <li><strong>Map the ground.</strong> DEM → slope. Streams → distance. GSI points → landslide density. Rainfall raster → how wet the climate signal is.</li>
+      <li><strong>Turn each map into 0–1.</strong> Steep becomes S. Landslide density becomes L. Rain becomes R. Streams/wetness become W.</li>
+      <li><strong>Per pixel,</strong> compute H_ls, then H_ff, then combine into H. Colour the pixel.</li>
+      <li><strong>Per village,</strong> average H inside the village (H_hab), compute social vulnerability V, then priority P.</li>
+      <li><strong>Per candidate site,</strong> throw away unsafe/steep/tiny sites, estimate how many people fit (C), then rank remaining sites with U_ij.</li>
+    </ol>
+    <p class="muted">Expensive GIS is done offline in scripts 01–05. The dashboard mostly displays answers that were already computed.</p>
+
+    <h2 id="clip">3. Clip and min-max (the two tools)</h2>
+    <h3>Clip — “don’t let it go outside 0–1”</h3>
+    <p><code>clip(x, 0, 1)</code> means: if x is negative, use 0. If x is bigger than 1, use 1. Otherwise keep x.</p>
+    <table>
+      <tr><th>x before clip</th><th>after clip</th></tr>
+      <tr><td>-0.2</td><td>0</td></tr>
+      <tr><td>0.4</td><td>0.4</td></tr>
+      <tr><td>1.7</td><td>1</td></tr>
+    </table>
+
+    <h3>Min-max — “rescale this district so the smallest is 0 and the largest is 1”</h3>
+    <div class="formula">score = (value − min) / (max − min)</div>
+    <p>If rainfall in the district runs from 800 mm to 1800 mm, then 1300 mm becomes (1300−800)/(1800−800) = 0.50.</p>
+    <div class="warn"><strong>Judge trap:</strong> a 0.8 in Rudraprayag is <em>not</em> a probability, and it is <em>not</em> comparable to Chamoli until you freeze the same min and max. These scores are relative inside one district.</div>
+
+    <details class="q">
+      <summary>Q. Slope is 10°. Formula (slope−15)/30 = −0.167. What do we store?</summary>
+      <div class="ans">0. Clip to 0–1. Gentle slopes are “no extra landslide severity from slope.”</div>
+    </details>
+    <details class="q">
+      <summary>Q. Why not use raw metres and millimetres in the weighted sum?</summary>
+      <div class="ans">Because 40° and 1200 mm are different units. Adding them is meaningless. 0–1 makes weights mean “importance,” not “unit conversion.”</div>
+    </details>
+
+    <h2 id="ingredients">4. Ingredients of hazard: S, L, R, W</h2>
+
+    <h3>S — slope severity</h3>
+    <div class="formula">S = clip( (slope_degrees − 15) / 30 , 0, 1 )</div>
+    <ul>
+      <li>15° or flatter → S = 0 (we treat it as not contributing).</li>
+      <li>45° or steeper → S = 1 (as bad as this term gets).</li>
+      <li>30° → (30−15)/30 = 0.50.</li>
+    </ul>
+    <p>Why 15 and 45? Himalayan planning rule of thumb: below ~15° is more buildable; above ~45° is severely hostile. They are <strong>policy knobs</strong>, not fitted science.</p>
+    <table>
+      <tr><th>Slope</th><th>S</th><th>Meaning</th></tr>
+      <tr><td>10°</td><td>0.00</td><td>No slope penalty</td></tr>
+      <tr><td>15°</td><td>0.00</td><td>Start of penalty</td></tr>
+      <tr><td>25°</td><td>0.33</td><td>Moderate</td></tr>
+      <tr><td>30°</td><td>0.50</td><td>Halfway</td></tr>
+      <tr><td>45°</td><td>1.00</td><td>Maxed out</td></tr>
+      <tr><td>60°</td><td>1.00</td><td>Still 1 — clip</td></tr>
+    </table>
+
+    <h3>L — landslide density (from GSI points)</h3>
+    <ol class="steps">
+      <li>Put each GSI landslide point on the raster grid (like dropping a 1 in that cell).</li>
+      <li>Blur with a Gaussian whose width is about <strong>500 m</strong> (KDE). Nearby cells light up too — a landslide is not only the exact pin.</li>
+      <li>Min-max the blurred map to 0–1 across the district. That is L.</li>
+    </ol>
+    <p>If there are no GSI points, fallback: treat slopes steeper than 30° as a proxy. Label it <strong>DERIVED</strong>, never “official GSI zonation.”</p>
+
+    <h3>R — rainfall severity</h3>
+    <p>Take a rainfall raster (CHIRPS / ERA5, or orographic fallback from DEM). Min-max to 0–1 (or scale millimetres by a cap). High R = wetter / more extreme in our chosen statistic, relative to this district.</p>
+    <p>The UI slider does <strong>not</strong> download a new storm. It multiplies this R by 1.2 or 1.5, clips to 1, and recomputes H. That is a <strong>scenario</strong>, not an IMD forecast.</p>
+
+    <h3>W — wetness / flood-path</h3>
+    <p>Two ideas glued together:</p>
+    <ol>
+      <li><strong>Near a stream is worse.</strong> Distance capped at 1 km:<br />
+        <code>stream_score = clip(1 − dist_m / 1000, 0, 1)</code><br />
+        On the bank (0 m) → 1. At 1 km or further → 0.
+      </li>
+      <li><strong>TWI (topographic wetness)</strong> — cells that collect water and are not steep. Rough idea: TWI ≈ ln(catchment / tan(slope)). Then min-max TWI to 0–1.</li>
+    </ol>
+    <p>W is “how much this pixel looks like a cloudburst path,” not a HEC-RAS flood depth.</p>
+
+    <details class="q">
+      <summary>Q. A house is 250 m from a nala. What is stream_score?</summary>
+      <div class="ans">1 − 250/1000 = 0.75.</div>
+    </details>
+    <details class="q">
+      <summary>Q. Is TWI a flood model?</summary>
+      <div class="ans">No. No hydrograph, no Manning n, no inundation depth. Susceptibility proxy only.</div>
+    </details>
+
+    <div class="calc" id="calc-s">
+      <h3>Calculator — S from slope°</h3>
+      <div class="grid">
+        <div><label>Slope (degrees)</label><input id="in-slope" type="number" value="32" step="1" oninput="calcS()" /></div>
+      </div>
+      <div class="out" id="out-s"></div>
+    </div>
+
+    <h2 id="hls">5. Landslide score H_ls</h2>
+    <div class="formula">H_ls = 0.45 × S + 0.40 × L + 0.15 × R</div>
+    <p>Read it as: slope is the biggest driver (45%), then “this neighbourhood already had slides” (40%), then rain as a trigger (15%).</p>
+    <p><strong>Worked example.</strong> S = 0.80, L = 0.60, R = 0.50</p>
+    <div class="formula">H_ls = 0.45×0.80 + 0.40×0.60 + 0.15×0.50
+     = 0.360 + 0.240 + 0.075
+     = 0.675</div>
+    <p>0.675 means “fairly high landslide susceptibility on our index,” still not a 67.5% chance of a slide tomorrow.</p>
+    <div class="say"><strong>Say:</strong> “H_ls is a 0–1 susceptibility index, not a probability of failure.”</div>
+
+    <div class="calc">
+      <h3>Calculator — H_ls</h3>
+      <div class="grid">
+        <div><label>S slope 0–1</label><input id="hls-s" type="number" value="0.8" step="0.05" oninput="calcHls()" /></div>
+        <div><label>L density 0–1</label><input id="hls-l" type="number" value="0.6" step="0.05" oninput="calcHls()" /></div>
+        <div><label>R rain 0–1</label><input id="hls-r" type="number" value="0.5" step="0.05" oninput="calcHls()" /></div>
+      </div>
+      <div class="out" id="out-hls"></div>
+    </div>
+    <details class="q">
+      <summary>Q. Why is rainfall only 0.15 in H_ls if rain triggers slides?</summary>
+      <div class="ans">Because the same R also enters flash-flood. Slope + inventory already carry most of the landslide story. Rain is the shared trigger, not the whole landslide map.</div>
+    </details>
+
+    <h2 id="hff">6. Flash-flood score H_ff</h2>
+    <div class="formula">H_ff = 0.50 × W + 0.50 × R</div>
+    <p>Half “are you in the water’s path?”, half “is the rainfall signal high?”</p>
+    <p><strong>Worked example.</strong> W = 0.70, R = 0.50</p>
+    <div class="formula">H_ff = 0.50×0.70 + 0.50×0.50 = 0.35 + 0.25 = 0.60</div>
+    <div class="warn">This is <em>not</em> river flooding on the Ganga plains. It is Himalayan cloudburst / stream-corridor susceptibility.</div>
+
+    <div class="calc">
+      <h3>Calculator — H_ff</h3>
+      <div class="grid">
+        <div><label>W wetness 0–1</label><input id="hff-w" type="number" value="0.7" step="0.05" oninput="calcHff()" /></div>
+        <div><label>R rain 0–1</label><input id="hff-r" type="number" value="0.5" step="0.05" oninput="calcHff()" /></div>
+      </div>
+      <div class="out" id="out-hff"></div>
+    </div>
+    <details class="q">
+      <summary>Q. Where is discharge / return period in H_ff?</summary>
+      <div class="ans">Nowhere. No 1-in-100 year. If you say “100-year flood,” they will eat you.</div>
+    </details>
+
+    <h2 id="h">7. Combined hazard H (the formula everyone asks about)</h2>
+    <div class="formula">H = 1 − (1 − H_ls) × (1 − H_ff)</div>
+    <p>This is the “at least one of the two is dangerous” rule, also called a <strong>probabilistic OR</strong>.</p>
+    <h3>Intuition without probability jargon</h3>
+    <p>Think of (1 − H_ls) as “how landslide-safe is this pixel.” (1 − H_ff) is “how flood-safe.” Multiply safeties: you are only fully safe if <em>both</em> are safe. Then H is 1 minus that combined safety.</p>
+    <p><strong>Worked example</strong> (same numbers as the unit test): H_ls = 0.78, H_ff = 0.61</p>
+    <div class="formula">H = 1 − (1−0.78)×(1−0.61)
+  = 1 − (0.22)×(0.39)
+  = 1 − 0.0858
+  = 0.9142</div>
+    <p>Notice H is <strong>higher than both</strong> inputs. Combining two medium threats makes a high combined threat. That is the point: either can kill you.</p>
+    <table>
+      <tr><th>H_ls</th><th>H_ff</th><th>H (OR)</th><th>max()</th><th>average</th></tr>
+      <tr><td>0.60</td><td>0.60</td><td>0.84</td><td>0.60</td><td>0.60</td></tr>
+      <tr><td>0.90</td><td>0.10</td><td>0.91</td><td>0.90</td><td>0.50</td></tr>
+      <tr><td>0.00</td><td>0.00</td><td>0.00</td><td>0.00</td><td>0.00</td></tr>
+      <tr><td>1.00</td><td>0.00</td><td>1.00</td><td>1.00</td><td>0.50</td></tr>
+    </table>
+    <p>Look at row 2: average would hide a 0.90 landslide behind a “0.50 overall.” OR and max do not hide it. We picked OR because we treat the two hazards as able to strike together, not as “pick the worse one only.”</p>
+    <div class="warn"><strong>Honest limit:</strong> the formula assumes the two hazards are independent. They are not — both use rainfall. So H can be a bit inflated. We accept extra red (false alarm) over hidden green. If they ask for a cleaner model, say copulas / shared-factor — Phase 3, not this demo.</div>
+
+    <div class="calc">
+      <h3>Calculator — H from H_ls and H_ff</h3>
+      <div class="grid">
+        <div><label>H_ls</label><input id="h-ls" type="number" value="0.78" step="0.01" oninput="calcH()" /></div>
+        <div><label>H_ff</label><input id="h-ff" type="number" value="0.61" step="0.01" oninput="calcH()" /></div>
+      </div>
+      <div class="out" id="out-h"></div>
+    </div>
+    <details class="q">
+      <summary>Q. If H_ls = 0.6 and H_ff = 0.6, is the pixel Red?</summary>
+      <div class="ans">H = 1 − 0.4×0.4 = 0.84, which is ≥ 0.70, so <strong>Red</strong>. Average would have been Orange. Know this example cold.</div>
+    </details>
+    <details class="q">
+      <summary>Q. Why not just add H_ls + H_ff?</summary>
+      <div class="ans">That can exceed 1. Weights already used inside each hazard. OR keeps H in [0,1] and encodes “either hazard is enough.”</div>
+    </details>
+
+    <h2 id="zones">8. Painting the map: Red / Orange / Yellow / Green</h2>
+    <p>After H is computed on every pixel:</p>
+    <table>
+      <tr><th>If H is…</th><th>Class</th></tr>
+      <tr><td>≥ 0.70</td><td><span class="zone z-red">Red</span></td></tr>
+      <tr><td>0.50 to &lt; 0.70</td><td><span class="zone z-orange">Orange</span></td></tr>
+      <tr><td>0.30 to &lt; 0.50</td><td><span class="zone z-yellow">Yellow</span></td></tr>
+      <tr><td>&lt; 0.30</td><td><span class="zone z-green">Green</span></td></tr>
+    </table>
+    <p>We then turn red (and other class) cells into polygons, drop scraps smaller than <strong>2 ha</strong>, simplify for the web map.</p>
+    <p><strong>Habitation hazard H_hab</strong> = mean of H inside the village polygon (or sampled at the point). <strong>% red</strong> = share of that village’s area whose pixels are Red.</p>
+    <div class="warn"><strong>Never say:</strong> “These are NDMA / GSI official hazard zones.” <strong>Do say:</strong> “Derived screening index. Provenance DERIVED.”</div>
+    <div class="warn"><strong>KPI trap:</strong> meta.json field red_zone_area_ha currently <em>sums several zone classes</em> and can look larger than the district because polygons overlap. Do not quote “104% of district is red.” Talk about the colour on the map and the 0.70 rule.</div>
+    <details class="q">
+      <summary>Q. Who chose 0.70?</summary>
+      <div class="ans">We did. It is a policy knob in weights.yaml, not a law. Changing it grows or shrinks red polygons.</div>
+    </details>
+
+    <h2 id="v">9. Vulnerability V — “how badly will people be hurt if something happens”</h2>
+    <p>Hazard is the mountain. Vulnerability is the household.</p>
+    <div class="formula">V = 0.25×population + 0.15×dependents + 0.20×isolation
+  + 0.15×health_access + 0.25×historical_exposure</div>
+    <p>Each x is already 0–1 (high = more vulnerable, except health is coded so that far-from-hospital is worse in the engine).</p>
+    <table>
+      <tr><th>Factor</th><th>Weight</th><th>What we actually used in the demo</th></tr>
+      <tr><td>Population size</td><td>0.25</td><td>Min-max of the 25 demo village populations. Bigger village → higher this factor.</td></tr>
+      <tr><td>Dependents</td><td>0.15</td><td><strong>Proxy, not Census age tables.</strong> Smaller villages get a higher dependent-like score.</td></tr>
+      <tr><td>Isolation</td><td>0.20</td><td>Straight-line km to nearest of 4 hubs (Rudraprayag Town, Guptkashi, Agastyamuni, Srinagar) / 18 km, capped at 1.</td></tr>
+      <tr><td>Health access</td><td>0.15</td><td>Also from those hubs (not a real PHC inventory distance).</td></tr>
+      <tr><td>Historical exposure</td><td>0.25</td><td>GSI points within 1 km, plus a +0.35 bump if the village is on our 2013 Kedarnath-corridor list.</td></tr>
+    </table>
+
+    <h3>Missing data: renormalize</h3>
+    <p>If dependents is missing, we do <strong>not</strong> pretend it is 0. We drop it and stretch the remaining weights so they still add to 1.</p>
+    <p>Example: only population (0.25) and isolation (0.20) present. Total = 0.45.</p>
+    <div class="formula">new weight_pop = 0.25/0.45 = 0.556
+new weight_iso = 0.20/0.45 = 0.444
+V = 0.556×pop + 0.444×isolation</div>
+    <div class="say"><strong>Say:</strong> “Missing factor → drop and renormalize. We do not silently treat missing as safe.”</div>
+
+    <div class="calc">
+      <h3>Calculator — V (all five factors present)</h3>
+      <div class="grid">
+        <div><label>population</label><input id="v-pop" type="number" value="0.7" step="0.05" oninput="calcV()" /></div>
+        <div><label>dependents</label><input id="v-dep" type="number" value="0.5" step="0.05" oninput="calcV()" /></div>
+        <div><label>isolation</label><input id="v-iso" type="number" value="0.6" step="0.05" oninput="calcV()" /></div>
+        <div><label>health</label><input id="v-hea" type="number" value="0.4" step="0.05" oninput="calcV()" /></div>
+        <div><label>historical</label><input id="v-his" type="number" value="0.8" step="0.05" oninput="calcV()" /></div>
+      </div>
+      <div class="out" id="out-v"></div>
+    </div>
+    <details class="q">
+      <summary>Q. Is isolation road-network distance?</summary>
+      <div class="ans">No. Haversine (straight line). Winter road cuts are not modelled.</div>
+    </details>
+    <details class="q">
+      <summary>Q. Did we use Census 2011 age groups for dependents?</summary>
+      <div class="ans">Not in the demo engine. Do not claim it. Call it a proxy.</div>
+    </details>
+
+    <h2 id="p">10. Relocation priority P</h2>
+    <p>Now mix “dangerous place” with “fragile people.”</p>
+    <div class="formula">P = 0.60 × H_hab + 0.40 × V</div>
+    <p>Hazard gets more weight than social vulnerability because a safe rich village still should not sit on a debris fan — and a fragile village on a safe bench is a different problem.</p>
+    <p><strong>Worked example.</strong> H_hab = 0.82, V = 0.71</p>
+    <div class="formula">P = 0.60×0.82 + 0.40×0.71 = 0.492 + 0.284 = 0.776</div>
+    <table>
+      <tr><th>P</th><th>Class</th><th>Plain meaning</th></tr>
+      <tr><td>≥ 0.75</td><td>Immediate</td><td>Plan relocation / evacuation now</td></tr>
+      <tr><td>0.60 – &lt; 0.75</td><td>Short-term</td><td>This season</td></tr>
+      <tr><td>0.40 – &lt; 0.60</td><td>Medium-term</td><td>Mitigate and monitor</td></tr>
+      <tr><td>&lt; 0.40</td><td>Monitor</td><td>Stay, strengthen</td></tr>
+    </table>
+    <p>0.776 → Immediate from the table. The explain panel shows:</p>
+    <ul>
+      <li>multi_hazard contribution = 0.60 × 0.82 = 0.492</li>
+      <li>vulnerability contribution = 0.40 × 0.71 = 0.284</li>
+    </ul>
+    <p>Those two contributions <em>are</em> P. That is what “explainable” means.</p>
+
+    <h3>The override (this is a favourite judge question)</h3>
+    <p>Even if P is only 0.50 (Medium-term), we <strong>force Immediate</strong> if either:</p>
+    <ul>
+      <li><strong>% of village area in Red ≥ 40%</strong>, or</li>
+      <li><strong>H_hab ≥ 0.80</strong></li>
+    </ul>
+    <p>Why? A small village with low “social V” can still be sitting on a red fan. Physics first.</p>
+    <p>Demo script line: “Immediate is forced because 46% of habitation area falls in red zone.”</p>
+
+    <div class="calc">
+      <h3>Calculator — P and class (includes override)</h3>
+      <div class="grid">
+        <div><label>H_hab</label><input id="p-h" type="number" value="0.70" step="0.01" oninput="calcP()" /></div>
+        <div><label>V</label><input id="p-v" type="number" value="0.40" step="0.01" oninput="calcP()" /></div>
+        <div><label>% area red</label><input id="p-red" type="number" value="46" step="1" oninput="calcP()" /></div>
+      </div>
+      <div class="out" id="out-p"></div>
+    </div>
+    <details class="q">
+      <summary>Q. H_hab = 0.70, V = 0.40, pct_red = 46. What class, and why?</summary>
+      <div class="ans">P = 0.60×0.70 + 0.40×0.40 = 0.42 + 0.16 = 0.58 → would be Medium-term, but 46% ≥ 40% forces <strong>Immediate</strong>.</div>
+    </details>
+    <details class="q">
+      <summary>Q. Does the override change the number P?</summary>
+      <div class="ans">No. It changes the <em>label</em>. P can still be 0.58. The dashboard label becomes Immediate. Explain panel adds a note with weight 0.</div>
+    </details>
+
+    <h2 id="sites">11. Site screening — throw away bad land first</h2>
+    <p>Before ranking, a candidate must pass <strong>all</strong> of:</p>
+    <table>
+      <tr><th>Rule</th><th>Threshold</th></tr>
+      <tr><td>Mean hazard of site</td><td>&lt; 0.40</td></tr>
+      <tr><td>Mean slope</td><td>&lt; 20°</td></tr>
+      <tr><td>Protected share</td><td>&lt; 0.5 (treated as not a park)</td></tr>
+      <tr><td>Area</td><td>≥ 3 hectares</td></tr>
+    </table>
+    <p>This is a gate, not a score. Fail any one → site is not recommended.</p>
+    <p>Demo sites are <strong>EXPERT_SCREENED</strong> polygons, then checked against rasters. Only a handful survive in this terrain — that shortage is a finding.</p>
+    <details class="q">
+      <summary>Q. Why 20° to enter the list but 15° inside capacity?</summary>
+      <div class="ans">Himalaya is steep; 20° lets a site exist. Capacity then penalises how much of it is actually &lt;15° (more buildable).</div>
+    </details>
+
+    <h2 id="c">12. Carrying capacity — how many people could physically fit</h2>
+    <p>Not a legal number. Not forest clearance. First-order <strong>physical screening</strong>.</p>
+    <h3>Step A — how much land is even usable?</h3>
+    <div class="formula">A_safe (ha) = area_ha
+        × p_buildable
+        × p_slope_lt15
+        × (1 − p_hazard)
+        × (1 − p_protected)</div>
+    <p>Each p is a fraction 0–1. Multiplying means: only the land that is buildable AND flatter AND not hazardous AND not protected counts.</p>
+    <p><strong>Worked example.</strong> 16 ha site, buildable 0.68, slope&lt;15 share 0.80, hazard 0.28, protected 0</p>
+    <div class="formula">A_safe = 16 × 0.68 × 0.80 × (1−0.28) × (1−0)
+        = 16 × 0.68 × 0.80 × 0.72
+        = 6.266 ha</div>
+
+    <h3>Step B — convert to people at 80 m² each</h3>
+    <p>1 hectare = 10,000 m², so 6.266 ha = 62,660 m².</p>
+    <div class="formula">C_raw = A_safe_m² / 80
+       = 62660 / 80
+       = 783.25 people</div>
+    <div class="warn"><strong>Naming bug in YAML:</strong> the key is called <code>ha_per_person: 80</code> but the code divides <em>square metres</em> by 80. So it is <strong>80 m² per person</strong>, not 80 hectares per person. If you say hectares you fail the viva.</div>
+
+    <h3>Step C — access deraters (roads, water, health each between 0.6 and 1.0 typically)</h3>
+    <div class="formula">C = integer( C_raw × f_road × f_water × f_health )</div>
+    <p>Example: 0.90 × 0.85 × 0.80 = 0.612</p>
+    <div class="formula">C = int(783.25 × 0.612) = int(479.3) = 479</div>
+
+    <h3>Step D — subtract people already there</h3>
+    <div class="formula">C_available = max(0, C − existing_population)</div>
+    <p>If 180 people already live there: 479 − 180 = 299 spare.</p>
+    <div class="say"><strong>Always say:</strong> “First-order physical screening capacity, not statutory settlement capacity.”</div>
+
+    <div class="calc">
+      <h3>Calculator — capacity</h3>
+      <div class="grid">
+        <div><label>area_ha</label><input id="c-a" type="number" value="16" step="0.5" oninput="calcC()" /></div>
+        <div><label>p_buildable</label><input id="c-b" type="number" value="0.68" step="0.01" oninput="calcC()" /></div>
+        <div><label>p_slope&lt;15</label><input id="c-s" type="number" value="0.80" step="0.01" oninput="calcC()" /></div>
+        <div><label>p_hazard</label><input id="c-h" type="number" value="0.28" step="0.01" oninput="calcC()" /></div>
+        <div><label>p_protected</label><input id="c-p" type="number" value="0" step="0.01" oninput="calcC()" /></div>
+        <div><label>f_road</label><input id="c-fr" type="number" value="0.90" step="0.01" oninput="calcC()" /></div>
+        <div><label>f_water</label><input id="c-fw" type="number" value="0.85" step="0.01" oninput="calcC()" /></div>
+        <div><label>f_health</label><input id="c-fh" type="number" value="0.80" step="0.01" oninput="calcC()" /></div>
+        <div><label>existing pop</label><input id="c-e" type="number" value="180" step="10" oninput="calcC()" /></div>
+      </div>
+      <div class="out" id="out-c"></div>
+    </div>
+    <details class="q">
+      <summary>Q. Why 80 m², not SPHERE ~45 m²?</summary>
+      <div class="ans">A screening constant for a slightly generous plot+services campus. SDMA can change it in weights.yaml. It is not an Indian building bye-law.</div>
+    </details>
+    <details class="q">
+      <summary>Q. Can C_available go negative?</summary>
+      <div class="ans">No. max(0, C − existing). We never recommend “minus 50 people of space.”</div>
+    </details>
+
+    <h2 id="u">13. Site suitability U_ij — “why this site for this village”</h2>
+    <p>i = habitation, j = site. Higher U is better.</p>
+    <div class="formula">U_ij = 0.30×safety
+     + 0.15×distance
+     + 0.15×road
+     + 0.10×healthcare
+     + 0.05×school
+     + 0.10×water
+     + 0.15×capacity_fit</div>
+    <table>
+      <tr><th>Term</th><th>How it is 0–1</th></tr>
+      <tr><td>safety</td><td>1 − site hazard. Hazard 0.18 → safety 0.82.</td></tr>
+      <tr><td>distance</td><td>1 − (km between village and site) / 25. 5 km → 0.80. 25 km or more → 0.</td></tr>
+      <tr><td>road / health / school / water</td><td>Access factors already 0–1 on the site (demo uses f_road etc.).</td></tr>
+      <tr><td>capacity_fit</td><td>clip(C_available / village_population, 0, 1). If the site can hold the whole village, this is 1.</td></tr>
+    </table>
+    <p><strong>Hard constraint (not a weight):</strong> we only pick a site as the winner if</p>
+    <div class="formula">C_available ≥ 0.5 × village_population</div>
+    <p>So a tiny beautiful site that can take 10% of the village is not allowed to win alone. If nobody qualifies, we <strong>split across the top 2</strong>.</p>
+    <p>This is <strong>ranking</strong>, not an operations-research optimizer. There is no MIP, no OR-Tools. If the PPT says “Optimization,” say “weighted ranking with a capacity constraint.”</p>
+
+    <p><strong>Worked example.</strong> safety 0.82, distance 0.80, road 0.90, health 0.80, school 0.70, water 0.85, cap_fit 1.00</p>
+    <div class="formula">U = 0.30×0.82 + 0.15×0.80 + 0.15×0.90 + 0.10×0.80
+  + 0.05×0.70 + 0.10×0.85 + 0.15×1.00
+  = 0.246 + 0.120 + 0.135 + 0.080 + 0.035 + 0.085 + 0.150
+  = 0.851</div>
+
+    <div class="calc">
+      <h3>Calculator — U_ij</h3>
+      <div class="grid">
+        <div><label>safety</label><input id="u-s" type="number" value="0.82" step="0.01" oninput="calcU()" /></div>
+        <div><label>distance</label><input id="u-d" type="number" value="0.80" step="0.01" oninput="calcU()" /></div>
+        <div><label>road</label><input id="u-r" type="number" value="0.90" step="0.01" oninput="calcU()" /></div>
+        <div><label>healthcare</label><input id="u-h" type="number" value="0.80" step="0.01" oninput="calcU()" /></div>
+        <div><label>school</label><input id="u-k" type="number" value="0.70" step="0.01" oninput="calcU()" /></div>
+        <div><label>water</label><input id="u-w" type="number" value="0.85" step="0.01" oninput="calcU()" /></div>
+        <div><label>capacity_fit</label><input id="u-c" type="number" value="1.00" step="0.01" oninput="calcU()" /></div>
+      </div>
+      <div class="out" id="out-u"></div>
+    </div>
+    <details class="q">
+      <summary>Q. Distance is 30 km. What is the distance score?</summary>
+      <div class="ans">1 − 30/25 = −0.2 → clip to <strong>0</strong>. We do not give negative suitability from distance; we just give no credit.</div>
+    </details>
+    <details class="q">
+      <summary>Q. Why is school only 0.05?</summary>
+      <div class="ans">Nice to have for a screening relocate. Safety and “will they fit” matter more in the first pass.</div>
+    </details>
+
+    <h2 id="story">14. One village, start to finish (memorise this story)</h2>
+    <p>Invented numbers in the shape of the spec’s JSON example — good for a whiteboard.</p>
+    <ol class="steps">
+      <li>Pixel ingredients near the village: S=0.80, L=0.70, R=0.50, W=0.61.</li>
+      <li>H_ls = 0.45×0.80 + 0.40×0.70 + 0.15×0.50 = 0.36 + 0.28 + 0.075 = <strong>0.715</strong>.</li>
+      <li>H_ff = 0.50×0.61 + 0.50×0.50 = 0.305 + 0.25 = <strong>0.555</strong>.</li>
+      <li>H = 1 − (1−0.715)×(1−0.555) = 1 − 0.285×0.445 = 1 − 0.1268 = <strong>0.873</strong> → Red pixel.</li>
+      <li>Village mean H_hab ≈ <strong>0.82</strong>, and 46% of its area is Red.</li>
+      <li>V ≈ <strong>0.71</strong> from the five social factors.</li>
+      <li>P = 0.60×0.82 + 0.40×0.71 = <strong>0.776</strong> ≥ 0.75 → Immediate. Even if P were lower, 46% red would force Immediate.</li>
+      <li>Sites with hazard ≥ 0.40 or slope ≥ 20° are discarded.</li>
+      <li>A remaining site gets C and C_available as in section 12.</li>
+      <li>U_ij is computed for every surviving site. Winner must have spare capacity ≥ 50% of village pop. Show runner-up.</li>
+    </ol>
+    <div class="callout">On demo day, click a real village and read <em>its</em> H, V, P, % red from the screen. If the screen disagrees with this story, the screen wins.</div>
+
+    <h2 id="traps">15. Numbers that will trap you</h2>
+    <table>
+      <tr><th>Thing</th><th>Correct</th><th>Wrong</th></tr>
+      <tr><td>H</td><td>Susceptibility index 0–1</td><td>“87% chance of disaster”</td></tr>
+      <tr><td>Red</td><td>H ≥ 0.70 screening</td><td>Official zonation</td></tr>
+      <tr><td>Capacity 80</td><td>80 square metres / person</td><td>80 hectares / person</td></tr>
+      <tr><td>CRS</td><td>Show 4326, measure 32644</td><td>Areas in degrees</td></tr>
+      <tr><td>KDE</td><td>500 m blur of GSI points</td><td>Neural net</td></tr>
+      <tr><td>Rain slider</td><td>Scenario on cached R</td><td>Forecast</td></tr>
+      <tr><td>U_ij</td><td>Weighted rank</td><td>Linear programming “optimization”</td></tr>
+      <tr><td>ML</td><td>Disabled. Scaffold not ready</td><td>“Our AI model”</td></tr>
+      <tr><td>25 villages</td><td>Expert-screened demo subset</td><td>All of Rudraprayag</td></tr>
+      <tr><td>Independence in OR</td><td>Known approximation</td><td>“Hazards are independent, scientifically”</td></tr>
+    </table>
+
+    <h3>Quick oral drill (cover the answers, speak out loud)</h3>
+    <details class="q"><summary>1. Write H_ls.</summary><div class="ans">0.45S + 0.40L + 0.15R</div></details>
+    <details class="q"><summary>2. Write H_ff.</summary><div class="ans">0.50W + 0.50R</div></details>
+    <details class="q"><summary>3. Write H.</summary><div class="ans">1 − (1−H_ls)(1−H_ff)</div></details>
+    <details class="q"><summary>4. Write P.</summary><div class="ans">0.60 H_hab + 0.40 V</div></details>
+    <details class="q"><summary>5. Two override rules.</summary><div class="ans">pct_red ≥ 40 or H_hab ≥ 0.80 → Immediate</div></details>
+    <details class="q"><summary>6. Red threshold.</summary><div class="ans">0.70</div></details>
+    <details class="q"><summary>7. Site hazard / slope / area gates.</summary><div class="ans">H &lt; 0.40, slope &lt; 20°, area ≥ 3 ha, not protected</div></details>
+    <details class="q"><summary>8. Capacity density.</summary><div class="ans">80 m²/person after A_safe, then road/water/health deraters, then minus existing pop</div></details>
+    <details class="q"><summary>9. Winner capacity rule.</summary><div class="ans">C_available ≥ 0.5 × population, else split top 2</div></details>
+    <details class="q"><summary>10. What is 0.45 in H_ls?</summary><div class="ans">Weight on slope severity S — largest landslide term</div></details>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      RedZone DSS / RakshaGrid — study notes generated from config/weights.yaml and scripts/_scoring.py.
+      Not official NDMA guidance. Derived scores are decision-support only.
+    </div>
+  </footer>
+
+  <script>
+    function clip01(x) {
+      x = Number(x);
+      if (Number.isNaN(x)) return 0;
+      return Math.min(1, Math.max(0, x));
+    }
+    function calcS() {
+      const deg = Number(document.getElementById("in-slope").value);
+      const raw = (deg - 15) / 30;
+      const s = clip01(raw);
+      document.getElementById("out-s").textContent =
+        "(slope − 15) / 30 = " + raw.toFixed(3) + "\n" +
+        "after clip 0–1: S = " + s.toFixed(3);
+    }
+    function calcHls() {
+      const S = clip01(document.getElementById("hls-s").value);
+      const L = clip01(document.getElementById("hls-l").value);
+      const R = clip01(document.getElementById("hls-r").value);
+      const h = 0.45 * S + 0.40 * L + 0.15 * R;
+      document.getElementById("out-hls").textContent =
+        "0.45×" + S + " + 0.40×" + L + " + 0.15×" + R + "\n" +
+        "= " + (0.45*S).toFixed(3) + " + " + (0.40*L).toFixed(3) + " + " + (0.15*R).toFixed(3) + "\n" +
+        "H_ls = " + h.toFixed(4);
+    }
+    function calcHff() {
+      const W = clip01(document.getElementById("hff-w").value);
+      const R = clip01(document.getElementById("hff-r").value);
+      const h = 0.50 * W + 0.50 * R;
+      document.getElementById("out-hff").textContent =
+        "0.50×" + W + " + 0.50×" + R + " = " + h.toFixed(4);
+    }
+    function calcH() {
+      const a = clip01(document.getElementById("h-ls").value);
+      const b = clip01(document.getElementById("h-ff").value);
+      const h = 1 - (1 - a) * (1 - b);
+      let cls = "Green";
+      if (h >= 0.70) cls = "Red";
+      else if (h >= 0.50) cls = "Orange";
+      else if (h >= 0.30) cls = "Yellow";
+      document.getElementById("out-h").textContent =
+        "1 − (1 − " + a + ") × (1 − " + b + ")\n" +
+        "1 − " + (1-a).toFixed(3) + " × " + (1-b).toFixed(3) + " = " + h.toFixed(4) + "\n" +
+        "class = " + cls + "   |   max() would be " + Math.max(a,b).toFixed(3) +
+        "   |   average would be " + ((a+b)/2).toFixed(3);
+    }
+    function calcV() {
+      const pop = clip01(document.getElementById("v-pop").value);
+      const dep = clip01(document.getElementById("v-dep").value);
+      const iso = clip01(document.getElementById("v-iso").value);
+      const hea = clip01(document.getElementById("v-hea").value);
+      const his = clip01(document.getElementById("v-his").value);
+      const v = 0.25*pop + 0.15*dep + 0.20*iso + 0.15*hea + 0.25*his;
+      document.getElementById("out-v").textContent =
+        "0.25×pop + 0.15×dep + 0.20×iso + 0.15×health + 0.25×hist\n" +
+        "V = " + v.toFixed(4);
+    }
+    function calcP() {
+      const hh = clip01(document.getElementById("p-h").value);
+      const v = clip01(document.getElementById("p-v").value);
+      const red = Number(document.getElementById("p-red").value);
+      const p = 0.60 * hh + 0.40 * v;
+      let cls = "Monitor";
+      if (p >= 0.75) cls = "Immediate";
+      else if (p >= 0.60) cls = "Short-term";
+      else if (p >= 0.40) cls = "Medium-term";
+      let note = "from P table: " + cls;
+      if (red >= 40 || hh >= 0.80) {
+        cls = "Immediate";
+        const why = red >= 40 ? ("% red " + red + " ≥ 40") : ("H_hab " + hh + " ≥ 0.80");
+        note = "P = " + p.toFixed(4) + " would have been " + note.replace("from P table: ","") +
+          ", but OVERRIDE because " + why + " → Immediate";
+      } else {
+        note = "P = " + p.toFixed(4) + " → " + cls + " (no override)";
+      }
+      document.getElementById("out-p").textContent =
+        "P = 0.60×" + hh + " + 0.40×" + v + " = " + p.toFixed(4) + "\n" + note;
+    }
+    function calcC() {
+      const area = Number(document.getElementById("c-a").value);
+      const pb = clip01(document.getElementById("c-b").value);
+      const ps = clip01(document.getElementById("c-s").value);
+      const ph = clip01(document.getElementById("c-h").value);
+      const pp = clip01(document.getElementById("c-p").value);
+      const fr = Number(document.getElementById("c-fr").value);
+      const fw = Number(document.getElementById("c-fw").value);
+      const fh = Number(document.getElementById("c-fh").value);
+      const ex = Number(document.getElementById("c-e").value);
+      const aSafe = area * pb * ps * (1 - ph) * (1 - pp);
+      const m2 = aSafe * 10000;
+      const craw = m2 / 80;
+      const c = Math.floor(craw * fr * fw * fh);
+      const avail = Math.max(0, c - ex);
+      document.getElementById("out-c").textContent =
+        "A_safe = " + aSafe.toFixed(3) + " ha  (" + m2.toFixed(0) + " m²)\n" +
+        "C_raw = m² / 80 = " + craw.toFixed(2) + " people\n" +
+        "deraters product = " + (fr*fw*fh).toFixed(3) + "\n" +
+        "C = " + c + "   C_available = " + avail;
+    }
+    function calcU() {
+      const s = clip01(document.getElementById("u-s").value);
+      const d = clip01(document.getElementById("u-d").value);
+      const r = clip01(document.getElementById("u-r").value);
+      const h = clip01(document.getElementById("u-h").value);
+      const k = clip01(document.getElementById("u-k").value);
+      const w = clip01(document.getElementById("u-w").value);
+      const c = clip01(document.getElementById("u-c").value);
+      const u = 0.30*s + 0.15*d + 0.15*r + 0.10*h + 0.05*k + 0.10*w + 0.15*c;
+      document.getElementById("out-u").textContent =
+        "0.30×safety + 0.15×dist + 0.15×road + 0.10×health\n" +
+        "+ 0.05×school + 0.10×water + 0.15×cap_fit\n" +
+        "U_ij = " + u.toFixed(4);
+    }
+    calcS(); calcHls(); calcHff(); calcH(); calcV(); calcP(); calcC(); calcU();
+  </script>
+</body>
+</html>
